@@ -1,0 +1,182 @@
+[
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Pag.1 REGISTRAZIONE UTENTE E GESTIONE DEI RUOLI Manuale per Stazioni Appaltanti Vers. 2.0 del 14/06/2024 QUESTO DOCUMENTO È DI PROPRIETÀ DELLA SOCIETÀ INNOVAPUGLIA S.P.A. OGNI DIVULGAZIONE, RIPRODUZIONE O CESSIONE DI CONTENUTI A TERZI DOVRÀ ESSERE AUTORIZZATA DALLA STESSA.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 1,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 41
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Sommario ISTRUZIONI OPERATIVE PER LA NUOVA REGISTRAZIONE .......................... 3 3.1. LISTA ATTIVIT Á ........................................................................................................ 9 3.2. CAMBIO PASSWORD .............................................................................................. 10 3.3. PROFILAZIONE DELL’UTENTE ............................................................................ 10 Legenda PA Pubblica Amministrazione OE Operatore Economico SA Stazione Appaltante RTI Raggruppamento temporaneo di imprese RUP Responsabile Unico di Progetto",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 2,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 51
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 INTRODUZIONE Il presente documento illustra i passi che l’utente di una Pubblica Amministrazione dovrà seguire per registrarsi ed accedere al portale di EmPULIA. Il manuale descrive la registrazione ex-novo di un utente interno alla Stazione Appaltante (SA) e le indicazioni per una corretta gestione del profilo (modifiche ed aggiornamenti). REGISTRAZIONE UTENTE PA Per accedere ad EmPULIA gli utenti delle Pubbliche Amministrazioni dovranno registrarsi, comunicando i propri dati e le informazioni ritenute necessarie per la loro identificazione. Al momento della registrazione, il Sistema provvederà ad associare all’Utente un account composto da Codice Accesso, Nome Utente e Password, generato automaticamente dal Sistema stesso. L’attivazione dell’Account è immediata, anche se inizialmente i permessi associati all’Utente saranno limitati al solo profilo base (Utente Ente Base). Successivamente il profilo dell’utente potrà essere abilitato a compiere ulteriori azioni e ad attivare ulteriori funzionalità, come descritto nei seguenti paragrafi. ISTRUZIONI OPERATIVE PER LA NUOVA REGISTRAZIONE Per avviare il percorso di registrazione al Sistema, accedere alla sezione .",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 3,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 192
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Una volta cliccato sulla voce Registrazione utente P.A. si aprirà procedura guidata per registrazione. La procedura si compone dei seguenti STEP: Selezione Ente Riepilogo Dati Ente Dati Utente Trattamento dei dati personali Riepilogo Per completare la registrazione sarà necessario compilare tutti i campi previsti in questi 5 STEP . Nello sarà necessario individuare l’Ente di riferimento. Per farlo l’utente intenzionato a registrarsi dovrà ricercare l’Amministrazione di appartenenza nell’elenco proposto degli Enti Registrati.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 4,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 86
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Nel si potrà selezionare una delle seguenti opzioni: Amministrazioni ed enti regionali Aziende e istituti del SSR Istituti di istruzione scolastica e universitaria Amministrazioni, enti, aziende, consorzi e società di enti locali Altri Enti Dopo aver selezionato il primo livello si può applicare il filtro relativo al , scegliendo tra quelli disponibili nell’elenco. L’elenco delle strutture di secondo livello cambia in base alla struttura di primo livello selezionata. Infine, in si selezionerà, dalla lista ottenuta in base ai filtri applicati sui livelli precedenti, l’Ente di appartenenza. Nell’elenco sono riportati tutti gli Enti profilati ed abilitati ad operare in piattaforma. Cliccando sul comando si passa allo STEP2.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 5,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 127
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Nello il Sistema mostrerà, in versione non editabile, la scheda anagrafica precaricata dell’Ente al quale l’Utente si sta registrando. Una volta visionati i campi compilati automaticamente dalla piattaforma è possibile scegliere se tornare indietro, cliccando l’apposito controllo, o proseguire con la registrazione cliccando . Si passerà così allo dove si aprirà la seguente schermata:",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 6,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 67
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Inserire quindi i dati personali richiesti (quelli contrassegnati con * sono obbligatori) e fare click sul comando per passare alla fase successiva. Nella penultima fase invece, lo , è necessario leggere attentamente e spuntare su con riferimento al trattamento dei dati personali ed inserire il codice alfanumerico di controllo antispam , come riportato nell’immagine:",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 7,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 62
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 L’accettazione del documento e di tutti gli eventuali altri documenti richiamati nell’informativa è condizione necessaria per completare la registrazione. Una volta inseriti i valori corretti, fare click su per passare alla fase successiva. Infine, nell’ultima fase, verrà proposto un dei dati di registrazione. Una volta confermati i dati di riepilogo, il Sistema provvederà quindi ad inviare due e-mail:",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 8,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 73
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Una prima e-mail di conferma della registrazione, all’indirizzo indicato dall’Utente. A questo indirizzo sarà trasmessa la terna di credenziali (Codice di accesso, username, password) per l’accesso in piattaforma; Una seconda e-mail verrà recapitata all’indirizzo pec della Struttura cui l’utente ha dichiarato di appartenere, per notificare l’avvenuto censimento. 3. PRIMO ACCESSO 3.1. LISTA ATTIVIT Á La Lista Attività è una funzione che permette di evidenziare le eventuali azioni a cui è necessario prestare attenzione prima di effettuare l'accesso all'Area Riservata. La lista viene mostrata all’utente non solo al primo accesso, ma ogni volta che ci sono da svolgere in piattaforma delle nuove attività, le quali possono essere: : attività che richiedono un'azione da parte dell'utente. Tali attività inibiscono l'accesso a funzioni e/o attività fino a compimento dell'azione richiesta; : attività di semplice notifica, finalizzate a dare evidenza di determinate comunicazioni; : comunicazioni di semplice notifica di nuove funzioni e/o attività rilasciate sul sistema. Cliccare sull'attività evidenziata per proseguire con l'azione richiesta (nel caso dell'Attività Bloccante) o con la visualizzazione della notifica (nel caso di Attività non bloccanti ed Aggiornamenti).",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 9,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 218
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 3.2. CAMBIO PASSWORD Al primo accesso è previsto il Cambio Password. Poiché si tratta di un’operazione obbligatoria, il Sistema inibirà l’accesso alle altre funzioni finché tale richiesta non verrà evasa (il comando Continua, in questo caso, non produrrà alcuna azione). Per proseguire è necessario quindi fare clic sull’oggetto . Nella schermata che verrà mostrata, inserire la password ricevuta per e-mail nel campo Vecchia Password e digitare una nuova password nel campo Nuova Password , rispettando i criteri elencati. Digitare nuovamente la password scelta nel campo Controllo Password e fare clic sul comando . 3.3. PROFILAZIONE DELL’UTENTE Al primo accesso successivo alla registrazione in piattaforma, i permessi associati all’utente saranno limitati al solo profilo base (Utente Ente Base). Per completare la profilazione dell’utente, definirne il ruolo e dunque abilitarlo alle funzionalità di sua competenza, è necessario accedere, dal gruppo funzionale a e seguire le istruzioni riportate nel paragrafo successivo. 4. MODIFICA RUOLO La modifica del ruolo è un passaggio:",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 10,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 192
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 obbligatorio in caso di nuova registrazione dell’utente; attivabile a discrezione dell’utente ogni volta che si renda necessario effettuare modifiche che richiedono un’autorizzazione o una formalizzazione, quali ad esempio l’associazione ad altri Enti o strutture o il ruolo associato all’utente. Effettuato l'accesso all’Area Riservata, cliccare sul gruppo funzionale e successivamente sulla voce . In alto alla schermata che verrà mostrata, è predisposta una toolbar per gestire il processo: per terminare le operazioni e rendere effettiva l’assegnazione del ruolo o dei ruoli selezionati. per stampare il documento visualizzato. per esportare in formato xls le informazioni visualizzate sulla schermata. per tornare alla schermata precedente. Il documento di Modifica Ruolo si suddivide nelle aree Informazioni Utente, Scelta del proprio ruolo ed Altri dati.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 11,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 146
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Nell'area vengono riportate, in forma non editabile, tutte le informazioni relative all’utenza, quali Nome Utente, Nome, Cognome, Codice Fiscale, Lingua, Telefono 1, Telefono 2 ed E-mail. Nell'area è possibile selezionare il ruolo - o i ruoli - da attribuire al profilo utente tra quelli proposti (Punto Istruttore, Punto Ordinante, RUP PDG), cliccando sulle relative caselle di selezione. Inoltre, se sono selezionati più ruoli, occorre indicare il selezionando lo stesso da un menu a tendina.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 12,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 96
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Per maggiori chiarimenti relativamente ai ruoli, si faccia riferimento alla seguente tabella: Tabella riepilogativa dei ruoli Negozio Elettronico RDO Gare Telematiche Consultazioni Preliminari di mercato Appalti Specifici L'utente può predisporre documenti quali ordinativi di fornitura, Procedure di Gara da inviare in approvazione al proprio approvatore responsabile Negozio Elettronico RDO Gli utenti con questo profilo possono predisporre, sottoscrivere e pubblicare documenti quali ordinativi di fornitura. Gare Telematiche Consultazioni Preliminari di mercato Appalti Specifici Gli utenti con questo profilo possono indire ed approvare procedure di gara telematiche. Qualora si volessero attivare profili associati a ruoli diversi, selezionare più ruoli. Punti Istruttori e RUP possono predisporre tutte le tipologie di gara gestite dal sistema (il primo con le limitazioni descritte in tabella), e non più un sottoinsieme delle stesse. Per una descrizione più dettagliata dei Ruoli, si rimanda al manuale dedicato. Nel caso in cui venga selezionato il ruolo Punto Istruttore, sarà necessario indicare l'Approvatore di riferimento nell'area Altri dati, cliccando su e selezionando il nominativo del proprio Responsabile Utente tra quelli profilati. È possibile eliminare una riga, cliccando sulla relativa icona. Nel caso dei RUP PDG sarà obbligatorio allegare l’atto di nomina o altro documento che attesti l’idoneità dell’utente ad operare in qualità di RUP sulle procedure di gara telematiche.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 13,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 235
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 A seconda di come è profilato in piattaforma il proprio Ente di appartenenza, potrebbe essere necessario specificare la tra quelle profilate. Completato l’inserimento dei dati (quelli contrassegnati dall’asterisco sono obbligatori), per gli utenti con ruolo o sarà richiesta la generazione del documento in formato pdf, tramite click sul relativo comando. Il file pdf dovrà essere firmato digitalmente dall’utente e ricaricato tramite Una volta generato il pdf, se si volessero apportare modifiche alle dichiarazioni rese, sarà necessario cliccare su , ed il documento pdf andrà nuovamente generato. Per finalizzare la modifica del ruolo, cliccare sul comando presente nella toolbar in alto nella schermata. Qualunque sia la modifica del ruolo apportata, un messaggio di informazione a video confermerà l'operazione e lo Stato del documento cambierà da ad . Al momento della Conferma il Sistema assocerà automaticamente all’utente uno o più profili e aggiornerà le relative informazioni nell’Anagrafica e nella sezione Utente. Inoltre: Nel caso in cui sia stato selezionato il ruolo Punto Istruttore, al momento della Conferma, il proprio Responsabile riceverà una notifica via e-mail; Nel caso in cui sia stato selezionato il ruolo Punto Ordinante o RUP, a partire dall’accesso successivo, l’utente potrà quindi iniziare ad operare con le funzionalità e i permessi attribuiti al ruolo selezionato. 5. MODIFICA DATI UTENTE ED ANAGRAFICA ENTE Il seguente paragrafo mostra le indicazioni per variazioni di anagrafica dell’utente che non richiedono una particolare approvazione (numeri di telefono, indirizzi mail ecc.). Viene mostrato inoltre come visualizzare i dati relativi all’anagrafica del proprio Ente.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 14,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 294
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Per modificare i propri dati anagrafici o di contatto, l’utente accreditato deve effettuare log-in e cliccare sull’icona di Utility Utente in alto a destra e successivamente cliccare su . La pagina riporta nella testata le azioni attivabili:",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 15,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 44
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Inoltre, sono presenti i tab: i dati sono in sola lettura. Solo alcuni di essi sono modificabili, per farlo è necessario cliccare sull’azione ; i ruoli associati all’utente sono in sola lettura, per modificarli è necessario eseguire la procedura descritta al paragrafo 4. : i responsabili associati all’utente sono in sola lettura, per modificarli è necessario eseguire la procedura descritta al paragrafo 4; : è riportato l’elenco delle modifiche effettuate sull’utente, con indicazione della data, dell’utente che ha apportato la modifica, la descrizione del tipo di modifica ed il riferimento a protocolli interni della piattaforma. Cliccando sulla lente sarà possibile accedere al dettaglio dello storico. Con riferimento all’anagrafica dell’Ente, la modifica dei dati non è permessa a tutti gli utenti, ma solo a determinati ruoli. Tuttavia, è possibile per gli utenti accedere in visualizzazione ai dati anagrafici del proprio Ente, cliccando sul nome della propria azienda, presente in alto a destra nella schermata e successivamente entrando nel .",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 16,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 193
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Dalla sezione, sarà possibile visualizzare una serie di informazioni relative all'anagrafica con la quale l’Ente è stato censito.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 17,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 23
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 Nel tab , verranno visualizzati tutti gli utenti associati all’Ente con le relative informazioni di sintesi: Nome E Cognome, Ruolo, Telefono 1, Telefono 2, E-Mail Nel tab , sono riportate tutte le variazioni eseguite nell’anagrafica dell’Ente (es: variazioni dati, cessazioni). È possibile accedere al dettaglio di un documento, facendo click sul nome della variazione riportata in grassetto. Alcune tipologie di Struttura dell’Ente possono essere eliminate e sostituite con nuove descrizioni da parte dell’Amministratore di sistema. Tale variazione viene tracciata nell’anagrafica dell’Ente attraverso il documento Modifica Dati Ente, disponibile nella sezione Storico. In particolare, nel dettaglio del documento, la variazione effettuata viene evidenziata da un riquadro in rosso.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 18,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 140
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 6. CESSAZIONE UTENTE Per cessare la propria utenza, fare click sul comando Cessazione Utente in alto nella toolbar. L’operatività dell’Utente sulla piattaforma cesserà quando verrà chiusa la sessione di lavoro nella quale ha eseguito il comando ed il Sistema invierà una mail di conferma dell’avvenuta operazione. La cessazione di un Utente è consentita a patto che egli non sia l’unico utente di quell’Ente.",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 19,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 79
+  },
+  {
+    "chunk_id": "SA_Registrazione_gestione_utente.pdf_section_0",
+    "text": "Vers.2.0 7. INDICE DELLE FIGURE Le immagini sono puramente indicative e possono subire variazioni. Figura 1 – Registrazione Utente PA ................................................................................................. 3 Figura 2 – Step .................................................................................................................................. 4 Figura 3 – Step 1 – Selezione ente .................................................................................................... 5 Figura 4 – Step 2-riepilogo dati ente ................................................................................................. 6 Figura 5 - Step 3-informazioni utente ............................................................................................... 7 Figura 6 – Step 4-trattamento Dati .................................................................................................... 8 Figura 7 - Lista attività – cambio password ...................................................................................... 9 Figura 8 - Cambio Password ........................................................................................................... 10 Figura 9 – Menù - Modifica ruolo .................................................................................................. 11 Figura 10 - Modifica ruolo .............................................................................................................. 12 Figura 11 - Scelta ruolo ................................................................................................................... 12 Figura 12 - Approvatore di riferimento........................................................................................... 13 Figura 13 – Generazione del Pdf e modifica dati ............................................................................ 14 Figura 14 - Utente ........................................................................................................................... 15 Figura 15 - Opzioni utente .............................................................................................................. 15 Figura 16 - Storico Utente ............................................................................................................... 16 Figura 17 – Anagrafica Azienda ..................................................................................................... 17 Figura 18 - Scheda anagrafica ......................................................................................................... 18 Figura 19- Modifica Dati ente ......................................................................................................... 19 Figura 20 - Cessazione Utente ........................................................................................................ 19",
+    "source_file": "SA_Registrazione_gestione_utente.pdf",
+    "page_number": 20,
+    "section_title": null,
+    "chunk_type": "section",
+    "word_count": 172
+  }
+]
