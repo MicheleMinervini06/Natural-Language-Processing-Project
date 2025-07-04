@@ -1,0 +1,758 @@
+[
+  {
+    "soggetto_norm": "fornitore",
+    "predicato_norm": "siapplicaa",
+    "oggetto_norm": "piattaforma empulia",
+    "contesti": [
+      "Se sei già registrato come fornitore sulla piattaforma EmPULIA"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "credenziali",
+    "predicato_norm": "siapplicaa",
+    "oggetto_norm": "piattaforma empulia",
+    "contesti": [
+      "Hai dunque ricevuto via email la terna di Password) che saranno valide solo per la nuova piattaforma"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "accesso alla piattaforma",
+    "predicato_norm": "richiedeinput",
+    "oggetto_norm": "credenziali",
+    "contesti": [
+      "Entra nella nuova piattaforma utilizzando la terna di credenziali che hai ricevuto"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "aggiornamento password",
+    "predicato_norm": "riguarda",
+    "oggetto_norm": "password",
+    "contesti": [
+      "password rispettando i criteri di sicurezza richiesti ed elencati"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "dati di contatto",
+    "predicato_norm": "èpartedi",
+    "oggetto_norm": "fornitore",
+    "contesti": [
+      "Accertati che i dati di contatto (telefono e/o email) della tua utenza siano corretti."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "utente",
+    "predicato_norm": "interagiscecon",
+    "oggetto_norm": "fornitore",
+    "contesti": [
+      "Clicca su Utente in alto a destra"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "dati aziendali",
+    "predicato_norm": "èpartedi",
+    "oggetto_norm": "fornitore",
+    "contesti": [
+      "Accertati che i dati (es. Telefono) della tua azienda siano corretti."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "anagrafica",
+    "predicato_norm": "interagiscecon",
+    "oggetto_norm": "fornitore",
+    "contesti": [
+      "Clicca su Anagrafica in alto a destra"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "modifica dati",
+    "predicato_norm": "riguarda",
+    "oggetto_norm": "dati aziendali",
+    "contesti": [
+      "Potrai apportare le modifiche richieste"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "pdf firmato digitalmente",
+    "predicato_norm": "generadocumento",
+    "oggetto_norm": "modifica dati",
+    "contesti": [
+      "Infatti ti verrà richiesto di generare un pdf con digitalmente e di riallegarlo firmato."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "invia",
+    "predicato_norm": "èeseguitada",
+    "oggetto_norm": "fornitore",
+    "contesti": [
+      "Clicca su Invia al termine."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "fornitore",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "piattaforma empulia",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "credenziali",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "accesso alla piattaforma",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "password",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "aggiornamento password",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "dati di contatto",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "utente",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "anagrafica",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "dati aziendali",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "menu di sinistra",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "modifica dati",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "pdf firmato digitalmente",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "invia",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "albo forniture e servizi",
+    "predicato_norm": "èpartedi",
+    "oggetto_norm": "albo fornitori",
+    "contesti": [
+      "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "albo dei lavori pubblici",
+    "predicato_norm": "èpartedi",
+    "oggetto_norm": "albo fornitori",
+    "contesti": [
+      "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi e Le abilitazioni sono state migrate sulla base delle categorie selezionate:"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "categoria beni/servizi",
+    "predicato_norm": "siapplicaa",
+    "oggetto_norm": "albo forniture e servizi",
+    "contesti": [
+      "Se eri abilitato solo su categorie di beni/servizi, ora sarai abilitato sull’Albo Forniture e Servizi"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "categoria soa",
+    "predicato_norm": "siapplicaa",
+    "oggetto_norm": "albo dei lavori pubblici",
+    "contesti": [
+      "Se eri abilitato solo su categorie SOA, ora sarai abilitato sull’Albo dei Lavori Pubblici"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "classi di iscrizione",
+    "predicato_norm": "riguarda",
+    "oggetto_norm": "albo forniture e servizi",
+    "contesti": [
+      "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi)"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "categorie soa",
+    "predicato_norm": "riguarda",
+    "oggetto_norm": "albo dei lavori pubblici",
+    "contesti": [
+      "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi) o Categorie SOA (per Lavori Pubblici)"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "rinnovo albo",
+    "predicato_norm": "richiedeinput",
+    "oggetto_norm": "categoria di massimo dettaglio",
+    "contesti": [
+      "Ricorda che – a partire dal tuo prossimo rinnovo all’Albo - sulla nuova piattaforma sarà richiesto di selezionare le categorie di massimo dettaglio"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "data di scadenza",
+    "predicato_norm": "scadeil",
+    "oggetto_norm": "31/12/2023",
+    "contesti": [
+      "Per le aziende migrate la data di scadenza del primo rinnovo è fissata d’ufficio al 31/12/2023"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "registrazione utente",
+    "predicato_norm": "richiedeinput",
+    "oggetto_norm": "p.iva",
+    "contesti": [
+      "Per creare un nuovo utente fai una nuova p.iva dell’azienda già registrata"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "registrazione utente",
+    "predicato_norm": "richiedeinput",
+    "oggetto_norm": "dati anagrafici",
+    "contesti": [
+      "e negli step successive inserisci i dati del nuovo utente."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "albo fornitori",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "albo forniture e servizi",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "albo dei lavori pubblici",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "categoria beni/servizi",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "categoria soa",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "anagrafica",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "classi di iscrizione",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "categorie soa",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "rinnovo albo",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "categoria di massimo dettaglio",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "data di scadenza",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "31/12/2023",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "nuovo utente",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "registrazione utente",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "p.iva",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_norm": "dati anagrafici",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  }
+]

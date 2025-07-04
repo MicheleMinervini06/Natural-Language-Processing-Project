@@ -1,0 +1,687 @@
+[
+  {
+    "nome_entita_canonico_provvisorio": "Fornitore",
+    "nome_entita_norm": "fornitore",
+    "tipo_entita_canonico_provvisorio": "RuoloUtente",
+    "tutti_nomi_originali": [
+      "Fornitore"
+    ],
+    "tutti_tipi_rilevati": [
+      "RuoloUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Utente registrato sulla piattaforma EmPULIA."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Piattaforma EmPULIA",
+    "nome_entita_norm": "piattaforma empulia",
+    "tipo_entita_canonico_provvisorio": "PiattaformaModulo",
+    "tutti_nomi_originali": [
+      "Piattaforma EmPULIA"
+    ],
+    "tutti_tipi_rilevati": [
+      "PiattaformaModulo"
+    ],
+    "descrizioni_aggregate": [
+      "La piattaforma di e-procurement della Regione Puglia."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Credenziali",
+    "nome_entita_norm": "credenziali",
+    "tipo_entita_canonico_provvisorio": "ParametroConfigurazione",
+    "tutti_nomi_originali": [
+      "Credenziali"
+    ],
+    "tutti_tipi_rilevati": [
+      "ParametroConfigurazione"
+    ],
+    "descrizioni_aggregate": [
+      "Terna di credenziali (username, password) per l'accesso alla piattaforma."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Accesso alla piattaforma",
+    "nome_entita_norm": "accesso alla piattaforma",
+    "tipo_entita_canonico_provvisorio": "FunzionalitàPiattaforma",
+    "tutti_nomi_originali": [
+      "Accesso alla piattaforma"
+    ],
+    "tutti_tipi_rilevati": [
+      "FunzionalitàPiattaforma"
+    ],
+    "descrizioni_aggregate": [
+      "La funzionalità di accesso alla piattaforma tramite credenziali."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Password",
+    "nome_entita_norm": "password",
+    "tipo_entita_canonico_provvisorio": "ParametroConfigurazione",
+    "tutti_nomi_originali": [
+      "Password"
+    ],
+    "tutti_tipi_rilevati": [
+      "ParametroConfigurazione"
+    ],
+    "descrizioni_aggregate": [
+      "Password per l'accesso alla piattaforma."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Aggiornamento password",
+    "nome_entita_norm": "aggiornamento password",
+    "tipo_entita_canonico_provvisorio": "AzioneUtente",
+    "tutti_nomi_originali": [
+      "Aggiornamento password"
+    ],
+    "tutti_tipi_rilevati": [
+      "AzioneUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Azione di aggiornamento della password rispettando i criteri di sicurezza."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Dati di contatto",
+    "nome_entita_norm": "dati di contatto",
+    "tipo_entita_canonico_provvisorio": "ParametroConfigurazione",
+    "tutti_nomi_originali": [
+      "Dati di contatto"
+    ],
+    "tutti_tipi_rilevati": [
+      "ParametroConfigurazione"
+    ],
+    "descrizioni_aggregate": [
+      "Informazioni di contatto dell'utenza (telefono e/o email)."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Utente",
+    "nome_entita_norm": "utente",
+    "tipo_entita_canonico_provvisorio": "InterfacciaUtenteElemento",
+    "tutti_nomi_originali": [
+      "Utente"
+    ],
+    "tutti_tipi_rilevati": [
+      "InterfacciaUtenteElemento"
+    ],
+    "descrizioni_aggregate": [
+      "Elemento dell'interfaccia utente in alto a destra."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Anagrafica",
+    "nome_entita_norm": "anagrafica",
+    "tipo_entita_canonico_provvisorio": "InterfacciaUtenteElemento",
+    "tutti_nomi_originali": [
+      "Anagrafica"
+    ],
+    "tutti_tipi_rilevati": [
+      "InterfacciaUtenteElemento"
+    ],
+    "descrizioni_aggregate": [
+      "Elemento dell'interfaccia utente in alto a destra per la gestione dei dati aziendali.",
+      "Sezione dell'interfaccia utente dove sono presenti i dati anagrafici."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      7,
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 2
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Dati aziendali",
+    "nome_entita_norm": "dati aziendali",
+    "tipo_entita_canonico_provvisorio": "ParametroConfigurazione",
+    "tutti_nomi_originali": [
+      "Dati aziendali"
+    ],
+    "tutti_tipi_rilevati": [
+      "ParametroConfigurazione"
+    ],
+    "descrizioni_aggregate": [
+      "Informazioni relative all'azienda (es. Telefono, P.IVA, forma giuridica, sedi)."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Menu di sinistra",
+    "nome_entita_norm": "menu di sinistra",
+    "tipo_entita_canonico_provvisorio": "InterfacciaUtenteElemento",
+    "tutti_nomi_originali": [
+      "Menu di sinistra"
+    ],
+    "tutti_tipi_rilevati": [
+      "InterfacciaUtenteElemento"
+    ],
+    "descrizioni_aggregate": [
+      "Menu di navigazione posizionato a sinistra nell'interfaccia utente."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Modifica dati",
+    "nome_entita_norm": "modifica dati",
+    "tipo_entita_canonico_provvisorio": "AzioneUtente",
+    "tutti_nomi_originali": [
+      "Modifica dati"
+    ],
+    "tutti_tipi_rilevati": [
+      "AzioneUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Azione di modifica dei dati aziendali."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "PDF firmato digitalmente",
+    "nome_entita_norm": "pdf firmato digitalmente",
+    "tipo_entita_canonico_provvisorio": "DocumentoSistema",
+    "tutti_nomi_originali": [
+      "PDF firmato digitalmente"
+    ],
+    "tutti_tipi_rilevati": [
+      "DocumentoSistema"
+    ],
+    "descrizioni_aggregate": [
+      "Documento PDF contenente le modifiche ai dati aziendali, firmato digitalmente."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Invia",
+    "nome_entita_norm": "invia",
+    "tipo_entita_canonico_provvisorio": "ComandoUI",
+    "tutti_nomi_originali": [
+      "Invia"
+    ],
+    "tutti_tipi_rilevati": [
+      "ComandoUI"
+    ],
+    "descrizioni_aggregate": [
+      "Comando per inviare le modifiche."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "SezioneSconosciuta_0",
+    "nome_entita_norm": "sezionesconosciuta_0",
+    "tipo_entita_canonico_provvisorio": "SezioneGuida",
+    "tutti_nomi_originali": [
+      "SezioneSconosciuta_0"
+    ],
+    "tutti_tipi_rilevati": [
+      "SezioneGuida"
+    ],
+    "descrizioni_aggregate": [
+      "La sezione della guida EmPULIA intitolata 'None' (ID: GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0) da cui provengono queste informazioni."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Albo Fornitori",
+    "nome_entita_norm": "albo fornitori",
+    "tipo_entita_canonico_provvisorio": "PiattaformaModulo",
+    "tutti_nomi_originali": [
+      "Albo Fornitori"
+    ],
+    "tutti_tipi_rilevati": [
+      "PiattaformaModulo"
+    ],
+    "descrizioni_aggregate": [
+      "Modulo della piattaforma EmPULIA per la gestione degli albi fornitori."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Albo Forniture e Servizi",
+    "nome_entita_norm": "albo forniture e servizi",
+    "tipo_entita_canonico_provvisorio": "PiattaformaModulo",
+    "tutti_nomi_originali": [
+      "Albo Forniture e Servizi"
+    ],
+    "tutti_tipi_rilevati": [
+      "PiattaformaModulo"
+    ],
+    "descrizioni_aggregate": [
+      "Uno dei due albi fornitori in cui è stato diviso l'albo unico precedente, dedicato a forniture e servizi."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Albo dei Lavori Pubblici",
+    "nome_entita_norm": "albo dei lavori pubblici",
+    "tipo_entita_canonico_provvisorio": "PiattaformaModulo",
+    "tutti_nomi_originali": [
+      "Albo dei Lavori Pubblici"
+    ],
+    "tutti_tipi_rilevati": [
+      "PiattaformaModulo"
+    ],
+    "descrizioni_aggregate": [
+      "Uno dei due albi fornitori in cui è stato diviso l'albo unico precedente, dedicato ai lavori pubblici."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Categoria beni/servizi",
+    "nome_entita_norm": "categoria beni/servizi",
+    "tipo_entita_canonico_provvisorio": "Criterio",
+    "tutti_nomi_originali": [
+      "Categoria beni/servizi"
+    ],
+    "tutti_tipi_rilevati": [
+      "Criterio"
+    ],
+    "descrizioni_aggregate": [
+      "Categorie relative a beni e servizi."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Categoria SOA",
+    "nome_entita_norm": "categoria soa",
+    "tipo_entita_canonico_provvisorio": "Criterio",
+    "tutti_nomi_originali": [
+      "Categoria SOA"
+    ],
+    "tutti_tipi_rilevati": [
+      "Criterio"
+    ],
+    "descrizioni_aggregate": [
+      "Categorie relative alle Società Organismi di Attestazione."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Classi di iscrizione",
+    "nome_entita_norm": "classi di iscrizione",
+    "tipo_entita_canonico_provvisorio": "InterfacciaUtenteElemento",
+    "tutti_nomi_originali": [
+      "Classi di iscrizione"
+    ],
+    "tutti_tipi_rilevati": [
+      "InterfacciaUtenteElemento"
+    ],
+    "descrizioni_aggregate": [
+      "Sezione dell'interfaccia utente per la gestione delle classi di iscrizione (per Forniture/Servizi)."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Categorie SOA",
+    "nome_entita_norm": "categorie soa",
+    "tipo_entita_canonico_provvisorio": "InterfacciaUtenteElemento",
+    "tutti_nomi_originali": [
+      "Categorie SOA"
+    ],
+    "tutti_tipi_rilevati": [
+      "InterfacciaUtenteElemento"
+    ],
+    "descrizioni_aggregate": [
+      "Sezione dell'interfaccia utente per la gestione delle categorie SOA (per Lavori Pubblici)."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Rinnovo Albo",
+    "nome_entita_norm": "rinnovo albo",
+    "tipo_entita_canonico_provvisorio": "AzioneUtente",
+    "tutti_nomi_originali": [
+      "Rinnovo Albo"
+    ],
+    "tutti_tipi_rilevati": [
+      "AzioneUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Azione di rinnovo dell'iscrizione all'Albo Fornitori."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Categoria di massimo dettaglio",
+    "nome_entita_norm": "categoria di massimo dettaglio",
+    "tipo_entita_canonico_provvisorio": "Criterio",
+    "tutti_nomi_originali": [
+      "Categoria di massimo dettaglio"
+    ],
+    "tutti_tipi_rilevati": [
+      "Criterio"
+    ],
+    "descrizioni_aggregate": [
+      "Le categorie di massimo dettaglio che dovranno essere selezionate al rinnovo."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Data di scadenza",
+    "nome_entita_norm": "data di scadenza",
+    "tipo_entita_canonico_provvisorio": "Scadenza",
+    "tutti_nomi_originali": [
+      "Data di scadenza"
+    ],
+    "tutti_tipi_rilevati": [
+      "Scadenza"
+    ],
+    "descrizioni_aggregate": [
+      "La data di scadenza del primo rinnovo per le aziende migrate."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "31/12/2023",
+    "nome_entita_norm": "31/12/2023",
+    "tipo_entita_canonico_provvisorio": "TermineTemporale",
+    "tutti_nomi_originali": [
+      "31/12/2023"
+    ],
+    "tutti_tipi_rilevati": [
+      "TermineTemporale"
+    ],
+    "descrizioni_aggregate": [
+      "Data di scadenza fissata d'ufficio per il primo rinnovo delle aziende migrate."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Nuovo utente",
+    "nome_entita_norm": "nuovo utente",
+    "tipo_entita_canonico_provvisorio": "RuoloUtente",
+    "tutti_nomi_originali": [
+      "Nuovo utente"
+    ],
+    "tutti_tipi_rilevati": [
+      "RuoloUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Un nuovo utente da registrare sulla piattaforma."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Registrazione utente",
+    "nome_entita_norm": "registrazione utente",
+    "tipo_entita_canonico_provvisorio": "AzioneUtente",
+    "tutti_nomi_originali": [
+      "Registrazione utente"
+    ],
+    "tutti_tipi_rilevati": [
+      "AzioneUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Azione di registrazione di un nuovo utente."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "P.IVA",
+    "nome_entita_norm": "p.iva",
+    "tipo_entita_canonico_provvisorio": "ParametroConfigurazione",
+    "tutti_nomi_originali": [
+      "P.IVA"
+    ],
+    "tutti_tipi_rilevati": [
+      "ParametroConfigurazione"
+    ],
+    "descrizioni_aggregate": [
+      "Partita IVA dell'azienda da registrare."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "Dati anagrafici",
+    "nome_entita_norm": "dati anagrafici",
+    "tipo_entita_canonico_provvisorio": "ParametroConfigurazione",
+    "tutti_nomi_originali": [
+      "Dati anagrafici"
+    ],
+    "tutti_tipi_rilevati": [
+      "ParametroConfigurazione"
+    ],
+    "descrizioni_aggregate": [
+      "I dati anagrafici dell'azienda."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_canonico_provvisorio": "SezioneSconosciuta_1",
+    "nome_entita_norm": "sezionesconosciuta_1",
+    "tipo_entita_canonico_provvisorio": "SezioneGuida",
+    "tutti_nomi_originali": [
+      "SezioneSconosciuta_1"
+    ],
+    "tutti_tipi_rilevati": [
+      "SezioneGuida"
+    ],
+    "descrizioni_aggregate": [
+      "La sezione della guida EmPULIA intitolata 'None' (ID: GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1) da cui provengono queste informazioni."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  }
+]

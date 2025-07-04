@@ -1,17 +1,18 @@
-import openai
+import google.generativeai as genai
 import json
 import os
+from collections import Counter
 import time
 from typing import List, Dict, Any, Tuple
 
 # --- Configurazione ---
 # Assicurati che la tua API key sia impostata come variabile d'ambiente
-# openai.api_key = os.getenv("OPENAI_API_KEY")
+# genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 # Oppure, se non vuoi usare variabili d'ambiente (sconsigliato per codice condiviso):
-# openai.api_key = "LA_TUA_API_KEY_QUI" # SOSTITUISCI CON LA TUA CHIAVE REALE
+# genai.configure(api_key="LA_TUA_API_KEY_QUI") # SOSTITUISCI CON LA TUA CHIAVE REALE
 
-LLM_MODEL_EXTRACTION = "gpt-4-turbo-preview" # o gpt-3.5-turbo, o altro modello
-LLM_MODEL_CLUSTERING = "gpt-4-turbo-preview"
+LLM_MODEL_EXTRACTION = "gemini-2.0-flash"
+LLM_MODEL_CLUSTERING = "gemini-2.0-flash"
 
 ENTITY_TYPES = [
     "PiattaformaModulo",            # Es. "Registrazione Utente PA", "Negozio Elettronico"
@@ -85,31 +86,51 @@ def load_chunks_from_json(filepath: str) -> List[Dict[str, Any]]:
 
 def call_llm_api(prompt: str, model: str = LLM_MODEL_EXTRACTION, max_retries: int = 3, delay: int = 5) -> str:
     """
-    Chiama l'API LLM con gestione dei tentativi.
+    Chiama l'API Gemini con gestione dei tentativi.
     Restituisce la risposta dell'LLM come stringa (probabilmente JSON).
     """
     for attempt in range(max_retries):
         try:
-            # Utilizza il client globale se la chiave API è impostata globalmente
-            if not openai.api_key and os.getenv("OPENAI_API_KEY"):
-                openai.api_key = os.getenv("OPENAI_API_KEY")
-            elif not openai.api_key:
-                raise ValueError("API Key OpenAI non configurata.")
+            # Crea il modello Gemini (la configurazione dovrebbe essere già stata fatta)
+            gemini_model = genai.GenerativeModel(model)
+            
+            # Costruisce il prompt completo con il system message
+            full_prompt = """Sei un assistente AI esperto nell'estrazione di informazioni strutturate da manuali utente per creare Knowledge Graph dettagliati sulla piattaforma EmPULIA. Presta attenzione ai dettagli procedurali e ai termini specifici della piattaforma.
 
-            client = openai.OpenAI() # Crea un client per ogni chiamata o lo definisci globalmente
-            response = client.chat.completions.create(
-                model=model,
-                messages=[
-                    {"role": "system", "content": "Sei un assistente AI esperto nell'estrazione di informazioni strutturate da manuali utente per creare Knowledge Graph dettagliati sulla piattaforma EmPULIA. Presta attenzione ai dettagli procedurali e ai termini specifici della piattaforma."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.1,
-                # response_format={"type": "json_object"} # Attiva se il modello lo supporta e vuoi forzare JSON
+""" + prompt
+
+            # Genera la risposta
+            response = gemini_model.generate_content(
+                full_prompt,
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.1,
+                    candidate_count=1,
+                    max_output_tokens=4096,  # Limite massimo di token per evitare output troppo lunghi
+                ),
+                safety_settings=[
+                    {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+                    {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+                    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+                    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
+                ]
             )
-            return response.choices[0].message.content.strip()
-        except openai.APIError as e:
-            print(f"Errore API OpenAI (tentativo {attempt + 1}/{max_retries}): {e}")
-            if "rate limit" in str(e).lower():
+            
+            # Controlla se la risposta è stata bloccata
+            if response.candidates and response.candidates[0].finish_reason:
+                finish_reason = response.candidates[0].finish_reason.name
+                if finish_reason != "STOP":
+                    print(f"Avviso: Risposta Gemini bloccata o incompleta. Motivo: {finish_reason}")
+                    if finish_reason == "SAFETY":
+                        print("  La risposta è stata bloccata per motivi di sicurezza.")
+                    elif finish_reason == "MAX_TOKENS":
+                        print("  La risposta è stata troncata per limite di token.")
+                    return ""
+            
+            return response.text.strip()
+            
+        except Exception as e:
+            print(f"Errore API Gemini (tentativo {attempt + 1}/{max_retries}): {e}")
+            if "quota" in str(e).lower() or "rate" in str(e).lower() or "429" in str(e):
                 current_delay = delay * (2 ** attempt)
                 print(f"Rate limit raggiunto. Attendo {current_delay} secondi...")
                 time.sleep(current_delay)
@@ -117,13 +138,6 @@ def call_llm_api(prompt: str, model: str = LLM_MODEL_EXTRACTION, max_retries: in
                 time.sleep(delay)
             else:
                 print("Massimo numero di tentativi raggiunto per errore API.")
-                return ""
-        except Exception as e:
-            print(f"Errore generico durante chiamata LLM (tentativo {attempt + 1}/{max_retries}): {e}")
-            if attempt < max_retries - 1:
-                time.sleep(delay)
-            else:
-                print("Massimo numero di tentativi raggiunto per errore generico.")
                 return ""
     return ""
 
@@ -172,8 +186,10 @@ CONSIGLI PER L'ESTRAZIONE:
 - Collega quante più entità possibile all'entità `SezioneGuida` "{current_section_entity_name}" usando la relazione `èDescrittoIn` (soggetto: entità trovata, oggetto: "{current_section_entity_name}").
 
 FORMATO OUTPUT (JSON):
-Restituisci un singolo oggetto JSON con due chiavi principali: "entita" (una lista di dizionari entità) e "relazioni" (una lista di dizionari relazione). Segui questo schema:
-```json
+Restituisci SOLO un oggetto JSON valido, senza alcun testo aggiuntivo prima o dopo. Non utilizzare markdown code blocks (```json). 
+Il JSON deve avere esattamente due chiavi principali: "entita" (una lista di dizionari entità) e "relazioni" (una lista di dizionari relazione). 
+
+ESEMPIO ESATTO del formato richiesto:
 {{
   "entita": [
     {{
@@ -201,16 +217,36 @@ Restituisci un singolo oggetto JSON con due chiavi principali: "entita" (una lis
     }}
   ]
 }}
-```
-Assicurati che il JSON sia valido e completo. Estrai solo informazioni chiaramente desumibili dal testo fornito.
+
+IMPORTANTE: La tua risposta deve iniziare con {{ e finire con }}. Non aggiungere spiegazioni, commenti o altro testo.
+Assicurati che tutti i nomi di entità nelle relazioni corrispondano esattamente ai "nome_entita" definiti nella sezione "entita".
 Se una sezione è molto breve o non contiene informazioni estraibili per entità diverse da "{current_section_entity_name}", restituisci un JSON contenente solo l'entità SezioneGuida nella lista "entita" e una lista "relazioni" vuota.
 """
     return prompt
 
 def parse_llm_extraction_output(llm_response_str: str) -> Tuple[List[Dict], List[Dict]]:
     """Interpreta l'output JSON dell'LLM e restituisce liste di entità e relazioni."""
+    
+    # Debug: mostra la risposta grezza per capire il problema
+    print(f"\n--- DEBUG: Risposta LLM grezza (primi 500 caratteri) ---")
+    print(f"{llm_response_str[:500]}...")
+    print(f"--- Fine debug ---\n")
+    
+    # Prova a pulire la risposta se contiene markdown o altri formati
+    cleaned_response = llm_response_str.strip()
+    
+    # Rimuovi eventuali markdown code blocks
+    if cleaned_response.startswith("```json"):
+        cleaned_response = cleaned_response[7:]  # Rimuovi ```json
+    if cleaned_response.startswith("```"):
+        cleaned_response = cleaned_response[3:]   # Rimuovi ```
+    if cleaned_response.endswith("```"):
+        cleaned_response = cleaned_response[:-3]  # Rimuovi ``` finale
+    
+    cleaned_response = cleaned_response.strip()
+    
     try:
-        data = json.loads(llm_response_str)
+        data = json.loads(cleaned_response)
         entities = data.get("entita", [])
         relations = data.get("relazioni", [])
         
@@ -226,7 +262,7 @@ def parse_llm_extraction_output(llm_response_str: str) -> Tuple[List[Dict], List
                 else:
                     print(f"Avviso: Formato entità non conforme o campi mancanti: {str(e)[:100]}. Entità scartata.")
         else:
-            print(f"Avviso: 'entita' non è una lista nell'output LLM: {llm_response_str[:200]}")
+            print(f"Avviso: 'entita' non è una lista nell'output LLM: {cleaned_response[:200]}")
 
         valid_relations = []
         if isinstance(relations, list):
@@ -244,14 +280,19 @@ def parse_llm_extraction_output(llm_response_str: str) -> Tuple[List[Dict], List
                 else:
                     print(f"Avviso: Formato relazione non conforme o campi mancanti: {str(r)[:100]}. Relazione scartata.")
         else:
-            print(f"Avviso: 'relazioni' non è una lista nell'output LLM: {llm_response_str[:200]}")
+            print(f"Avviso: 'relazioni' non è una lista nell'output LLM: {cleaned_response[:200]}")
              
         return valid_entities, valid_relations
-    except json.JSONDecodeError:
-        print(f"Errore Critico nel parsing dell'output JSON dall'LLM: {llm_response_str[:300]}...")
+        
+    except json.JSONDecodeError as e:
+        print(f"Errore Critico nel parsing dell'output JSON dall'LLM:")
+        print(f"  Errore JSON: {e}")
+        print(f"  Posizione errore: linea {e.lineno}, colonna {e.colno}")
+        print(f"  Risposta pulita (primi 1000 caratteri): {cleaned_response[:1000]}")
         return [], []
     except Exception as e:
         print(f"Errore Critico imprevisto nel parsing dell'output LLM: {e}")
+        print(f"  Risposta grezza: {llm_response_str[:500]}")
         return [], []
 
 def extract_knowledge_from_chunks(chunks: List[Dict[str, Any]], output_dir: str = "llm_outputs") -> Tuple[List[Dict], List[Dict]]:
@@ -417,6 +458,125 @@ def aggregate_knowledge(entities: List[Dict], relations: List[Dict]) -> Tuple[Li
     print(f"Relazioni uniche dopo aggregazione: {len(aggregated_relations)}")
     return aggregated_entities, aggregated_relations
 
+def aggregate_knowledge_improved(entities: List[Dict], relations: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
+    """
+    Versione migliorata di aggregate_knowledge.
+    - Raggruppa le entità per nome normalizzato, gestendo tipi multipli.
+    - Mantiene tutte le varianti originali di nomi e tipi.
+    - Sceglie il tipo più frequente come tipo "canonico" per l'entità aggregata.
+    """
+    print("\nInizio aggregazione e normalizzazione (versione migliorata)...")
+
+    # --- Aggregazione Entità Migliorata ---
+    # La chiave ora è solo il nome normalizzato, per raggruppare entità con lo stesso nome ma tipi diversi
+    unique_entities_dict: Dict[str, Dict[str, Any]] = {}
+    
+    for entity in entities:
+        name = entity.get("nome_entita", "").strip()
+        etype = entity.get("tipo_entita", "")
+        if not name or not etype:
+            continue
+
+        norm_name = name.lower()
+        key = norm_name
+
+        if key not in unique_entities_dict:
+            unique_entities_dict[key] = {
+                "nomi_originali": [name],
+                "tipi_rilevati": [etype],
+                "descrizioni": [d for d in [entity.get("descrizione_entita")] if d and d.strip()],
+                "fonti_chunk_id": [c_id for c_id in [entity.get("source_chunk_id")] if c_id],
+                "fonti_pagina": [p_num for p_num in [entity.get("source_page_number")] if p_num is not None],
+                "fonti_sezione": [s_title for s_title in [entity.get("source_section_title")] if s_title],
+                "conteggio_occorrenze": 1
+            }
+        else:
+            current_entry = unique_entities_dict[key]
+            current_entry["nomi_originali"].append(name)
+            current_entry["tipi_rilevati"].append(etype)
+            
+            if entity.get("descrizione_entita") and entity.get("descrizione_entita").strip():
+                current_entry["descrizioni"].append(entity.get("descrizione_entita").strip())
+            if entity.get("source_chunk_id"):
+                current_entry["fonti_chunk_id"].append(entity.get("source_chunk_id"))
+            if entity.get("source_page_number") is not None:
+                current_entry["fonti_pagina"].append(entity.get("source_page_number"))
+            if entity.get("source_section_title"):
+                current_entry["fonti_sezione"].append(entity.get("source_section_title"))
+            
+            current_entry["conteggio_occorrenze"] += 1
+
+    # Finalizzazione delle entità aggregate
+    aggregated_entities = []
+    for norm_name, data in unique_entities_dict.items():
+        # Scegli il nome e il tipo più frequenti come "canonici" per questa fase
+        most_common_name = Counter(data["nomi_originali"]).most_common(1)[0][0]
+        most_common_type = Counter(data["tipi_rilevati"]).most_common(1)[0][0]
+
+        final_entity = {
+            "nome_entita_canonico_provvisorio": most_common_name, # Nome canonico provvisorio
+            "nome_entita_norm": norm_name,
+            "tipo_entita_canonico_provvisorio": most_common_type, # Tipo canonico provvisorio
+            "tutti_nomi_originali": sorted(list(set(data["nomi_originali"]))),
+            "tutti_tipi_rilevati": sorted(list(set(data["tipi_rilevati"]))),
+            "descrizioni_aggregate": sorted(list(set(data["descrizioni"]))),
+            "fonti_chunk_id": sorted(list(set(data["fonti_chunk_id"]))),
+            "fonti_pagina": sorted(list(set(data["fonti_pagina"]))),
+            "fonti_sezione": sorted(list(set(data["fonti_sezione"]))),
+            "conteggio_occorrenze": data["conteggio_occorrenze"]
+        }
+        aggregated_entities.append(final_entity)
+
+    # --- Aggregazione Relazioni (rimane simile, ma potremmo aggiungere conteggi) ---
+    unique_relations_dict: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
+    for relation in relations:
+        s = relation.get("soggetto", "").strip()
+        p = relation.get("predicato", "").strip()
+        o = relation.get("oggetto", "").strip()
+        if not s or not p or not o:
+            continue
+            
+        norm_s = s.lower()
+        norm_p = p.lower()
+        norm_o = o.lower()
+        key = (norm_s, norm_p, norm_o)
+
+        if key not in unique_relations_dict:
+             unique_relations_dict[key] = {
+                "soggetto_norm": norm_s,
+                "predicato_norm": norm_p,
+                "oggetto_norm": norm_o,
+                "contesti": [ctx for ctx in [relation.get("contesto_relazione")] if ctx and ctx.strip()],
+                "fonti_chunk_id": [c_id for c_id in [relation.get("source_chunk_id")] if c_id],
+                "fonti_pagina": [p_num for p_num in [relation.get("source_page_number")] if p_num is not None],
+                "fonti_sezione": [s_title for s_title in [relation.get("source_section_title")] if s_title],
+                "conteggio_occorrenze": 1
+            }
+        else:
+            current_entry = unique_relations_dict[key]
+            if relation.get("contesto_relazione") and relation.get("contesto_relazione").strip():
+                current_entry["contesti"].append(relation.get("contesto_relazione").strip())
+            if relation.get("source_chunk_id"):
+                current_entry["fonti_chunk_id"].append(relation.get("source_chunk_id"))
+            if relation.get("source_page_number") is not None:
+                current_entry["fonti_pagina"].append(relation.get("source_page_number"))
+            if relation.get("source_section_title"):
+                current_entry["fonti_sezione"].append(relation.get("source_section_title"))
+            current_entry["conteggio_occorrenze"] += 1
+
+    aggregated_relations = []
+    for data in unique_relations_dict.values():
+        data["contesti"] = sorted(list(set(data["contesti"])))
+        data["fonti_chunk_id"] = sorted(list(set(data["fonti_chunk_id"])))
+        data["fonti_pagina"] = sorted(list(set(data["fonti_pagina"])))
+        data["fonti_sezione"] = sorted(list(set(data["fonti_sezione"])))
+        aggregated_relations.append(data)
+
+
+    print(f"Entità uniche (raggruppate per nome) dopo aggregazione: {len(aggregated_entities)}")
+    print(f"Relazioni uniche dopo aggregazione: {len(aggregated_relations)}")
+    return aggregated_entities, aggregated_relations
+
 def placeholder_cluster_entities(aggregated_entities: List[Dict]) -> List[Dict]:
     """ Funzione placeholder per il clustering. Da sostituire con logica LLM. """
     print("\nATTENZIONE: Uso di clustering entità placeholder. Implementare logica LLM avanzata.")
@@ -496,25 +656,28 @@ def save_kg_to_json(data: List[Dict], filepath: str, description: str):
         print(f"Errore: Impossibile scrivere il file {description} a {filepath}")
 
 if __name__ == "__main__":
-    # Configura la tua API Key OpenAI all'inizio
-    api_key_from_env = os.getenv("OPENAI_API_KEY")
+    # Configura la tua API Key Gemini all'inizio
+    api_key_from_env = os.getenv("GEMINI_API_KEY")
     if api_key_from_env:
-        openai.api_key = api_key_from_env
-        print("API Key OpenAI caricata dalla variabile d'ambiente.")
+        genai.configure(api_key=api_key_from_env)
+        print("API Key Gemini caricata dalla variabile d'ambiente.")
     else:
         # Inserisci qui la tua chiave se non usi variabili d'ambiente
-        # openai.api_key = "sk-TUA_CHIAVE_API_OPENAI"
+        # genai.configure(api_key="TUA_CHIAVE_API_GEMINI")
         # ATTENZIONE: Non committare mai la chiave API nel codice sorgente!
-        print("ATTENZIONE: API Key OpenAI non trovata. Impostala o inseriscila nel codice (sconsigliato).")
-        # exit() # Potresti voler uscire se la chiave non è configurata
+        print("ATTENZIONE: API Key Gemini non trovata. Impostala nella variabile d'ambiente GEMINI_API_KEY.")
+        print("Esempio: export GEMINI_API_KEY='la_tua_chiave_api' (Linux/Mac) o set GEMINI_API_KEY=la_tua_chiave_api (Windows)")
+        exit() # Esci se la chiave non è configurata
     
-    input_json_path = "processed_chunks_toc_enhanced.json" # Assicurati che questo file esista
+    input_json_path = "data\\processed\\test.json"
     output_dir_llm = "llm_extraction_outputs"
 
     output_entities_raw_path = "kg_entities_raw_empulia.json"
     output_relations_raw_path = "kg_relations_raw_empulia.json"
     output_entities_aggregated_path = "kg_entities_aggregated_empulia.json"
     output_relations_aggregated_path = "kg_relations_aggregated_empulia.json"
+    output_entities_aggregated_improved_path = "kg_entities_aggregated_improved_empulia.json"
+    output_relations_aggregated_improved_path = "kg_relations_aggregated_improved_empulia.json"
     output_entities_clustered_path = "kg_entities_clustered_final_empulia.json"
     output_relations_clustered_path = "kg_relations_clustered_final_empulia.json"
 
@@ -532,15 +695,26 @@ if __name__ == "__main__":
         save_kg_to_json(aggregated_entities, output_entities_aggregated_path, "Entità aggregate")
         save_kg_to_json(aggregated_relations, output_relations_aggregated_path, "Relazioni aggregate")
 
-        # 4. Clusterizza (usando le versioni placeholder per ora)
-        final_clustered_entities = placeholder_cluster_entities(aggregated_entities)
-        final_clustered_relations = placeholder_cluster_relations(aggregated_relations, final_clustered_entities)
+        # 3. Aggrega e normalizza (versione migliorata)
+        aggregated_entities_improved, aggregated_relations_improved = aggregate_knowledge_improved(raw_entities, raw_relations)
+        save_kg_to_json(aggregated_entities_improved, output_entities_aggregated_improved_path, "Entità aggregate (versione migliorata)")
+        save_kg_to_json(aggregated_relations_improved, output_relations_aggregated_improved_path, "Relazioni aggregate (versione migliorata)")
 
-        save_kg_to_json(final_clustered_entities, output_entities_clustered_path, "Entità clusterizzate finali")
-        save_kg_to_json(final_clustered_relations, output_relations_clustered_path, "Relazioni clusterizzate finali")
+        # # 4. Clusterizza (usando le versioni placeholder per ora)
+        # final_clustered_entities = placeholder_cluster_entities(aggregated_entities)
+        # final_clustered_relations = placeholder_cluster_relations(aggregated_relations, final_clustered_entities)
 
-        print("\n--- Generazione Knowledge Graph (con clustering placeholder) Completata ---")
-        print(f"Entità finali: {len(final_clustered_entities)}")
-        print(f"Relazioni finali: {len(final_clustered_relations)}")
+        # save_kg_to_json(final_clustered_entities, output_entities_clustered_path, "Entità clusterizzate finali")
+        # save_kg_to_json(final_clustered_relations, output_relations_clustered_path, "Relazioni clusterizzate finali")
+
+        # print("\n--- Generazione Knowledge Graph (con clustering placeholder) Completata ---")
+        # print(f"Entità finali: {len(final_clustered_entities)}")
+        # print(f"Relazioni finali: {len(final_clustered_relations)}")
+
+        print("\n--- Generazione Knowledge Graph (senza clustering) Completata ---")
+        print(f"Entità grezze estratte: {len(raw_entities)}")
+        print(f"Relazioni grezze estratte: {len(raw_relations)}")
+        print(f"Output salvati in: {output_entities_raw_path} e {output_relations_raw_path}")
+
     else:
         print(f"Nessun chunk caricato da {input_json_path}. Verifica il file.")

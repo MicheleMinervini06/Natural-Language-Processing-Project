@@ -1,0 +1,258 @@
+[
+  {
+    "nome_entita": "Fornitore",
+    "tipo_entita": "RuoloUtente",
+    "descrizione_entita": "Utente registrato sulla piattaforma EmPULIA.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Piattaforma EmPULIA",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "La piattaforma di e-procurement della Regione Puglia.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Credenziali",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizione_entita": "Terna di credenziali (username, password) per l'accesso alla piattaforma.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Accesso alla piattaforma",
+    "tipo_entita": "FunzionalitàPiattaforma",
+    "descrizione_entita": "La funzionalità di accesso alla piattaforma tramite credenziali.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Password",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizione_entita": "Password per l'accesso alla piattaforma.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Aggiornamento password",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Azione di aggiornamento della password rispettando i criteri di sicurezza.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Dati di contatto",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizione_entita": "Informazioni di contatto dell'utenza (telefono e/o email).",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Utente",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Elemento dell'interfaccia utente in alto a destra.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Anagrafica",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Elemento dell'interfaccia utente in alto a destra per la gestione dei dati aziendali.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Dati aziendali",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizione_entita": "Informazioni relative all'azienda (es. Telefono, P.IVA, forma giuridica, sedi).",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Menu di sinistra",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Menu di navigazione posizionato a sinistra nell'interfaccia utente.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Modifica dati",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Azione di modifica dei dati aziendali.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "PDF firmato digitalmente",
+    "tipo_entita": "DocumentoSistema",
+    "descrizione_entita": "Documento PDF contenente le modifiche ai dati aziendali, firmato digitalmente.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Invia",
+    "tipo_entita": "ComandoUI",
+    "descrizione_entita": "Comando per inviare le modifiche.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "SezioneSconosciuta_0",
+    "tipo_entita": "SezioneGuida",
+    "descrizione_entita": "La sezione della guida EmPULIA intitolata 'None' (ID: GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0) da cui provengono queste informazioni.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Albo Fornitori",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "Modulo della piattaforma EmPULIA per la gestione degli albi fornitori.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Albo Forniture e Servizi",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "Uno dei due albi fornitori in cui è stato diviso l'albo unico precedente, dedicato a forniture e servizi.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Albo dei Lavori Pubblici",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "Uno dei due albi fornitori in cui è stato diviso l'albo unico precedente, dedicato ai lavori pubblici.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Categoria beni/servizi",
+    "tipo_entita": "Criterio",
+    "descrizione_entita": "Categorie relative a beni e servizi.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Categoria SOA",
+    "tipo_entita": "Criterio",
+    "descrizione_entita": "Categorie relative alle Società Organismi di Attestazione.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Anagrafica",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Sezione dell'interfaccia utente dove sono presenti i dati anagrafici.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Classi di iscrizione",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Sezione dell'interfaccia utente per la gestione delle classi di iscrizione (per Forniture/Servizi).",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Categorie SOA",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Sezione dell'interfaccia utente per la gestione delle categorie SOA (per Lavori Pubblici).",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Rinnovo Albo",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Azione di rinnovo dell'iscrizione all'Albo Fornitori.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Categoria di massimo dettaglio",
+    "tipo_entita": "Criterio",
+    "descrizione_entita": "Le categorie di massimo dettaglio che dovranno essere selezionate al rinnovo.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Data di scadenza",
+    "tipo_entita": "Scadenza",
+    "descrizione_entita": "La data di scadenza del primo rinnovo per le aziende migrate.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "31/12/2023",
+    "tipo_entita": "TermineTemporale",
+    "descrizione_entita": "Data di scadenza fissata d'ufficio per il primo rinnovo delle aziende migrate.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Nuovo utente",
+    "tipo_entita": "RuoloUtente",
+    "descrizione_entita": "Un nuovo utente da registrare sulla piattaforma.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Registrazione utente",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Azione di registrazione di un nuovo utente.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "P.IVA",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizione_entita": "Partita IVA dell'azienda da registrare.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "Dati anagrafici",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizione_entita": "I dati anagrafici dell'azienda.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "SezioneSconosciuta_1",
+    "tipo_entita": "SezioneGuida",
+    "descrizione_entita": "La sezione della guida EmPULIA intitolata 'None' (ID: GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1) da cui provengono queste informazioni.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  }
+]

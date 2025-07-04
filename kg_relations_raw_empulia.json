@@ -1,0 +1,431 @@
+[
+  {
+    "soggetto": "Fornitore",
+    "predicato": "siApplicaA",
+    "oggetto": "Piattaforma EmPULIA",
+    "contesto_relazione": "Se sei già registrato come fornitore sulla piattaforma EmPULIA",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Credenziali",
+    "predicato": "siApplicaA",
+    "oggetto": "Piattaforma EmPULIA",
+    "contesto_relazione": "Hai dunque ricevuto via email la terna di Password) che saranno valide solo per la nuova piattaforma",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Accesso alla piattaforma",
+    "predicato": "richiedeInput",
+    "oggetto": "Credenziali",
+    "contesto_relazione": "Entra nella nuova piattaforma utilizzando la terna di credenziali che hai ricevuto",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Aggiornamento password",
+    "predicato": "riguarda",
+    "oggetto": "Password",
+    "contesto_relazione": "password rispettando i criteri di sicurezza richiesti ed elencati",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Dati di contatto",
+    "predicato": "èParteDi",
+    "oggetto": "Fornitore",
+    "contesto_relazione": "Accertati che i dati di contatto (telefono e/o email) della tua utenza siano corretti.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Utente",
+    "predicato": "interagisceCon",
+    "oggetto": "Fornitore",
+    "contesto_relazione": "Clicca su Utente in alto a destra",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Dati aziendali",
+    "predicato": "èParteDi",
+    "oggetto": "Fornitore",
+    "contesto_relazione": "Accertati che i dati (es. Telefono) della tua azienda siano corretti.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Anagrafica",
+    "predicato": "interagisceCon",
+    "oggetto": "Fornitore",
+    "contesto_relazione": "Clicca su Anagrafica in alto a destra",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Modifica dati",
+    "predicato": "riguarda",
+    "oggetto": "Dati aziendali",
+    "contesto_relazione": "Potrai apportare le modifiche richieste",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "PDF firmato digitalmente",
+    "predicato": "generaDocumento",
+    "oggetto": "Modifica dati",
+    "contesto_relazione": "Infatti ti verrà richiesto di generare un pdf con digitalmente e di riallegarlo firmato.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Invia",
+    "predicato": "èEseguitaDa",
+    "oggetto": "Fornitore",
+    "contesto_relazione": "Clicca su Invia al termine.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Fornitore",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Piattaforma EmPULIA",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Credenziali",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Accesso alla piattaforma",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Password",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Aggiornamento password",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Dati di contatto",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Utente",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Anagrafica",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Dati aziendali",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Menu di sinistra",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Modifica dati",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "PDF firmato digitalmente",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Invia",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_0",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": 7,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Albo Forniture e Servizi",
+    "predicato": "èParteDi",
+    "oggetto": "Albo Fornitori",
+    "contesto_relazione": "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Albo dei Lavori Pubblici",
+    "predicato": "èParteDi",
+    "oggetto": "Albo Fornitori",
+    "contesto_relazione": "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi e Le abilitazioni sono state migrate sulla base delle categorie selezionate:",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Categoria beni/servizi",
+    "predicato": "siApplicaA",
+    "oggetto": "Albo Forniture e Servizi",
+    "contesto_relazione": "Se eri abilitato solo su categorie di beni/servizi, ora sarai abilitato sull’Albo Forniture e Servizi",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Categoria SOA",
+    "predicato": "siApplicaA",
+    "oggetto": "Albo dei Lavori Pubblici",
+    "contesto_relazione": "Se eri abilitato solo su categorie SOA, ora sarai abilitato sull’Albo dei Lavori Pubblici",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Classi di iscrizione",
+    "predicato": "riguarda",
+    "oggetto": "Albo Forniture e Servizi",
+    "contesto_relazione": "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi)",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Categorie SOA",
+    "predicato": "riguarda",
+    "oggetto": "Albo dei Lavori Pubblici",
+    "contesto_relazione": "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi) o Categorie SOA (per Lavori Pubblici)",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Rinnovo Albo",
+    "predicato": "richiedeInput",
+    "oggetto": "Categoria di massimo dettaglio",
+    "contesto_relazione": "Ricorda che – a partire dal tuo prossimo rinnovo all’Albo - sulla nuova piattaforma sarà richiesto di selezionare le categorie di massimo dettaglio",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Data di scadenza",
+    "predicato": "scadeIl",
+    "oggetto": "31/12/2023",
+    "contesto_relazione": "Per le aziende migrate la data di scadenza del primo rinnovo è fissata d’ufficio al 31/12/2023",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Registrazione utente",
+    "predicato": "richiedeInput",
+    "oggetto": "P.IVA",
+    "contesto_relazione": "Per creare un nuovo utente fai una nuova p.iva dell’azienda già registrata",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Registrazione utente",
+    "predicato": "richiedeInput",
+    "oggetto": "Dati anagrafici",
+    "contesto_relazione": "e negli step successive inserisci i dati del nuovo utente.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Albo Fornitori",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Albo Forniture e Servizi",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Albo dei Lavori Pubblici",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Categoria beni/servizi",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Categoria SOA",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Anagrafica",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Classi di iscrizione",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Categorie SOA",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Rinnovo Albo",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Categoria di massimo dettaglio",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Data di scadenza",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "31/12/2023",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Nuovo utente",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Registrazione utente",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "P.IVA",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "Dati anagrafici",
+    "predicato": "èDescrittoIn",
+    "oggetto": "SezioneSconosciuta_1",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": 10,
+    "source_section_title": null
+  }
+]
