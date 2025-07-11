@@ -87,7 +87,7 @@ def load_chunks_from_json(filepath: str) -> List[Dict[str, Any]]:
 def call_llm_api(prompt: str, model: str = LLM_MODEL_EXTRACTION, max_retries: int = 3, delay: int = 5) -> str:
     """
     Chiama l'API Gemini con gestione dei tentativi.
-    Restituisce la risposta dell'LLM come stringa (probabilmente JSON).
+    Restituisce la risposta dell'LLM come stringa.
     """
     for attempt in range(max_retries):
         try:
@@ -576,8 +576,6 @@ def aggregate_knowledge_improved(entities: List[Dict], relations: List[Dict]) ->
     print(f"Entità uniche (raggruppate per nome) dopo aggregazione: {len(aggregated_entities)}")
     print(f"Relazioni uniche dopo aggregazione: {len(aggregated_relations)}")
     return aggregated_entities, aggregated_relations
-
-# ...existing code...
 
 def llm_cluster_knowledge(aggregated_entities: List[Dict], aggregated_relations: List[Dict], batch_size: int = 15) -> Tuple[List[Dict], List[Dict]]:
     """
