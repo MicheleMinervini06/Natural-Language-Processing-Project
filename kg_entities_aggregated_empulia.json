@@ -20,7 +20,23 @@
     "nome_entita_norm": "piattaforma empulia",
     "tipo_entita": "PiattaformaModulo",
     "descrizioni": [
-      "La piattaforma di e-procurement della Regione Puglia."
+      "Piattaforma per la gestione di procedure."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_aggregato": "Migrazione utenza",
+    "nome_entita_norm": "migrazione utenza",
+    "tipo_entita": "OperazioneSistema",
+    "descrizioni": [
+      "Processo di trasferimento dell'utenza da una piattaforma all'altra."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -36,7 +52,7 @@
     "nome_entita_norm": "credenziali",
     "tipo_entita": "ParametroConfigurazione",
     "descrizioni": [
-      "Terna di credenziali (username, password) per l'accesso alla piattaforma."
+      "Terna di credenziali (Password) ricevuta via email."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -52,7 +68,7 @@
     "nome_entita_norm": "accesso alla piattaforma",
     "tipo_entita": "FunzionalitàPiattaforma",
     "descrizioni": [
-      "La funzionalità di accesso alla piattaforma tramite credenziali."
+      "Funzionalità di accesso alla piattaforma tramite credenziali."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -80,27 +96,11 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Aggiornamento password",
-    "nome_entita_norm": "aggiornamento password",
-    "tipo_entita": "AzioneUtente",
-    "descrizioni": [
-      "Azione di aggiornamento della password rispettando i criteri di sicurezza."
-    ],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
-    ],
-    "fonti_pagina": [
-      7
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
     "nome_entita_aggregato": "Dati di contatto",
     "nome_entita_norm": "dati di contatto",
     "tipo_entita": "ParametroConfigurazione",
     "descrizioni": [
-      "Informazioni di contatto dell'utenza (telefono e/o email)."
+      "Informazioni di contatto dell'utente (telefono e/o email)."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -133,7 +133,7 @@
     "tipo_entita": "InterfacciaUtenteElemento",
     "descrizioni": [
       "Elemento dell'interfaccia utente in alto a destra per la gestione dei dati aziendali.",
-      "Sezione dell'interfaccia utente dove sono presenti i dati anagrafici."
+      "Sezione dell'interfaccia utente contenente i dati anagrafici."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
@@ -147,8 +147,8 @@
     "conteggio_occorrenze": 2
   },
   {
-    "nome_entita_aggregato": "Dati aziendali",
-    "nome_entita_norm": "dati aziendali",
+    "nome_entita_aggregato": "Dati azienda",
+    "nome_entita_norm": "dati azienda",
     "tipo_entita": "ParametroConfigurazione",
     "descrizioni": [
       "Informazioni relative all'azienda (es. Telefono, P.IVA, forma giuridica, sedi)."
@@ -167,7 +167,7 @@
     "nome_entita_norm": "menu di sinistra",
     "tipo_entita": "InterfacciaUtenteElemento",
     "descrizioni": [
-      "Menu di navigazione posizionato a sinistra nell'interfaccia utente."
+      "Menu di navigazione posizionato a sinistra."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -179,11 +179,11 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Modifica dati",
-    "nome_entita_norm": "modifica dati",
-    "tipo_entita": "AzioneUtente",
+    "nome_entita_aggregato": "Modifiche dati",
+    "nome_entita_norm": "modifiche dati",
+    "tipo_entita": "FunzionalitàPiattaforma",
     "descrizioni": [
-      "Azione di modifica dei dati aziendali."
+      "Funzionalità per apportare modifiche ai dati aziendali."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -199,7 +199,7 @@
     "nome_entita_norm": "pdf firmato digitalmente",
     "tipo_entita": "DocumentoSistema",
     "descrizioni": [
-      "Documento PDF contenente le modifiche ai dati aziendali, firmato digitalmente."
+      "Documento PDF contenente le modifiche ai dati, firmato digitalmente."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -215,7 +215,7 @@
     "nome_entita_norm": "invia",
     "tipo_entita": "ComandoUI",
     "descrizioni": [
-      "Comando per inviare le modifiche."
+      "Pulsante per inviare le modifiche."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -247,7 +247,7 @@
     "nome_entita_norm": "albo fornitori",
     "tipo_entita": "PiattaformaModulo",
     "descrizioni": [
-      "Modulo della piattaforma EmPULIA per la gestione degli albi fornitori."
+      "Albo dei fornitori presente sulla piattaforma EmPULIA."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -263,7 +263,7 @@
     "nome_entita_norm": "albo forniture e servizi",
     "tipo_entita": "PiattaformaModulo",
     "descrizioni": [
-      "Uno dei due albi fornitori in cui è stato diviso l'albo unico precedente, dedicato a forniture e servizi."
+      "Uno dei due albi in cui è stato diviso l'albo fornitori unico della vecchia piattaforma, dedicato a forniture e servizi."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -279,7 +279,7 @@
     "nome_entita_norm": "albo dei lavori pubblici",
     "tipo_entita": "PiattaformaModulo",
     "descrizioni": [
-      "Uno dei due albi fornitori in cui è stato diviso l'albo unico precedente, dedicato ai lavori pubblici."
+      "Uno dei due albi in cui è stato diviso l'albo fornitori unico della vecchia piattaforma, dedicato ai lavori pubblici."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -291,11 +291,27 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Categoria beni/servizi",
-    "nome_entita_norm": "categoria beni/servizi",
-    "tipo_entita": "Criterio",
+    "nome_entita_aggregato": "Abilitazione",
+    "nome_entita_norm": "abilitazione",
+    "tipo_entita": "StatoProcedura",
     "descrizioni": [
-      "Categorie relative a beni e servizi."
+      "Stato di abilitazione di un'impresa ad un albo."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_aggregato": "Categoria Beni/Servizi",
+    "nome_entita_norm": "categoria beni/servizi",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizioni": [
+      "Categorie di beni e servizi per l'abilitazione all'Albo Forniture e Servizi."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -309,41 +325,9 @@
   {
     "nome_entita_aggregato": "Categoria SOA",
     "nome_entita_norm": "categoria soa",
-    "tipo_entita": "Criterio",
+    "tipo_entita": "ParametroConfigurazione",
     "descrizioni": [
-      "Categorie relative alle Società Organismi di Attestazione."
-    ],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
-    ],
-    "fonti_pagina": [
-      10
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
-    "nome_entita_aggregato": "Classi di iscrizione",
-    "nome_entita_norm": "classi di iscrizione",
-    "tipo_entita": "InterfacciaUtenteElemento",
-    "descrizioni": [
-      "Sezione dell'interfaccia utente per la gestione delle classi di iscrizione (per Forniture/Servizi)."
-    ],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
-    ],
-    "fonti_pagina": [
-      10
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
-    "nome_entita_aggregato": "Categorie SOA",
-    "nome_entita_norm": "categorie soa",
-    "tipo_entita": "InterfacciaUtenteElemento",
-    "descrizioni": [
-      "Sezione dell'interfaccia utente per la gestione delle categorie SOA (per Lavori Pubblici)."
+      "Categorie SOA per l'abilitazione all'Albo dei Lavori Pubblici."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -359,7 +343,7 @@
     "nome_entita_norm": "rinnovo albo",
     "tipo_entita": "AzioneUtente",
     "descrizioni": [
-      "Azione di rinnovo dell'iscrizione all'Albo Fornitori."
+      "Azione di rinnovo dell'iscrizione all'albo fornitori."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -371,11 +355,11 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Categoria di massimo dettaglio",
+    "nome_entita_aggregato": "Categoria di Massimo Dettaglio",
     "nome_entita_norm": "categoria di massimo dettaglio",
-    "tipo_entita": "Criterio",
+    "tipo_entita": "ParametroConfigurazione",
     "descrizioni": [
-      "Le categorie di massimo dettaglio che dovranno essere selezionate al rinnovo."
+      "Categorie di massimo dettaglio da selezionare al rinnovo dell'albo."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -387,11 +371,27 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Data di scadenza",
+    "nome_entita_aggregato": "Categoria di Livello Intermedio",
+    "nome_entita_norm": "categoria di livello intermedio",
+    "tipo_entita": "ParametroConfigurazione",
+    "descrizioni": [
+      "Categorie di livello intermedio a cui si può essere abilitati."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_aggregato": "Data di Scadenza",
     "nome_entita_norm": "data di scadenza",
     "tipo_entita": "Scadenza",
     "descrizioni": [
-      "La data di scadenza del primo rinnovo per le aziende migrate."
+      "Data di scadenza del rinnovo dell'albo."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -403,11 +403,11 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "31/12/2023",
-    "nome_entita_norm": "31/12/2023",
-    "tipo_entita": "TermineTemporale",
+    "nome_entita_aggregato": "Classi di Iscrizione",
+    "nome_entita_norm": "classi di iscrizione",
+    "tipo_entita": "InterfacciaUtenteElemento",
     "descrizioni": [
-      "Data di scadenza fissata d'ufficio per il primo rinnovo delle aziende migrate."
+      "Sezione dell'interfaccia utente per la gestione delle classi di iscrizione (Forniture/Servizi)."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -419,11 +419,27 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Nuovo utente",
+    "nome_entita_aggregato": "Categorie SOA",
+    "nome_entita_norm": "categorie soa",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizioni": [
+      "Sezione dell'interfaccia utente per la gestione delle categorie SOA (Lavori Pubblici)."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_aggregato": "Nuovo Utente",
     "nome_entita_norm": "nuovo utente",
     "tipo_entita": "RuoloUtente",
     "descrizioni": [
-      "Un nuovo utente da registrare sulla piattaforma."
+      "Un nuovo utente della piattaforma."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -435,11 +451,11 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Registrazione utente",
-    "nome_entita_norm": "registrazione utente",
+    "nome_entita_aggregato": "Creazione Nuovo Utente",
+    "nome_entita_norm": "creazione nuovo utente",
     "tipo_entita": "AzioneUtente",
     "descrizioni": [
-      "Azione di registrazione di un nuovo utente."
+      "Azione di creazione di un nuovo utente sulla piattaforma."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -455,7 +471,7 @@
     "nome_entita_norm": "p.iva",
     "tipo_entita": "ParametroConfigurazione",
     "descrizioni": [
-      "Partita IVA dell'azienda da registrare."
+      "Partita IVA dell'azienda."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -467,11 +483,27 @@
     "conteggio_occorrenze": 1
   },
   {
-    "nome_entita_aggregato": "Dati anagrafici",
+    "nome_entita_aggregato": "Dati Anagrafici",
     "nome_entita_norm": "dati anagrafici",
     "tipo_entita": "ParametroConfigurazione",
     "descrizioni": [
-      "I dati anagrafici dell'azienda."
+      "Dati anagrafici dell'utente."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "nome_entita_aggregato": "31/12/2023",
+    "nome_entita_norm": "31/12/2023",
+    "tipo_entita": "Scadenza",
+    "descrizioni": [
+      "Data di scadenza fissata per il primo rinnovo delle aziende migrate."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"

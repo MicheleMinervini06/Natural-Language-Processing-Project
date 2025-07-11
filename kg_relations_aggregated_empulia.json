@@ -19,14 +19,33 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Credenziali",
-    "soggetto_norm": "credenziali",
-    "predicato_aggregato": "siApplicaA",
-    "predicato_norm": "siapplicaa",
-    "oggetto_aggregato": "Piattaforma EmPULIA",
-    "oggetto_norm": "piattaforma empulia",
+    "soggetto_aggregato": "Migrazione utenza",
+    "soggetto_norm": "migrazione utenza",
+    "predicato_aggregato": "riguarda",
+    "predicato_norm": "riguarda",
+    "oggetto_aggregato": "Fornitore",
+    "oggetto_norm": "fornitore",
     "contesti": [
-      "Hai dunque ricevuto via email la terna di Password) che saranno valide solo per la nuova piattaforma"
+      "la tua utenza è stata migrata anche sulla nuova piattaforma"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
+    "predicato_aggregato": "richiedeInput",
+    "predicato_norm": "richiedeinput",
+    "oggetto_aggregato": "Credenziali",
+    "oggetto_norm": "credenziali",
+    "contesti": [
+      "Hai dunque ricevuto via email la terna di Password"
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -57,14 +76,52 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Aggiornamento password",
-    "soggetto_norm": "aggiornamento password",
-    "predicato_aggregato": "riguarda",
-    "predicato_norm": "riguarda",
-    "oggetto_aggregato": "Password",
-    "oggetto_norm": "password",
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
+    "predicato_aggregato": "puòEseguire",
+    "predicato_norm": "puòeseguire",
+    "oggetto_aggregato": "Accesso alla piattaforma",
+    "oggetto_norm": "accesso alla piattaforma",
+    "contesti": [
+      "Entra nella nuova piattaforma utilizzando la terna di credenziali che hai ricevuto"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Password",
+    "soggetto_norm": "password",
+    "predicato_aggregato": "èVincolatoDa",
+    "predicato_norm": "èvincolatoda",
+    "oggetto_aggregato": "Criterio",
+    "oggetto_norm": "criterio",
     "contesti": [
       "password rispettando i criteri di sicurezza richiesti ed elencati"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
+    "predicato_aggregato": "puòEseguire",
+    "predicato_norm": "puòeseguire",
+    "oggetto_aggregato": "Accertati che i dati di contatto",
+    "oggetto_norm": "accertati che i dati di contatto",
+    "contesti": [
+      "Accertati che i dati di contatto (telefono e/o email) della tua utenza siano corretti."
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
@@ -95,12 +152,12 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Utente",
-    "soggetto_norm": "utente",
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
     "predicato_aggregato": "interagisceCon",
     "predicato_norm": "interagiscecon",
-    "oggetto_aggregato": "Fornitore",
-    "oggetto_norm": "fornitore",
+    "oggetto_aggregato": "Utente",
+    "oggetto_norm": "utente",
     "contesti": [
       "Clicca su Utente in alto a destra"
     ],
@@ -114,8 +171,27 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Dati aziendali",
-    "soggetto_norm": "dati aziendali",
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
+    "predicato_aggregato": "puòEseguire",
+    "predicato_norm": "puòeseguire",
+    "oggetto_aggregato": "Accertati che i dati",
+    "oggetto_norm": "accertati che i dati",
+    "contesti": [
+      "Accertati che i dati (es. Telefono) della tua azienda siano corretti."
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Dati azienda",
+    "soggetto_norm": "dati azienda",
     "predicato_aggregato": "èParteDi",
     "predicato_norm": "èpartedi",
     "oggetto_aggregato": "Fornitore",
@@ -133,12 +209,12 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Anagrafica",
-    "soggetto_norm": "anagrafica",
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
     "predicato_aggregato": "interagisceCon",
     "predicato_norm": "interagiscecon",
-    "oggetto_aggregato": "Fornitore",
-    "oggetto_norm": "fornitore",
+    "oggetto_aggregato": "Anagrafica",
+    "oggetto_norm": "anagrafica",
     "contesti": [
       "Clicca su Anagrafica in alto a destra"
     ],
@@ -152,12 +228,31 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Modifica dati",
-    "soggetto_norm": "modifica dati",
-    "predicato_aggregato": "riguarda",
-    "predicato_norm": "riguarda",
-    "oggetto_aggregato": "Dati aziendali",
-    "oggetto_norm": "dati aziendali",
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
+    "predicato_aggregato": "interagisceCon",
+    "predicato_norm": "interagiscecon",
+    "oggetto_aggregato": "Menu di sinistra",
+    "oggetto_norm": "menu di sinistra",
+    "contesti": [
+      "entra dal menu di sinistra in"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
+    "predicato_aggregato": "puòEseguire",
+    "predicato_norm": "puòeseguire",
+    "oggetto_aggregato": "Modifiche dati",
+    "oggetto_norm": "modifiche dati",
     "contesti": [
       "Potrai apportare le modifiche richieste"
     ],
@@ -171,12 +266,12 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "PDF firmato digitalmente",
-    "soggetto_norm": "pdf firmato digitalmente",
+    "soggetto_aggregato": "Modifiche dati",
+    "soggetto_norm": "modifiche dati",
     "predicato_aggregato": "generaDocumento",
     "predicato_norm": "generadocumento",
-    "oggetto_aggregato": "Modifica dati",
-    "oggetto_norm": "modifica dati",
+    "oggetto_aggregato": "PDF firmato digitalmente",
+    "oggetto_norm": "pdf firmato digitalmente",
     "contesti": [
       "Infatti ti verrà richiesto di generare un pdf con digitalmente e di riallegarlo firmato."
     ],
@@ -190,12 +285,12 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Invia",
-    "soggetto_norm": "invia",
-    "predicato_aggregato": "èEseguitaDa",
-    "predicato_norm": "èeseguitada",
-    "oggetto_aggregato": "Fornitore",
-    "oggetto_norm": "fornitore",
+    "soggetto_aggregato": "Fornitore",
+    "soggetto_norm": "fornitore",
+    "predicato_aggregato": "interagisceCon",
+    "predicato_norm": "interagiscecon",
+    "oggetto_aggregato": "Invia",
+    "oggetto_norm": "invia",
     "contesti": [
       "Clicca su Invia al termine."
     ],
@@ -228,6 +323,23 @@
   {
     "soggetto_aggregato": "Piattaforma EmPULIA",
     "soggetto_norm": "piattaforma empulia",
+    "predicato_aggregato": "èDescrittoIn",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_aggregato": "SezioneSconosciuta_0",
+    "oggetto_norm": "sezionesconosciuta_0",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
+    ],
+    "fonti_pagina": [
+      7
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Migrazione utenza",
+    "soggetto_norm": "migrazione utenza",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
     "oggetto_aggregato": "SezioneSconosciuta_0",
@@ -294,23 +406,6 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Aggiornamento password",
-    "soggetto_norm": "aggiornamento password",
-    "predicato_aggregato": "èDescrittoIn",
-    "predicato_norm": "èdescrittoin",
-    "oggetto_aggregato": "SezioneSconosciuta_0",
-    "oggetto_norm": "sezionesconosciuta_0",
-    "contesti": [],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0"
-    ],
-    "fonti_pagina": [
-      7
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
     "soggetto_aggregato": "Dati di contatto",
     "soggetto_norm": "dati di contatto",
     "predicato_aggregato": "èDescrittoIn",
@@ -362,8 +457,8 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Dati aziendali",
-    "soggetto_norm": "dati aziendali",
+    "soggetto_aggregato": "Dati azienda",
+    "soggetto_norm": "dati azienda",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
     "oggetto_aggregato": "SezioneSconosciuta_0",
@@ -396,8 +491,8 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Modifica dati",
-    "soggetto_norm": "modifica dati",
+    "soggetto_aggregato": "Modifiche dati",
+    "soggetto_norm": "modifiche dati",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
     "oggetto_aggregato": "SezioneSconosciuta_0",
@@ -473,7 +568,7 @@
     "oggetto_aggregato": "Albo Fornitori",
     "oggetto_norm": "albo fornitori",
     "contesti": [
-      "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi e Le abilitazioni sono state migrate sulla base delle categorie selezionate:"
+      "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi e Le abilitazioni sono state migrated sulla base delle categorie selezionate:"
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -485,8 +580,8 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Categoria beni/servizi",
-    "soggetto_norm": "categoria beni/servizi",
+    "soggetto_aggregato": "Abilitazione",
+    "soggetto_norm": "abilitazione",
     "predicato_aggregato": "siApplicaA",
     "predicato_norm": "siapplicaa",
     "oggetto_aggregato": "Albo Forniture e Servizi",
@@ -504,8 +599,8 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Categoria SOA",
-    "soggetto_norm": "categoria soa",
+    "soggetto_aggregato": "Abilitazione",
+    "soggetto_norm": "abilitazione",
     "predicato_aggregato": "siApplicaA",
     "predicato_norm": "siapplicaa",
     "oggetto_aggregato": "Albo dei Lavori Pubblici",
@@ -523,14 +618,14 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Classi di iscrizione",
-    "soggetto_norm": "classi di iscrizione",
+    "soggetto_aggregato": "Categoria Beni/Servizi",
+    "soggetto_norm": "categoria beni/servizi",
     "predicato_aggregato": "riguarda",
     "predicato_norm": "riguarda",
     "oggetto_aggregato": "Albo Forniture e Servizi",
     "oggetto_norm": "albo forniture e servizi",
     "contesti": [
-      "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi)"
+      "Se eri abilitato solo su categorie di beni/servizi, ora sarai abilitato sull’Albo Forniture e Servizi"
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -542,14 +637,14 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Categorie SOA",
-    "soggetto_norm": "categorie soa",
+    "soggetto_aggregato": "Categoria SOA",
+    "soggetto_norm": "categoria soa",
     "predicato_aggregato": "riguarda",
     "predicato_norm": "riguarda",
     "oggetto_aggregato": "Albo dei Lavori Pubblici",
     "oggetto_norm": "albo dei lavori pubblici",
     "contesti": [
-      "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi) o Categorie SOA (per Lavori Pubblici)"
+      "Se eri abilitato solo su categorie SOA, ora sarai abilitato sull’Albo dei Lavori Pubblici"
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -565,10 +660,10 @@
     "soggetto_norm": "rinnovo albo",
     "predicato_aggregato": "richiedeInput",
     "predicato_norm": "richiedeinput",
-    "oggetto_aggregato": "Categoria di massimo dettaglio",
+    "oggetto_aggregato": "Categoria di Massimo Dettaglio",
     "oggetto_norm": "categoria di massimo dettaglio",
     "contesti": [
-      "Ricorda che – a partire dal tuo prossimo rinnovo all’Albo - sulla nuova piattaforma sarà richiesto di selezionare le categorie di massimo dettaglio"
+      "sulla nuova piattaforma sarà richiesto di selezionare le categorie di massimo dettaglio"
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -580,12 +675,50 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Data di scadenza",
-    "soggetto_norm": "data di scadenza",
+    "soggetto_aggregato": "Anagrafica",
+    "soggetto_norm": "anagrafica",
+    "predicato_aggregato": "contieneElemento",
+    "predicato_norm": "contieneelemento",
+    "oggetto_aggregato": "Classi di Iscrizione",
+    "oggetto_norm": "classi di iscrizione",
+    "contesti": [
+      "entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi)"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Anagrafica",
+    "soggetto_norm": "anagrafica",
+    "predicato_aggregato": "contieneElemento",
+    "predicato_norm": "contieneelemento",
+    "oggetto_aggregato": "Categorie SOA",
+    "oggetto_norm": "categorie soa",
+    "contesti": [
+      "entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi) o Categorie SOA (per Lavori Pubblici)"
+    ],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "31/12/2023",
+    "soggetto_norm": "31/12/2023",
     "predicato_aggregato": "scadeIl",
     "predicato_norm": "scadeil",
-    "oggetto_aggregato": "31/12/2023",
-    "oggetto_norm": "31/12/2023",
+    "oggetto_aggregato": "Rinnovo Albo",
+    "oggetto_norm": "rinnovo albo",
     "contesti": [
       "Per le aziende migrate la data di scadenza del primo rinnovo è fissata d’ufficio al 31/12/2023"
     ],
@@ -599,8 +732,8 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Registrazione utente",
-    "soggetto_norm": "registrazione utente",
+    "soggetto_aggregato": "Creazione Nuovo Utente",
+    "soggetto_norm": "creazione nuovo utente",
     "predicato_aggregato": "richiedeInput",
     "predicato_norm": "richiedeinput",
     "oggetto_aggregato": "P.IVA",
@@ -618,14 +751,14 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Registrazione utente",
-    "soggetto_norm": "registrazione utente",
+    "soggetto_aggregato": "Creazione Nuovo Utente",
+    "soggetto_norm": "creazione nuovo utente",
     "predicato_aggregato": "richiedeInput",
     "predicato_norm": "richiedeinput",
-    "oggetto_aggregato": "Dati anagrafici",
+    "oggetto_aggregato": "Dati Anagrafici",
     "oggetto_norm": "dati anagrafici",
     "contesti": [
-      "e negli step successive inserisci i dati del nuovo utente."
+      "e negli step successive inserisci i dati del nuovo utente"
     ],
     "fonti_chunk_id": [
       "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
@@ -688,7 +821,24 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Categoria beni/servizi",
+    "soggetto_aggregato": "Abilitazione",
+    "soggetto_norm": "abilitazione",
+    "predicato_aggregato": "èDescrittoIn",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_aggregato": "SezioneSconosciuta_1",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Categoria Beni/Servizi",
     "soggetto_norm": "categoria beni/servizi",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
@@ -722,6 +872,74 @@
     "conteggio_occorrenze": 1
   },
   {
+    "soggetto_aggregato": "Rinnovo Albo",
+    "soggetto_norm": "rinnovo albo",
+    "predicato_aggregato": "èDescrittoIn",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_aggregato": "SezioneSconosciuta_1",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Categoria di Massimo Dettaglio",
+    "soggetto_norm": "categoria di massimo dettaglio",
+    "predicato_aggregato": "èDescrittoIn",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_aggregato": "SezioneSconosciuta_1",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Categoria di Livello Intermedio",
+    "soggetto_norm": "categoria di livello intermedio",
+    "predicato_aggregato": "èDescrittoIn",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_aggregato": "SezioneSconosciuta_1",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "Data di Scadenza",
+    "soggetto_norm": "data di scadenza",
+    "predicato_aggregato": "èDescrittoIn",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_aggregato": "SezioneSconosciuta_1",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
     "soggetto_aggregato": "Anagrafica",
     "soggetto_norm": "anagrafica",
     "predicato_aggregato": "èDescrittoIn",
@@ -739,7 +957,7 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Classi di iscrizione",
+    "soggetto_aggregato": "Classi di Iscrizione",
     "soggetto_norm": "classi di iscrizione",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
@@ -773,75 +991,7 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Rinnovo Albo",
-    "soggetto_norm": "rinnovo albo",
-    "predicato_aggregato": "èDescrittoIn",
-    "predicato_norm": "èdescrittoin",
-    "oggetto_aggregato": "SezioneSconosciuta_1",
-    "oggetto_norm": "sezionesconosciuta_1",
-    "contesti": [],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
-    ],
-    "fonti_pagina": [
-      10
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
-    "soggetto_aggregato": "Categoria di massimo dettaglio",
-    "soggetto_norm": "categoria di massimo dettaglio",
-    "predicato_aggregato": "èDescrittoIn",
-    "predicato_norm": "èdescrittoin",
-    "oggetto_aggregato": "SezioneSconosciuta_1",
-    "oggetto_norm": "sezionesconosciuta_1",
-    "contesti": [],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
-    ],
-    "fonti_pagina": [
-      10
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
-    "soggetto_aggregato": "Data di scadenza",
-    "soggetto_norm": "data di scadenza",
-    "predicato_aggregato": "èDescrittoIn",
-    "predicato_norm": "èdescrittoin",
-    "oggetto_aggregato": "SezioneSconosciuta_1",
-    "oggetto_norm": "sezionesconosciuta_1",
-    "contesti": [],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
-    ],
-    "fonti_pagina": [
-      10
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
-    "soggetto_aggregato": "31/12/2023",
-    "soggetto_norm": "31/12/2023",
-    "predicato_aggregato": "èDescrittoIn",
-    "predicato_norm": "èdescrittoin",
-    "oggetto_aggregato": "SezioneSconosciuta_1",
-    "oggetto_norm": "sezionesconosciuta_1",
-    "contesti": [],
-    "fonti_chunk_id": [
-      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
-    ],
-    "fonti_pagina": [
-      10
-    ],
-    "fonti_sezione": [],
-    "conteggio_occorrenze": 1
-  },
-  {
-    "soggetto_aggregato": "Nuovo utente",
+    "soggetto_aggregato": "Nuovo Utente",
     "soggetto_norm": "nuovo utente",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
@@ -858,8 +1008,8 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Registrazione utente",
-    "soggetto_norm": "registrazione utente",
+    "soggetto_aggregato": "Creazione Nuovo Utente",
+    "soggetto_norm": "creazione nuovo utente",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
     "oggetto_aggregato": "SezioneSconosciuta_1",
@@ -892,8 +1042,25 @@
     "conteggio_occorrenze": 1
   },
   {
-    "soggetto_aggregato": "Dati anagrafici",
+    "soggetto_aggregato": "Dati Anagrafici",
     "soggetto_norm": "dati anagrafici",
+    "predicato_aggregato": "èDescrittoIn",
+    "predicato_norm": "èdescrittoin",
+    "oggetto_aggregato": "SezioneSconosciuta_1",
+    "oggetto_norm": "sezionesconosciuta_1",
+    "contesti": [],
+    "fonti_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1"
+    ],
+    "fonti_pagina": [
+      10
+    ],
+    "fonti_sezione": [],
+    "conteggio_occorrenze": 1
+  },
+  {
+    "soggetto_aggregato": "31/12/2023",
+    "soggetto_norm": "31/12/2023",
     "predicato_aggregato": "èDescrittoIn",
     "predicato_norm": "èdescrittoin",
     "oggetto_aggregato": "SezioneSconosciuta_1",

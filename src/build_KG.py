@@ -364,7 +364,7 @@ def extract_knowledge_from_chunks(chunks: List[Dict[str, Any]], output_dir: str 
     print(f"Totale relazioni estratte (prima del clustering): {len(all_relations)}")
     return all_entities, all_relations
 
-def aggregate_knowledge(entities: List[Dict], relations: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
+#def aggregate_knowledge(entities: List[Dict], relations: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
     """
     Aggrega entità e relazioni, normalizzando e unendo informazioni da occorrenze multiple.
     """
@@ -577,74 +577,490 @@ def aggregate_knowledge_improved(entities: List[Dict], relations: List[Dict]) ->
     print(f"Relazioni uniche dopo aggregazione: {len(aggregated_relations)}")
     return aggregated_entities, aggregated_relations
 
-def placeholder_cluster_entities(aggregated_entities: List[Dict]) -> List[Dict]:
-    """ Funzione placeholder per il clustering. Da sostituire con logica LLM. """
-    print("\nATTENZIONE: Uso di clustering entità placeholder. Implementare logica LLM avanzata.")
-    clustered_entities_final = []
-    for entity in aggregated_entities:
-        clustered_entities_final.append({
-            "nome_entita_cluster": entity["nome_entita_norm"],
-            "tipo_entita_cluster": entity["tipo_entita"],
-            "descrizioni_aggregate": entity["descrizioni"],
-            "fonti_aggregate_chunk_id": entity["fonti_chunk_id"],
-            "fonti_aggregate_pagina": entity["fonti_pagina"],
-            "fonti_aggregate_sezione": entity["fonti_sezione"],
-            "membri_cluster": [entity["nome_entita_norm"]],
-            "conteggio_occorrenze_totale": entity["conteggio_occorrenze"]
-        })
-    print(f"Entità dopo clustering placeholder: {len(clustered_entities_final)}")
-    return clustered_entities_final
+# ...existing code...
 
-def placeholder_cluster_relations(aggregated_relations: List[Dict], final_clustered_entities: List[Dict]) -> List[Dict]:
-    """ Funzione placeholder per clustering relazioni e mappatura. Da sostituire. """
-    print("\nATTENZIONE: Uso di clustering relazioni placeholder e mappatura. Implementare logica LLM avanzata per predicati.")
+def llm_cluster_knowledge(aggregated_entities: List[Dict], aggregated_relations: List[Dict], batch_size: int = 15) -> Tuple[List[Dict], List[Dict]]:
+    """
+    Utilizza Gemini per clusterizzare contemporaneamente entità e relazioni in un'unica chiamata.
+    Riduce il numero di richieste API e mantiene la coerenza tra entità e relazioni.
+    """
+    print("\nInizio clustering combinato entità e relazioni con logica LLM avanzata...")
     
-    entity_map: Dict[str, str] = {}
-    for ce in final_clustered_entities:
-        for member_name in ce["membri_cluster"]: # member_name è già normalizzato (lowercase)
-            entity_map[member_name] = ce["nome_entita_cluster"] # nome_entita_cluster è anche normalizzato
+    if not aggregated_entities and not aggregated_relations:
+        return [], []
     
-    final_relations_mapped_dict: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
+    # Prepara i dati per il clustering
+    entities_for_clustering = prepare_entities_for_clustering(aggregated_entities)
+    relations_for_clustering = prepare_relations_for_clustering(aggregated_relations)
+    
+    # Processa in batch combinati
+    all_entity_clusters = []
+    all_relation_clusters = []
+    
+    total_batches = max(len(entities_for_clustering), len(relations_for_clustering))
+    batch_size_entities = min(batch_size, len(entities_for_clustering)) if entities_for_clustering else 0
+    batch_size_relations = min(batch_size * 2, len(relations_for_clustering)) if relations_for_clustering else 0  # Relazioni sono più semplici
+    
+    entities_processed = 0
+    relations_processed = 0
+    
+    batch_num = 1
+    while entities_processed < len(entities_for_clustering) or relations_processed < len(relations_for_clustering):
+        # Prendi batch di entità e relazioni
+        entity_batch = entities_for_clustering[entities_processed:entities_processed + batch_size_entities] if entities_processed < len(entities_for_clustering) else []
+        relation_batch = relations_for_clustering[relations_processed:relations_processed + batch_size_relations] if relations_processed < len(relations_for_clustering) else []
+        
+        print(f"Clustering batch {batch_num}: {len(entity_batch)} entità, {len(relation_batch)} relazioni")
+        
+        # Processa il batch combinato
+        entity_clusters, relation_clusters = process_combined_batch(entity_batch, relation_batch)
+        
+        all_entity_clusters.extend(entity_clusters)
+        all_relation_clusters.extend(relation_clusters)
+        
+        entities_processed += len(entity_batch)
+        relations_processed += len(relation_batch)
+        batch_num += 1
+        
+        # Pausa tra batch per evitare rate limiting
+        if entities_processed < len(entities_for_clustering) or relations_processed < len(relations_for_clustering):
+            time.sleep(2)
+    
+    # Finalizza i cluster
+    final_clustered_entities = finalize_entity_clusters(all_entity_clusters, aggregated_entities)
+    final_clustered_relations = finalize_relation_clusters(all_relation_clusters, aggregated_relations, final_clustered_entities)
+    
+    print(f"Clustering combinato completato:")
+    print(f"  Entità: {len(aggregated_entities)} → {len(final_clustered_entities)} ({len(aggregated_entities) - len(final_clustered_entities)} raggruppate)")
+    print(f"  Relazioni: {len(aggregated_relations)} → {len(final_clustered_relations)} ({len(aggregated_relations) - len(final_clustered_relations)} raggruppate)")
+    
+    return final_clustered_entities, final_clustered_relations
 
-    for rel in aggregated_relations:
-        s_norm = rel["soggetto_norm"] # Già lowercase
-        o_norm = rel["oggetto_norm"] # Già lowercase
-        p_norm = rel["predicato_norm"] # Già lowercase
-
-        s_canonical = entity_map.get(s_norm, s_norm) # Se non mappato, usa il nome normalizzato originale
-        o_canonical = entity_map.get(o_norm, o_norm) # Se non mappato, usa il nome normalizzato originale
-        p_cluster = p_norm # Il predicato non è clusterizzato da LLM in questa versione placeholder
-
-        key = (s_canonical, p_cluster, o_canonical)
-        if key not in final_relations_mapped_dict:
-            final_relations_mapped_dict[key] = {
-                "soggetto_cluster": s_canonical,
-                "predicato_cluster": p_cluster,
-                "oggetto_cluster": o_canonical,
-                "contesti_aggregati": rel["contesti"],
-                "fonti_aggregate_chunk_id": rel["fonti_chunk_id"],
-                "fonti_aggregate_pagina": rel["fonti_pagina"],
-                "fonti_aggregate_sezione": rel["fonti_sezione"],
-                "conteggio_occorrenze_totale": rel["conteggio_occorrenze"]
+def prepare_entities_for_clustering(aggregated_entities: List[Dict]) -> List[Dict]:
+    """Prepara le entità per il clustering."""
+    entities_for_clustering = []
+    for i, entity in enumerate(aggregated_entities):
+        if "nome_entita_canonico_provvisorio" in entity:
+            entity_info = {
+                "id": i,
+                "nome_principale": entity["nome_entita_canonico_provvisorio"],
+                "tipo_principale": entity["tipo_entita_canonico_provvisorio"],
+                "tutti_nomi": entity["tutti_nomi_originali"],
+                "tutti_tipi": entity["tutti_tipi_rilevati"],
+                "descrizioni": entity["descrizioni_aggregate"][:2],  # Ridotto per combinazione
+                "occorrenze": entity["conteggio_occorrenze"]
             }
         else:
-            entry = final_relations_mapped_dict[key]
-            entry["contesti_aggregati"].extend(rel["contesti"])
-            entry["fonti_aggregate_chunk_id"].extend(rel["fonti_chunk_id"])
-            entry["fonti_aggregate_pagina"].extend(rel["fonti_pagina"])
-            entry["fonti_aggregate_sezione"].extend(rel["fonti_sezione"])
-            entry["conteggio_occorrenze_totale"] += rel["conteggio_occorrenze"]
+            entity_info = {
+                "id": i,
+                "nome_principale": entity.get("nome_entita_aggregato", entity.get("nome_entita_norm", "")),
+                "tipo_principale": entity.get("tipo_entita", ""),
+                "tutti_nomi": [entity.get("nome_entita_aggregato", entity.get("nome_entita_norm", ""))],
+                "tutti_tipi": [entity.get("tipo_entita", "")],
+                "descrizioni": entity.get("descrizioni", [])[:2],
+                "occorrenze": entity.get("conteggio_occorrenze", 1)
+            }
+        entities_for_clustering.append(entity_info)
+    return entities_for_clustering
 
-    final_relations_list = []
-    for data in final_relations_mapped_dict.values():
-        data["contesti_aggregati"] = sorted(list(set(data["contesti_aggregati"])))
-        data["fonti_aggregate_chunk_id"] = sorted(list(set(data["fonti_aggregate_chunk_id"])))
-        data["fonti_aggregate_pagina"] = sorted(list(set(data["fonti_aggregate_pagina"])))
-        data["fonti_aggregate_sezione"] = sorted(list(set(data["fonti_aggregate_sezione"])))
-        final_relations_list.append(data)
+def prepare_relations_for_clustering(aggregated_relations: List[Dict]) -> List[Dict]:
+    """Prepara le relazioni per il clustering."""
+    relations_for_clustering = []
+    for i, relation in enumerate(aggregated_relations):
+        relation_info = {
+            "id": i,
+            "soggetto": relation["soggetto_norm"],
+            "predicato": relation["predicato_norm"],
+            "oggetto": relation["oggetto_norm"],
+            "contesti": relation["contesti"][:1],  # Ridotto per combinazione
+            "occorrenze": relation["conteggio_occorrenze"]
+        }
+        relations_for_clustering.append(relation_info)
+    return relations_for_clustering
 
-    print(f"Relazioni finali dopo clustering placeholder e mappatura: {len(final_relations_list)}")
-    return final_relations_list
+def process_combined_batch(entity_batch: List[Dict], relation_batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
+    """Processa un batch combinato di entità e relazioni."""
+    
+    prompt = build_combined_clustering_prompt(entity_batch, relation_batch)
+    llm_output = call_llm_api(prompt, model=LLM_MODEL_CLUSTERING)
+    
+    if not llm_output:
+        print("Nessun output dal LLM per clustering combinato, creando cluster singoli")
+        entity_clusters = [{"membri_ids": [e["id"]], "nome_cluster": e["nome_principale"], 
+                           "tipo_cluster": e["tipo_principale"], "motivazione": "Fallback: nessun clustering LLM"} 
+                          for e in entity_batch]
+        relation_clusters = [{"membri_ids": [r["id"]], "soggetto_cluster": r["soggetto"],
+                             "predicato_cluster": r["predicato"], "oggetto_cluster": r["oggetto"],
+                             "motivazione": "Fallback: nessun clustering LLM"} 
+                            for r in relation_batch]
+        return entity_clusters, relation_clusters
+    
+    try:
+        entity_clusters, relation_clusters = parse_combined_clustering_output(llm_output, entity_batch, relation_batch)
+        return entity_clusters, relation_clusters
+    except Exception as e:
+        print(f"Errore nel parsing dell'output clustering combinato: {e}")
+        # Fallback ai cluster singoli
+        entity_clusters = [{"membri_ids": [e["id"]], "nome_cluster": e["nome_principale"], 
+                           "tipo_cluster": e["tipo_principale"], "motivazione": "Fallback: errore parsing"} 
+                          for e in entity_batch]
+        relation_clusters = [{"membri_ids": [r["id"]], "soggetto_cluster": r["soggetto"],
+                             "predicato_cluster": r["predicato"], "oggetto_cluster": r["oggetto"],
+                             "motivazione": "Fallback: errore parsing"} 
+                            for r in relation_batch]
+        return entity_clusters, relation_clusters
+
+def build_combined_clustering_prompt(entity_batch: List[Dict], relation_batch: List[Dict]) -> str:
+    """Costruisce il prompt per il clustering combinato."""
+    
+    # Sezione entità
+    entities_section = ""
+    if entity_batch:
+        entities_section = "ENTITÀ DA ANALIZZARE:\n"
+        for entity in entity_batch:
+            entities_section += f"""
+ID: {entity["id"]}
+Nome: {entity["nome_principale"]}
+Tipo: {entity["tipo_principale"]}
+Nomi alternativi: {", ".join(entity["tutti_nomi"])}
+Descrizioni: {" | ".join(entity["descrizioni"])}
+Occorrenze: {entity["occorrenze"]}
+---"""
+    
+    # Sezione relazioni
+    relations_section = ""
+    if relation_batch:
+        relations_section = "\nRELAZIONI DA ANALIZZARE:\n"
+        for relation in relation_batch:
+            relations_section += f"""
+ID: {relation["id"]}
+Soggetto: {relation["soggetto"]}
+Predicato: {relation["predicato"]}
+Oggetto: {relation["oggetto"]}
+Contesti: {" | ".join(relation["contesti"])}
+Occorrenze: {relation["occorrenze"]}
+---"""
+    
+    prompt = f"""
+Analizza le seguenti entità e relazioni estratte dalla documentazione della piattaforma EmPULIA e raggruppa quelle semanticamente simili.
+
+{entities_section}
+
+{relations_section}
+
+ISTRUZIONI PER IL CLUSTERING:
+
+**Per le ENTITÀ:**
+1. Raggruppa entità che rappresentano lo stesso concetto
+2. Considera variazioni nei nomi, abbreviazioni, sinonimi
+3. Mantieni separati concetti chiaramente distinti
+4. Scegli nome e tipo più rappresentativi per ogni cluster
+
+**Per le RELAZIONI:**
+1. Raggruppa relazioni che esprimono lo stesso tipo di connessione
+2. Considera predicati sinonimi o semanticamente equivalenti
+3. Normalizza predicati secondo: {', '.join(RELATION_TYPES)}
+4. Mantieni separate relazioni con significati distinti
+
+FORMATO OUTPUT (JSON):
+{{
+  "entita_clusters": [
+    {{
+      "membri_ids": [0, 3],
+      "nome_cluster": "Registrazione Utente PA",
+      "tipo_cluster": "FunzionalitàPiattaforma",
+      "motivazione": "Varianti dello stesso processo di registrazione"
+    }}
+  ],
+  "relazioni_clusters": [
+    {{
+      "membri_ids": [0, 2],
+      "soggetto_cluster": "Fornitore",
+      "predicato_cluster": "èEseguitaDa",
+      "oggetto_cluster": "Registrazione",
+      "motivazione": "Predicati sinonimi per la stessa azione"
+    }}
+  ]
+}}
+
+IMPORTANTE:
+- Ogni ID deve apparire in esattamente un cluster
+- Include TUTTI gli ID forniti
+- Usa solo predicati validi da RELATION_TYPES
+- Risposta deve essere JSON puro senza markdown
+"""
+    
+    return prompt
+
+def parse_combined_clustering_output(llm_output: str, entity_batch: List[Dict], relation_batch: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
+    """Interpreta l'output del clustering combinato."""
+    
+    # Pulisci l'output
+    cleaned_output = llm_output.strip()
+    if cleaned_output.startswith("```json"):
+        cleaned_output = cleaned_output[7:]
+    if cleaned_output.startswith("```"):
+        cleaned_output = cleaned_output[3:]
+    if cleaned_output.endswith("```"):
+        cleaned_output = cleaned_output[:-3]
+    cleaned_output = cleaned_output.strip()
+    
+    try:
+        data = json.loads(cleaned_output)
+        
+        # Processa cluster entità
+        entity_clusters = []
+        for cluster in data.get("entita_clusters", []):
+            if isinstance(cluster, dict) and "membri_ids" in cluster:
+                if isinstance(cluster["membri_ids"], list) and cluster["membri_ids"]:
+                    entity_clusters.append(cluster)
+        
+        # Processa cluster relazioni
+        relation_clusters = []
+        for cluster in data.get("relazioni_clusters", []):
+            if isinstance(cluster, dict) and "membri_ids" in cluster:
+                if isinstance(cluster["membri_ids"], list) and cluster["membri_ids"]:
+                    # Valida predicato
+                    predicato = cluster.get("predicato_cluster", "")
+                    if predicato not in RELATION_TYPES:
+                        print(f"Predicato non valido corretto: {predicato}")
+                        # Prova a trovare un predicato simile o usa un default
+                        cluster["predicato_cluster"] = find_closest_predicate(predicato)
+                    relation_clusters.append(cluster)
+        
+        return entity_clusters, relation_clusters
+        
+    except json.JSONDecodeError as e:
+        print(f"Errore JSON nel parsing clustering combinato: {e}")
+        print(f"Output problematico: {cleaned_output[:500]}")
+        raise
+
+def find_closest_predicate(invalid_predicate: str) -> str:
+    """Trova il predicato più simile da RELATION_TYPES."""
+    invalid_lower = invalid_predicate.lower()
+    
+    # Mappature comuni
+    mappings = {
+        "esegue": "puòEseguire",
+        "eseguita": "èEseguitaDa",
+        "parte": "èParteDi",
+        "contiene": "contieneElemento",
+        "richiede": "richiedeInput",
+        "genera": "generaDocumento",
+        "interagisce": "interagisceCon",
+        "descritto": "èDescrittoIn"
+    }
+    
+    for key, value in mappings.items():
+        if key in invalid_lower:
+            return value
+    
+    # Default fallback
+    return "riguarda"
+
+def finalize_entity_clusters(all_entity_clusters: List[Dict], original_entities: List[Dict]) -> List[Dict]:
+    """Finalizza i cluster delle entità combinando i dati."""
+    final_entities = []
+    processed_ids = set()
+    
+    for cluster in all_entity_clusters:
+        if any(eid in processed_ids for eid in cluster["membri_ids"]):
+            continue
+        
+        processed_ids.update(cluster["membri_ids"])
+        cluster_data = combine_cluster_data(cluster, original_entities)
+        final_entities.append(cluster_data)
+    
+    # Aggiungi entità non clusterizzate
+    for i, entity in enumerate(original_entities):
+        if i not in processed_ids:
+            single_cluster = create_single_entity_cluster(entity, i)
+            final_entities.append(single_cluster)
+    
+    return final_entities
+
+def finalize_relation_clusters(all_relation_clusters: List[Dict], original_relations: List[Dict], final_entities: List[Dict]) -> List[Dict]:
+    """Finalizza i cluster delle relazioni con mappatura entità."""
+    
+    # Crea mappa entità
+    entity_map = {}
+    for ce in final_entities:
+        for member_name in ce["membri_cluster"]:
+            entity_map[member_name.lower()] = ce["nome_entita_cluster"]
+    
+    final_relations = []
+    processed_ids = set()
+    
+    for cluster in all_relation_clusters:
+        if any(rid in processed_ids for rid in cluster["membri_ids"]):
+            continue
+        
+        processed_ids.update(cluster["membri_ids"])
+        
+        # Mappa entità nel cluster
+        s_mapped = entity_map.get(cluster["soggetto_cluster"].lower(), cluster["soggetto_cluster"])
+        o_mapped = entity_map.get(cluster["oggetto_cluster"].lower(), cluster["oggetto_cluster"])
+        
+        cluster_data = combine_relations_cluster_data(cluster, original_relations)
+        cluster_data["soggetto_cluster"] = s_mapped
+        cluster_data["oggetto_cluster"] = o_mapped
+        final_relations.append(cluster_data)
+    
+    # Aggiungi relazioni non clusterizzate
+    for i, relation in enumerate(original_relations):
+        if i not in processed_ids:
+            s_mapped = entity_map.get(relation["soggetto_norm"], relation["soggetto_norm"])
+            o_mapped = entity_map.get(relation["oggetto_norm"], relation["oggetto_norm"])
+            single_cluster = create_single_relation_cluster(relation, i, s_mapped, o_mapped)
+            final_relations.append(single_cluster)
+    
+    return final_relations
+
+# ...existing code...
+
+def combine_cluster_data(cluster: Dict, original_entities: List[Dict]) -> Dict:
+    """Combina i dati delle entità appartenenti a un cluster."""
+    
+    membri_ids = cluster["membri_ids"]
+    
+    # Raccogli tutti i dati dalle entità del cluster
+    all_names = []
+    all_types = []
+    all_descriptions = []
+    all_chunk_ids = []
+    all_page_nums = []
+    all_sections = []
+    total_occurrences = 0
+    
+    for entity_id in membri_ids:
+        if entity_id < len(original_entities):
+            entity = original_entities[entity_id]
+            
+            # Gestisce sia la struttura originale che quella migliorata
+            if "nome_entita_canonico_provvisorio" in entity:
+                # Struttura migliorata
+                all_names.extend(entity.get("tutti_nomi_originali", []))
+                all_types.extend(entity.get("tutti_tipi_rilevati", []))
+                all_descriptions.extend(entity.get("descrizioni_aggregate", []))
+                all_chunk_ids.extend(entity.get("fonti_chunk_id", []))
+                all_page_nums.extend(entity.get("fonti_pagina", []))
+                all_sections.extend(entity.get("fonti_sezione", []))
+                total_occurrences += entity.get("conteggio_occorrenze", 0)
+            else:
+                # Struttura originale
+                all_names.append(entity.get("nome_entita_aggregato", entity.get("nome_entita_norm", "")))
+                all_types.append(entity.get("tipo_entita", ""))
+                all_descriptions.extend(entity.get("descrizioni", []))
+                all_chunk_ids.extend(entity.get("fonti_chunk_id", []))
+                all_page_nums.extend(entity.get("fonti_pagina", []))
+                all_sections.extend(entity.get("fonti_sezione", []))
+                total_occurrences += entity.get("conteggio_occorrenze", 0)
+    
+    # Rimuovi duplicati e ordina
+    return {
+        "nome_entita_cluster": cluster.get("nome_cluster", "Entità_Sconosciuta"),
+        "tipo_entita_cluster": cluster.get("tipo_cluster", "TipoSconosciuto"),
+        "membri_cluster": sorted(list(set(filter(None, all_names)))),
+        "tipi_membri_cluster": sorted(list(set(filter(None, all_types)))),
+        "descrizioni_aggregate": sorted(list(set(filter(None, all_descriptions)))),
+        "fonti_aggregate_chunk_id": sorted(list(set(filter(None, all_chunk_ids)))),
+        "fonti_aggregate_pagina": sorted(list(set(filter(None, all_page_nums)))),
+        "fonti_aggregate_sezione": sorted(list(set(filter(None, all_sections)))),
+        "conteggio_occorrenze_totale": total_occurrences,
+        "motivazione_clustering": cluster.get("motivazione", ""),
+        "membri_ids_originali": membri_ids
+    }
+
+def create_single_entity_cluster(entity: Dict, entity_id: int) -> Dict:
+    """Crea un cluster per una singola entità non raggruppata."""
+    
+    # Gestisce sia la struttura originale che quella migliorata
+    if "nome_entita_canonico_provvisorio" in entity:
+        # Struttura migliorata
+        return {
+            "nome_entita_cluster": entity["nome_entita_canonico_provvisorio"],
+            "tipo_entita_cluster": entity["tipo_entita_canonico_provvisorio"],
+            "membri_cluster": entity.get("tutti_nomi_originali", []),
+            "tipi_membri_cluster": entity.get("tutti_tipi_rilevati", []),
+            "descrizioni_aggregate": entity.get("descrizioni_aggregate", []),
+            "fonti_aggregate_chunk_id": entity.get("fonti_chunk_id", []),
+            "fonti_aggregate_pagina": entity.get("fonti_pagina", []),
+            "fonti_aggregate_sezione": entity.get("fonti_sezione", []),
+            "conteggio_occorrenze_totale": entity.get("conteggio_occorrenze", 0),
+            "motivazione_clustering": "Entità singola, nessun raggruppamento necessario",
+            "membri_ids_originali": [entity_id]
+        }
+    else:
+        # Struttura originale
+        return {
+            "nome_entita_cluster": entity.get("nome_entita_aggregato", entity.get("nome_entita_norm", "")),
+            "tipo_entita_cluster": entity.get("tipo_entita", ""),
+            "membri_cluster": [entity.get("nome_entita_aggregato", entity.get("nome_entita_norm", ""))],
+            "tipi_membri_cluster": [entity.get("tipo_entita", "")],
+            "descrizioni_aggregate": entity.get("descrizioni", []),
+            "fonti_aggregate_chunk_id": entity.get("fonti_chunk_id", []),
+            "fonti_aggregate_pagina": entity.get("fonti_pagina", []),
+            "fonti_aggregate_sezione": entity.get("fonti_sezione", []),
+            "conteggio_occorrenze_totale": entity.get("conteggio_occorrenze", 0),
+            "motivazione_clustering": "Entità singola, nessun raggruppamento necessario",
+            "membri_ids_originali": [entity_id]
+        }
+
+def combine_relations_cluster_data(cluster: Dict, original_relations: List[Dict]) -> Dict:
+    """Combina i dati delle relazioni appartenenti a un cluster."""
+    
+    membri_ids = cluster["membri_ids"]
+    
+    # Raccogli tutti i dati dalle relazioni del cluster
+    all_contexts = []
+    all_chunk_ids = []
+    all_page_nums = []
+    all_sections = []
+    total_occurrences = 0
+    original_predicates = []
+    
+    for relation_id in membri_ids:
+        if relation_id < len(original_relations):
+            relation = original_relations[relation_id]
+            
+            all_contexts.extend(relation.get("contesti", []))
+            all_chunk_ids.extend(relation.get("fonti_chunk_id", []))
+            all_page_nums.extend(relation.get("fonti_pagina", []))
+            all_sections.extend(relation.get("fonti_sezione", []))
+            total_occurrences += relation.get("conteggio_occorrenze", 0)
+            original_predicates.append(relation.get("predicato_norm", ""))
+    
+    # Rimuovi duplicati e ordina
+    return {
+        "soggetto_cluster": cluster.get("soggetto_cluster", "Soggetto_Sconosciuto"),
+        "predicato_cluster": cluster.get("predicato_cluster", "Predicato_Sconosciuto"),
+        "oggetto_cluster": cluster.get("oggetto_cluster", "Oggetto_Sconosciuto"),
+        "contesti_aggregati": sorted(list(set(filter(None, all_contexts)))),
+        "fonti_aggregate_chunk_id": sorted(list(set(filter(None, all_chunk_ids)))),
+        "fonti_aggregate_pagina": sorted(list(set(filter(None, all_page_nums)))),
+        "fonti_aggregate_sezione": sorted(list(set(filter(None, all_sections)))),
+        "predicati_originali_cluster": sorted(list(set(filter(None, original_predicates)))),
+        "conteggio_occorrenze_totale": total_occurrences,
+        "motivazione_clustering": cluster.get("motivazione", ""),
+        "membri_ids_originali": membri_ids
+    }
+
+def create_single_relation_cluster(relation: Dict, relation_id: int, s_mapped: str, o_mapped: str) -> Dict:
+    """Crea un cluster per una relazione singola non raggruppata."""
+    
+    return {
+        "soggetto_cluster": s_mapped,
+        "predicato_cluster": relation["predicato_norm"],
+        "oggetto_cluster": o_mapped,
+        "contesti_aggregati": relation.get("contesti", []),
+        "fonti_aggregate_chunk_id": relation.get("fonti_chunk_id", []),
+        "fonti_aggregate_pagina": relation.get("fonti_pagina", []),
+        "fonti_aggregate_sezione": relation.get("fonti_sezione", []),
+        "predicati_originali_cluster": [relation["predicato_norm"]],
+        "conteggio_occorrenze_totale": relation.get("conteggio_occorrenze", 0),
+        "motivazione_clustering": "Relazione singola, nessun raggruppamento necessario",
+        "membri_ids_originali": [relation_id]
+    }
 
 def save_kg_to_json(data: List[Dict], filepath: str, description: str):
     """Salva i dati (entità o relazioni) in un file JSON."""
@@ -656,65 +1072,75 @@ def save_kg_to_json(data: List[Dict], filepath: str, description: str):
         print(f"Errore: Impossibile scrivere il file {description} a {filepath}")
 
 if __name__ == "__main__":
-    # Configura la tua API Key Gemini all'inizio
+    # Configura API Key
     api_key_from_env = os.getenv("GEMINI_API_KEY")
     if api_key_from_env:
         genai.configure(api_key=api_key_from_env)
         print("API Key Gemini caricata dalla variabile d'ambiente.")
     else:
-        # Inserisci qui la tua chiave se non usi variabili d'ambiente
-        # genai.configure(api_key="TUA_CHIAVE_API_GEMINI")
-        # ATTENZIONE: Non committare mai la chiave API nel codice sorgente!
         print("ATTENZIONE: API Key Gemini non trovata. Impostala nella variabile d'ambiente GEMINI_API_KEY.")
-        print("Esempio: export GEMINI_API_KEY='la_tua_chiave_api' (Linux/Mac) o set GEMINI_API_KEY=la_tua_chiave_api (Windows)")
-        exit() # Esci se la chiave non è configurata
+        exit()
     
-    input_json_path = "data\\processed\\test.json"
+    # Scelta del metodo di elaborazione
+    print("\n=== SISTEMA DI ELABORAZIONE KNOWLEDGE GRAPH ===")
+    print("1. Elaborazione standard (senza checkpoint)")
+    print("2. Elaborazione con sistema di checkpoint completo")
+    
+    choice = input("Scegli il metodo (1 o 2): ").strip()
+    
+    input_json_path = "data\\processed\\processed_chunks_toc_enhanced.json"
     output_dir_llm = "llm_extraction_outputs"
+    
+    if choice == "1":
+        # Elaborazione standard (codice originale)
+        print("\n=== ELABORAZIONE STANDARD ===")
+        
+        # Definisci i percorsi di output
+        output_entities_raw_path = "kg_entities_raw_empulia.json"
+        output_relations_raw_path = "kg_relations_raw_empulia.json"
+        output_entities_aggregated_improved_path = "kg_entities_aggregated_improved_empulia.json"
+        output_relations_aggregated_improved_path = "kg_relations_aggregated_improved_empulia.json"
+        output_entities_clustered_path = "kg_entities_clustered_final_empulia.json"
+        output_relations_clustered_path = "kg_relations_clustered_final_empulia.json"
 
-    output_entities_raw_path = "kg_entities_raw_empulia.json"
-    output_relations_raw_path = "kg_relations_raw_empulia.json"
-    output_entities_aggregated_path = "kg_entities_aggregated_empulia.json"
-    output_relations_aggregated_path = "kg_relations_aggregated_empulia.json"
-    output_entities_aggregated_improved_path = "kg_entities_aggregated_improved_empulia.json"
-    output_relations_aggregated_improved_path = "kg_relations_aggregated_improved_empulia.json"
-    output_entities_clustered_path = "kg_entities_clustered_final_empulia.json"
-    output_relations_clustered_path = "kg_relations_clustered_final_empulia.json"
+        # Carica i chunk
+        document_chunks = load_chunks_from_json(input_json_path)
 
-    # 1. Carica i chunk
-    document_chunks = load_chunks_from_json(input_json_path)
+        if document_chunks:
+            # Estrai conoscenza grezza
+            raw_entities, raw_relations = extract_knowledge_from_chunks(document_chunks, output_dir_llm)
+            save_kg_to_json(raw_entities, output_entities_raw_path, "Entità grezze")
+            save_kg_to_json(raw_relations, output_relations_raw_path, "Relazioni grezze")
 
-    if document_chunks:
-        # 2. Estrai conoscenza grezza
-        raw_entities, raw_relations = extract_knowledge_from_chunks(document_chunks, output_dir_llm)
-        save_kg_to_json(raw_entities, output_entities_raw_path, "Entità grezze")
-        save_kg_to_json(raw_relations, output_relations_raw_path, "Relazioni grezze")
+            # Aggrega e normalizza
+            aggregated_entities_improved, aggregated_relations_improved = aggregate_knowledge_improved(raw_entities, raw_relations)
+            save_kg_to_json(aggregated_entities_improved, output_entities_aggregated_improved_path, "Entità aggregate (versione migliorata)")
+            save_kg_to_json(aggregated_relations_improved, output_relations_aggregated_improved_path, "Relazioni aggregate (versione migliorata)")
 
-        # 3. Aggrega e normalizza
-        aggregated_entities, aggregated_relations = aggregate_knowledge(raw_entities, raw_relations)
-        save_kg_to_json(aggregated_entities, output_entities_aggregated_path, "Entità aggregate")
-        save_kg_to_json(aggregated_relations, output_relations_aggregated_path, "Relazioni aggregate")
+            # Clusterizza
+            print("\n=== INIZIO CLUSTERING COMBINATO CON LLM ===")
+            final_clustered_entities, final_clustered_relations = llm_cluster_knowledge(
+                aggregated_entities_improved, 
+                aggregated_relations_improved
+            )
 
-        # 3. Aggrega e normalizza (versione migliorata)
-        aggregated_entities_improved, aggregated_relations_improved = aggregate_knowledge_improved(raw_entities, raw_relations)
-        save_kg_to_json(aggregated_entities_improved, output_entities_aggregated_improved_path, "Entità aggregate (versione migliorata)")
-        save_kg_to_json(aggregated_relations_improved, output_relations_aggregated_improved_path, "Relazioni aggregate (versione migliorata)")
+            save_kg_to_json(final_clustered_entities, output_entities_clustered_path, "Entità clusterizzate finali (LLM)")
+            save_kg_to_json(final_clustered_relations, output_relations_clustered_path, "Relazioni clusterizzate finali (LLM)")
 
-        # # 4. Clusterizza (usando le versioni placeholder per ora)
-        # final_clustered_entities = placeholder_cluster_entities(aggregated_entities)
-        # final_clustered_relations = placeholder_cluster_relations(aggregated_relations, final_clustered_entities)
+            print("\n--- Generazione Knowledge Graph Completata ---")
+            print(f"Entità finali: {len(final_clustered_entities)}")
+            print(f"Relazioni finali: {len(final_clustered_relations)}")
+            print(f"Riduzione entità tramite clustering: {len(aggregated_entities_improved)} → {len(final_clustered_entities)}")
+            print(f"Riduzione relazioni tramite clustering: {len(aggregated_relations_improved)} → {len(final_clustered_relations)}")
 
-        # save_kg_to_json(final_clustered_entities, output_entities_clustered_path, "Entità clusterizzate finali")
-        # save_kg_to_json(final_clustered_relations, output_relations_clustered_path, "Relazioni clusterizzate finali")
-
-        # print("\n--- Generazione Knowledge Graph (con clustering placeholder) Completata ---")
-        # print(f"Entità finali: {len(final_clustered_entities)}")
-        # print(f"Relazioni finali: {len(final_clustered_relations)}")
-
-        print("\n--- Generazione Knowledge Graph (senza clustering) Completata ---")
-        print(f"Entità grezze estratte: {len(raw_entities)}")
-        print(f"Relazioni grezze estratte: {len(raw_relations)}")
-        print(f"Output salvati in: {output_entities_raw_path} e {output_relations_raw_path}")
-
+        else:
+            print(f"Nessun chunk caricato da {input_json_path}. Verifica il file.")
+    
+    elif choice == "2":
+        # Elaborazione con checkpoint - import locale per evitare circolarità
+        print("\n=== ELABORAZIONE CON CHECKPOINT ===")
+        from KG_checkpoint import process_with_full_checkpoint_system
+        process_with_full_checkpoint_system(input_json_path, output_dir_llm)
+    
     else:
-        print(f"Nessun chunk caricato da {input_json_path}. Verifica il file.")
+        print("Scelta non valida. Esecuzione terminata.")
