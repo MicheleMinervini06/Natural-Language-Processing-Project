@@ -6,6 +6,7 @@ from functools import lru_cache
 import sqlite3
 import os
 from utils.entity_normalizer import EntityNormalizer, create_search_patterns
+from query_analyzer import analyze_user_question
 
 # --- Configurazione Neo4j ---
 NEO4J_URI = "neo4j://localhost:7687"
@@ -319,11 +320,25 @@ class KnowledgeRetriever:
         
         return context_str.strip(), source_chunk_ids
 
-    def retrieve_knowledge(self, analysis: Dict[str, Any], retrieve_text: bool = True) -> Dict[str, Any]:
+    def retrieve_knowledge(self, analysis, retrieve_text: bool = True) -> Dict[str, Any]:
         """
         Funzione principale con strategia di fallback.
         """
         self.logger.info("Avvio recupero conoscenza dal Knowledge Graph")
+        
+        # Check if input is a string (question) instead of analysis dict
+        if isinstance(analysis, str):
+            self.logger.info("Input è una stringa, chiamando QueryAnalyzer...")
+            analysis = analyze_user_question(analysis)
+            self.logger.debug(f"Analisi completata: {analysis}")
+        
+        # Validate analysis format
+        if not isinstance(analysis, dict) or "entita_chiave" not in analysis:
+            self.logger.error("Formato di analisi non valido")
+            return {
+                "graph_context": "Errore: formato di input non valido",
+                "text_context": ""
+            }
         
         # Tentativo principale
         cypher_query = self._generate_cypher_from_analysis(analysis)
@@ -409,19 +424,15 @@ if __name__ == "__main__":
   "intento": "find_procedure",
   "entita_chiave": [
     {
-      "nome": "creare",
-      "tipo": "AzioneUtente"
+      "nome": "calcolo anomalia",
+      "tipo": "OperazioneSistema"
     },
     {
-      "nome": "commissione di gara",
-      "tipo": "FunzionalitàPiattaforma"
-    },
-    {
-      "nome": "EmPULIA",
+      "nome": "piattaforma",
       "tipo": "PiattaformaModulo"
     }
   ],
-  "domanda_originale": "Come posso creare una commissione di gara su EmPULIA?"
+  "domanda_originale": "Come viene gestito il calcolo dell'anomalia dalla piattaforma?"
 }
 
     # Percorso al file JSON che contiene TUTTI i chunk originali
@@ -432,7 +443,7 @@ if __name__ == "__main__":
 
     if retriever.driver:
         # Esegui il recupero
-        retrieved_context = retriever.retrieve_knowledge(simulated_analysis, retrieve_text=True)
+        retrieved_context = retriever.retrieve_knowledge("Come posso creare una commissione di gara su EmPULIA?", retrieve_text=True)
 
         print("\n" + "="*50)
         print("RISULTATO RECUPERO CONOSCENZA")

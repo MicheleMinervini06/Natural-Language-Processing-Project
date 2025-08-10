@@ -174,7 +174,7 @@ if __name__ == "__main__":
     print("\n" + "="*50 + "\n")
 
     # Esempio 4: Come creare una commisione di gara
-    question4 = "Come posso creare una commissione di gara su EmPULIA?"
+    question4 = "Come viene gestito il calcolo dell'anomalia dalla piattaforma?"
     analysis4 = analyze_user_question(question4)
     print("\n--- Risultato Analisi 4 ---")
     print(json.dumps(analysis4, indent=2, ensure_ascii=False))
