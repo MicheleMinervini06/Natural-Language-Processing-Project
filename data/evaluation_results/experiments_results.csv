@@ -1,0 +1,2 @@
+Run ID,Descrizione Modifica,Context Recall,Context Precision,Answer Relevancy,Faithfulness,Note
+Run_01,Baseline (attuale),0.1000,0.2333,0.4426,0.6273,Problema critico nel recupero.
