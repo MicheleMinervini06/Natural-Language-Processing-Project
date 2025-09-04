@@ -78,4 +78,8 @@
 3.  **Prototipazione della Generazione KG:** Inizia con un singolo PDF o una sezione. Sperimenta con i prompt per l'estrazione di entità e relazioni. Valuta la qualità dell'output dell'LLM.
 4.  **Prototipazione del Q&A:** Implementa un flusso semplice: domanda utente -> LLM per estrarre entità dalla domanda -> query al KG (anche manuale all'inizio) -> LLM per generare risposta dalle triple.
 
-Questo piano è un punto di partenza. Ogni fase richiederà sperimentazione e iterazione. In bocca al lupo con il tuo progetto! Sembra molto interessante e con un forte potenziale di impatto.
+**Prossimi Passi**
+-
+- Tentare di ricreare la KB
+- Riconsiderare il golden datset, in quanto la recall/precision sono propabilmente caloclate sulla base dei chunk di riferimento e la KB non viene di fatti considerata
+- ~~Controllare se i chunk vengano effetivamente recuperato con ilk nuovo approccio~~

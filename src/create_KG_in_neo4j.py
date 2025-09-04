@@ -7,7 +7,8 @@ from utils.entity_normalizer import EntityNormalizer
 NEO4J_URI = "neo4j://localhost:7687"
 NEO4J_USER = "neo4j"
 NEO4J_PASSWORD = "Password"
-NEO4J_DATABASE = "test"
+#ATTENNZIONE
+NEO4J_DATABASE = "testaggregated"
 
 class Neo4jUploader:
     """
@@ -279,6 +280,7 @@ class Neo4jUploader:
         
         print(f"Caricamento relazioni completato: {total_created} relazioni create")
 
+ 
     def upload_entities(self, entities: List[Dict]):
         """Crea i nodi nel grafo usando UNWIND per efficienza (dati clusterizzati)."""
         if not entities:
@@ -287,21 +289,10 @@ class Neo4jUploader:
             
         print(f"Inizio caricamento di {len(entities)} nodi clusterizzati...")
         
-        # Filtra le entità con nome null o vuoto
-        valid_entities = []
-        invalid_count = 0
-        
-        for entity in entities:
-            name = entity.get("nome_entita_cluster")
-            if name and name.strip():
-                valid_entities.append(entity)
-            else:
-                invalid_count += 1
-                if invalid_count <= 10:
-                    print(f"WARN: Entità scartata - nome null/vuoto: {entity}")
-        
+        valid_entities = [e for e in entities if e.get("nome_entita_cluster", "").strip()]
+        invalid_count = len(entities) - len(valid_entities)
         if invalid_count > 0:
-            print(f"ATTENZIONE: {invalid_count} entità scartate per nome null/vuoto")
+            print(f"ATTENZIONE: {invalid_count} entità scartate per nome cluster nullo/vuoto.")
         
         if not valid_entities:
             print("Nessuna entità valida da caricare.")
@@ -309,41 +300,46 @@ class Neo4jUploader:
         
         print(f"Caricamento di {len(valid_entities)} entità valide...")
         
-        # Carica in batch
         batch_size = 1000
-        total_created = 0
-        
         for i in range(0, len(valid_entities), batch_size):
             batch = valid_entities[i:i+batch_size]
             print(f"Caricamento batch {i//batch_size + 1}/{(len(valid_entities) + batch_size - 1)//batch_size}")
             
-            query_fallback = """
+            # --- INIZIO MODIFICA QUI ---
+            query_corrected = """
             UNWIND $entities AS entity
-            WITH entity 
-            WHERE entity.nome_entita_cluster IS NOT NULL 
-              AND entity.nome_entita_cluster <> ''
             MERGE (n:Entity {name: entity.nome_entita_cluster})
             ON CREATE SET 
                 n.type = COALESCE(entity.tipo_entita_cluster, 'Unknown'),
                 n.descriptions = COALESCE(entity.descrizioni_aggregate, []),
                 n.occurrence_count = COALESCE(entity.conteggio_occorrenze_totale, 0),
                 n.original_members = COALESCE(entity.membri_cluster, []),
-                n.source_chunk_ids = COALESCE(entity.fonti_chunk_id, [])
+                
+                /* CORREZIONE: Usa il nome corretto della chiave dal JSON clusterizzato */
+                n.source_chunk_ids = COALESCE(entity.fonti_aggregate_chunk_id, [])
+
             ON MATCH SET
-                n.occurrence_count = n.occurrence_count + COALESCE(entity.conteggio_occorrenze_totale, 0)
-            RETURN count(n) AS created_nodes
+                /* Aggiungiamo l'aggiornamento anche su ON MATCH per robustezza */
+                n.type = COALESCE(entity.tipo_entita_cluster, 'Unknown'),
+                n.descriptions = COALESCE(entity.descrizioni_aggregate, []),
+                n.occurrence_count = COALESCE(entity.conteggio_occorrenze_totale, 0),
+                n.original_members = COALESCE(entity.membri_cluster, []),
+                n.source_chunk_ids = COALESCE(entity.fonti_aggregate_chunk_id, [])
+
+            RETURN count(n) AS node_count
             """
+            # --- FINE MODIFICA QUI ---
 
             try:
-                result = self.run_query(query_fallback, parameters={"entities": batch})
+                # Uso la variabile con il nome corretto
+                result = self.run_query(query_corrected, parameters={"entities": batch})
                 if result and result[0]:
-                    count = result[0].get('created_nodes', 0)
-                    total_created += count
-                    print(f"  Batch completato: {count} nodi")
+                    count = result[0].get('node_count', 0)
+                    print(f"  Batch completato: {count} nodi processati.")
             except Exception as e:
                 print(f"Errore nel caricamento batch: {e}")
         
-        print(f"Caricamento nodi clusterizzati completato. Totale: {total_created}")
+        print(f"Caricamento nodi clusterizzati completato.")
 
     def upload_relations(self, relations: List[Dict]):
         """Crea le relazioni tra i nodi esistenti (dati clusterizzati)."""

@@ -18,20 +18,6 @@ KNOWN_ENTITY_TYPES = [
     "Notifica", "SezioneGuida"
 ]
 
-# Carica la lista dei nomi canonici una sola volta all'avvio
-def load_canonical_entity_names(filepath: str) -> list:
-    """Carica i nomi canonici delle entità dal file del KG clusterizzato."""
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            entities = json.load(f)
-        return sorted([e.get("nome_entita_cluster", "") for e in entities if e.get("nome_entita_cluster")])
-    except Exception as e:
-        print(f"Errore nel caricamento dei nomi canonici da {filepath}: {e}")
-        return []
-
-# Esegui questa operazione una volta quando il modulo viene importato
-CANONICAL_ENTITY_NAMES = load_canonical_entity_names("kg_entities_clustered_final_empulia.json")
-
 # --- Funzioni Core per Gemini ---
 
 def call_gemini_with_retries(prompt: str, model_name: str = LLM_MODEL_ANALYSIS, max_retries: int = 3, delay: int = 5) -> str:
@@ -131,57 +117,47 @@ def get_few_shot_examples() -> str:
         
     return formatted_examples
 
+
 def build_gemini_query_analysis_prompt(user_question: str) -> str:
     """
-    Prompt MIGLIORATO E RINFORZATO per mappare la domanda ai nomi canonici del KG,
-    costringendo l'LLM a usare le chiavi JSON corrette.
+    Versione MIGLIORATA del prompt per analizzare la domanda dell'utente.
+    Include istruzioni condizionali ed esempi few-shot.
     """
-    # La logica per ottenere la lista di entità rimane la stessa
-    entity_list_for_prompt = CANONICAL_ENTITY_NAMES
-    # if len(entity_list_for_prompt) > 200:
-    #     entity_list_for_prompt = entity_list_for_prompt[:200]
-
+    few_shot_examples = get_few_shot_examples()
+    
     prompt = f"""
-Sei un sistema di Natural Language Understanding (NLU) altamente preciso. Il tuo unico scopo è convertire una domanda utente in un oggetto JSON strutturato, seguendo RIGOROSAMENTE lo schema fornito. Non deviare mai dal formato richiesto.
+Sei un agente esperto di Natural Language Understanding (NLU) che analizza le domande degli utenti per interrogare un Knowledge Graph sulla piattaforma di e-procurement EmPULIA.
+Il tuo unico compito è prendere la domanda dell'utente e convertirla in un oggetto JSON strutturato secondo le istruzioni seguenti. Non aggiungere commenti o spiegazioni al di fuori del JSON.
 
-**Domanda Utente da Analizzare:**
+**Istruzioni Generali per la Generazione del JSON:**
+
+1.  **Analisi dell'Intento:** Determina l'obiettivo principale della domanda. Nel campo `intento` del JSON, inserisci UNO dei seguenti valori:
+    - `find_procedure`: Per domande su "come fare qualcosa" o "quali sono i passaggi per".
+    - `find_definition`: Per domande su "cos'è qualcosa" o "spiegami X".
+    - `find_requirements`: Per domande su "cosa serve per", "quali documenti sono necessari", "quali sono i requisiti".
+    - `find_relationship`: Per domande che confrontano o collegano due o più concetti (es. "che differenza c'è tra X e Y?").
+    - `generic_search`: Usalo come fallback se nessun altro intento si adatta.
+
+2.  **Estrazione delle Entità Chiave:** Identifica le entità menzionate. Nel campo `entita_chiave`, fornisci:
+    - `nome`: Il nome dell'entità. **Sii specifico e normalizza i termini.** Ad esempio, se l'utente chiede "come cambio la mia psw", normalizza in "Cambio Password". Se chiede "come creo un contratto per più lotti", l'entità chiave è "Contratto Unico Multi-Lotto", non solo "contratto".
+    - `tipo`: Il tipo più appropriato per l'entità, scelto dalla seguente lista: `{', '.join(KNOWN_ENTITY_TYPES)}`.
+
+3.  **Priorità delle Entità:** Dai priorità alle entità che rappresentano **processi, azioni o funzionalità specifiche** della piattaforma (es. "Modifica Ruolo", "Creazione Commissione") rispetto a entità generiche (es. "Piattaforma", "Utente"), specialmente per le domande procedurali.
+
+---
+**ESEMPI DI ANALISI CORRETTE:**
+
+{few_shot_examples}
+---
+
+**ORA, ANALIZZA LA SEGUENTE DOMANDA:**
+
+**Domanda Utente:**
 `{user_question}`
 
----
-**VOCABOLARIO CONTROLLATO (Nomi Canonici delle Entità):**
-{', '.join(entity_list_for_prompt)}
----
-
-**ISTRUZIONI PER LA GENERAZIONE DEL JSON:**
-
-1.  **Campo `intento`:** Analizza la domanda e assegna UNO dei seguenti valori: `find_procedure`, `find_definition`, `find_requirements`, `find_relationship`, `generic_search`.
-
-2.  **Campo `entita_chiave`:** Questo DEVE essere una lista di oggetti. Per ogni concetto rilevante nella domanda, trova il nome canonico più simile nel VOCABOLARIO CONTROLLATO e crea un oggetto con i seguenti campi:
-    *   `nome`: (stringa) Il nome canonico esatto che hai scelto dal vocabolario.
-    *   `tipo`: (stringa) Il tipo di entità che ritieni più appropriato per quel nome canonico (puoi inferirlo).
-
-3.  **Campo `domanda_originale`:** Riporta la domanda dell'utente esattamente com'è.
-
----
-**SCHEMA DI OUTPUT JSON OBBLIGATORIO:**
-La tua risposta DEVE essere un singolo oggetto JSON che inizia con `{{` e finisce con `}}`. Le chiavi di primo livello DEVONO essere ESATTAMENTE `intento`, `entita_chiave`, e `domanda_originale`.
-
-**ESEMPIO PERFETTO DI OUTPUT:**
-```json
-{{
-  "intento": "find_requirements",
-  "entita_chiave": [
-    {{
-      "nome": "RUP PDG",
-      "tipo": "RuoloUtente"
-    }}
-  ],
-  "domanda_originale": "Cosa serve per il ruolo di RUP PDG?"
-}}
+**Output JSON:**
 """
     return prompt
-
-
 
 def analyze_user_question(user_question: str) -> Dict[str, Any]:
     """
