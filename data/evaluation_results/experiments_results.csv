@@ -1,2 +1,9 @@
 Run ID,Descrizione Modifica,Context Recall,Context Precision,Answer Relevancy,Faithfulness,Note
 Run_01,Baseline (attuale),0.1000,0.2333,0.4426,0.6273,Problema critico nel recupero.
+Run_02, Prompt NLU migliorato (few shot), 0.1667, 0.1667, 0.6810, 0.6557, Il recupero migliora leggermente. La precisione cala. La qualità della risposta migliora notevolmente grazie a un contesto leggermente migliore.
+Run_03, Query Cypher Corrette, 0.1000, 0.1333, 0.6272, 0.6124, Problema persiste. Né l'analisi né le query sembrano essere il collo di bottiglia principale.
+Run_04, Usato il KG creato sui dati aggregati e non raw, 0.0000, 0.0000, 0.5103, 0.0698, I risultati peggiorano. L'analisi della domanda LLM sta estraendo le entità sbagliate rendendo le nuove query specifiche inefficaci.
+Run_05, Modificato il prmpt di analsi della domanda includendo una Chain Of Thought, 0.0000, 0.0000, 0.5699, 0.0008, Nessun miglioramento significativo osservato e identificato un problema di individuazione delle relationship.
+Run_06, Correto il problema riguardate il matching delle relazioni(era ancora usata la vecchia funzione di match per i dati raw e non aggregati), 0.0000, 0.0000, 0.4958, 0.1982, Nessun miglioramento significativo osservato.
+Run_07, Aumentato il numero di entità considerate durante la fase di analisi della domanda in quanto prima era limitato a 200, 0.0000, 0.0000, 0.6299, 0.0000, Nessun miglioramento significativo osservato.
+Run_08, Corretto un errore per cui non venivano recuperati i chunk di testo nell'approccio con dati aggregati, 0.2111, 0.2000, 0.3623, 0.6338, Riscontrato un miglioramento nel recupero del contesto

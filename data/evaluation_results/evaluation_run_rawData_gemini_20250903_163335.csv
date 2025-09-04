@@ -1,0 +1,515 @@
+user_input,retrieved_contexts,response,reference,faithfulness,answer_relevancy,context_precision,context_recall
+Sono un utente di una Stazione Appaltante e ho appena ricevuto le nuove credenziali per EmPULIA. Qual è il primo passo che devo compiere dopo aver fatto l'accesso?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"Dopo aver effettuato l'accesso a EmPULIA con le nuove credenziali, il primo passo fondamentale che devi compiere, in quanto utente di una Stazione Appaltante, è **aggiornare e completare il profilo della Stazione Appaltante**.
+
+Questo passaggio è cruciale per diversi motivi:
+
+*   **Corretta identificazione:** Assicura che la piattaforma identifichi correttamente la tua Stazione Appaltante.
+*   **Funzionalità complete:** Permette di accedere a tutte le funzionalità e i servizi dedicati alle Stazioni Appaltanti.
+*   **Conformità normativa:** Garantisce la conformità ai requisiti normativi e procedurali per la gestione degli appalti pubblici.
+*   **Comunicazioni efficaci:** Permette di ricevere comunicazioni e aggiornamenti importanti da EmPULIA.
+
+In sintesi, l'aggiornamento del profilo è un prerequisito essenziale per poter utilizzare EmPULIA in modo efficace e conforme alle normative.","Dopo aver effettuato il primo accesso con le nuove credenziali, il primo passo obbligatorio è il cambio della password. Questa azione si trova nella 'Lista attività' ed è definita come un' 'Attività Bloccante', il che significa che non potrai usare altre funzionalità finché non l'avrai completata.",0.0,0.9341475724165335,0.0,0.0
+Come si attiva e si inizia a personalizzare il DGUE strutturato per una gara?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"Per attivare e iniziare a personalizzare il DGUE strutturato per una gara, segui questi passaggi, tenendo presente che la procedura specifica può variare leggermente a seconda della piattaforma o del software che stai utilizzando:
+
+**1. Accesso alla Piattaforma o Software:**
+
+*   **Identifica la piattaforma:** Determina quale piattaforma o software è richiesto dall'ente appaltante per la presentazione del DGUE. Potrebbe essere una piattaforma specifica dell'ente, un software di terze parti certificato, o un servizio online.
+*   **Accedi con le tue credenziali:** Effettua l'accesso alla piattaforma o al software utilizzando le tue credenziali (nome utente e password). Se non hai un account, potrebbe essere necessario crearne uno.
+
+**2. Creazione o Importazione del DGUE:**
+
+*   **Nuovo DGUE:** Se devi creare un nuovo DGUE, cerca un'opzione come ""Crea nuovo DGUE"", ""Avvia nuovo DGUE"", o simile.
+*   **Importazione DGUE:** In alcuni casi, potresti avere un DGUE precompilato o un modello da importare. Cerca un'opzione come ""Importa DGUE"", ""Carica DGUE"", o simile.  Assicurati che il formato del file sia compatibile (solitamente XML o un formato specifico della piattaforma).
+
+**3. Selezione della Procedura di Gara:**
+
+*   **Identifica la gara:** Una volta creato o importato il DGUE, dovrai associarlo alla specifica procedura di gara a cui stai partecipando.
+*   **Ricerca e selezione:** Cerca un'opzione per ricercare e selezionare la gara. Potrebbe essere necessario inserire il codice identificativo della gara (CIG, CUP, ID gara, ecc.) o utilizzare filtri di ricerca.
+*   **Associazione:** Una volta trovata la gara, selezionala per associare il DGUE a quella specifica procedura.
+
+**4. Personalizzazione e Compilazione del DGUE:**
+
+*   **Navigazione:** Il DGUE strutturato è solitamente suddiviso in sezioni (informazioni sull'operatore economico, criteri di selezione, motivi di esclusione, ecc.). Naviga tra le sezioni utilizzando il menu o i pulsanti di navigazione.
+*   **Compilazione dei campi:** Compila attentamente tutti i campi richiesti in ogni sezione. Assicurati di fornire informazioni accurate e complete.
+*   **Documentazione di supporto:** In alcuni casi, potrebbe essere necessario allegare documenti di supporto per comprovare le informazioni fornite nel DGUE. Segui le istruzioni della piattaforma per caricare i documenti necessari.
+*   **Aiuto e istruzioni:** La piattaforma o il software dovrebbe fornire aiuto e istruzioni per la compilazione del DGUE. Consulta la guida online, le FAQ, o contatta il supporto tecnico se hai bisogno di assistenza.
+
+**5. Validazione e Controllo:**
+
+*   **Validazione:** Prima di inviare il DGUE, utilizza la funzione di validazione della piattaforma per verificare che tutti i campi obbligatori siano stati compilati correttamente e che non ci siano errori.
+*   **Controllo:** Rivedi attentamente tutte le informazioni fornite nel DGUE per assicurarti che siano accurate e complete.
+
+**6. Firma e Invio:**
+
+*   **Firma digitale:** In molti casi, è necessario firmare digitalmente il DGUE prima di inviarlo. Assicurati di avere un certificato di firma digitale valido e di seguire le istruzioni della piattaforma per firmare il documento.
+*   **Invio:** Una volta validato, controllato e firmato, invia il DGUE alla piattaforma.
+
+**Consigli Aggiuntivi:**
+
+*   **Leggi attentamente il bando di gara:** Il bando di gara contiene informazioni importanti sui requisiti per la presentazione del DGUE, inclusi i formati accettati, le scadenze e le istruzioni specifiche.
+*   **Prepara la documentazione in anticipo:** Raccogli tutti i documenti necessari per la compilazione del DGUE in anticipo per risparmiare tempo e ridurre il rischio di errori.
+*   **Salva regolarmente:** Salva regolarmente il tuo lavoro mentre compili il DGUE per evitare di perdere i dati in caso di problemi tecnici.
+*   **Richiedi assistenza:** Se hai bisogno di aiuto, non esitare a contattare il supporto tecnico della piattaforma o dell'ente appaltante.
+
+Seguendo questi passaggi, sarai in grado di attivare, personalizzare e inviare correttamente il DGUE strutturato per la tua gara. Ricorda che la precisione e la completezza delle informazioni fornite sono fondamentali per la tua partecipazione alla gara.","Per attivare il DGUE strutturato, devi andare nella sezione 'Busta Documentazione' durante la configurazione della gara e selezionare 'SI' al comando 'DGUE Strutturato'. Dopo l'attivazione, per iniziare la personalizzazione, è obbligatorio cliccare su 'Specializza Modulo DGUE Request Mandataria'.",1.0,0.8996022049374871,0.0,0.0
+"È obbligatorio compilare tutti i moduli e le sezioni del DGUE, o posso disattivarne alcuni?",['Informazioni rilevanti trovate nel Knowledge Graph:'],"La risposta alla tua domanda dipende dal contesto specifico della procedura di appalto e dalle indicazioni fornite dall'ente appaltante. In generale, **non è possibile disattivare arbitrariamente sezioni o moduli del DGUE**.
+
+Ecco una spiegazione più dettagliata:
+
+* **Obbligatorietà del DGUE:** Il Documento di Gara Unico Europeo (DGUE) è un'autodichiarazione standardizzata utilizzata nelle procedure di appalto pubbliche per semplificare la presentazione delle informazioni da parte degli operatori economici.  È progettato per fornire una panoramica preliminare della loro idoneità a partecipare alla gara.
+
+* **Compilazione completa:** Di norma, **tutte le sezioni e i moduli del DGUE che sono pertinenti ai criteri di selezione e ai requisiti specificati nel bando di gara devono essere compilati**.  L'ente appaltante definisce nel bando quali informazioni sono necessarie per valutare l'idoneità dei partecipanti.
+
+* **Sezioni non pertinenti:**  Potrebbe capitare che alcune sezioni del DGUE non siano rilevanti per la specifica procedura di appalto. In questo caso, **è necessario indicare chiaramente che la sezione non è pertinente, motivando la risposta.**  Non è sufficiente lasciare la sezione vuota.  Ad esempio, se non si possiedono certificazioni di qualità richieste, si dovrà indicare che non si possiedono e, se richiesto, spiegare perché.
+
+* **Responsabilità dell'ente appaltante:** L'ente appaltante ha la responsabilità di indicare chiaramente nel bando di gara quali sezioni del DGUE sono obbligatorie e quali no.  Dovrebbe anche fornire istruzioni su come compilare il DGUE correttamente.
+
+* **Conseguenze della compilazione incompleta o errata:**  Una compilazione incompleta o errata del DGUE può portare all'esclusione dalla procedura di appalto.
+
+**In sintesi:**
+
+* **Leggi attentamente il bando di gara e le istruzioni fornite dall'ente appaltante.**
+* **Compila tutte le sezioni del DGUE che sono richieste dal bando.**
+* **Se una sezione non è pertinente, indicalo chiaramente e motiva la risposta.**
+* **Non lasciare sezioni vuote senza una spiegazione.**
+
+**Consiglio:** In caso di dubbi, contatta direttamente l'ente appaltante per chiarimenti.  È sempre meglio chiedere spiegazioni piuttosto che rischiare l'esclusione dalla gara.","Non tutti i moduli e le sezioni sono obbligatori. Secondo la guida, alcune 'Parti, Sezioni e Moduli Richieste' sono obbligatorie e non possono essere rimosse. Quelle che invece presentano una spunta blu sotto la colonna 'Selezionato' possono essere disattivate o riattivate dalla Stazione Appaltante (SA) a seconda della loro pertinenza per la gara.",0.0,0.0,0.0,0.0
+Qual è la differenza tra definire un attributo per 'Lotto' e per 'Voce' in un modello di offerta?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"Per rispondere alla domanda sulla differenza tra definire un attributo per 'Lotto' e per 'Voce' in un modello di offerta, dobbiamo considerare il loro ruolo e la loro granularità all'interno del processo di offerta.
+
+*   **Lotto:** Rappresenta un raggruppamento di beni o servizi offerti come un'unità.  È un livello di aggregazione più alto.  Gli attributi definiti a livello di lotto si applicano all'intero gruppo di beni/servizi.  Esempi di attributi di lotto potrebbero essere:
+
+    *   **ID Lotto:** Un identificativo univoco per il lotto.
+    *   **Descrizione Lotto:** Una descrizione generale del lotto.
+    *   **Quantità Totale:** La quantità totale di beni/servizi inclusi nel lotto (se applicabile).
+    *   **Valore Stimato del Lotto:** Il valore stimato dell'intero lotto.
+    *   **Termini di Consegna del Lotto:** Termini di consegna specifici per l'intero lotto.
+    *   **Criteri di Aggiudicazione del Lotto:** Criteri specifici per l'aggiudicazione del lotto (e.g., prezzo più basso, miglior rapporto qualità/prezzo).
+
+*   **Voce:** Rappresenta un singolo bene o servizio specifico all'interno di un lotto. È un livello di granularità più basso. Gli attributi definiti a livello di voce si applicano a quel singolo bene/servizio. Esempi di attributi di voce potrebbero essere:
+
+    *   **ID Voce:** Un identificativo univoco per la voce.
+    *   **Descrizione Voce:** Una descrizione dettagliata del bene/servizio.
+    *   **Quantità Voce:** La quantità specifica di quel bene/servizio.
+    *   **Prezzo Unitario:** Il prezzo per singola unità del bene/servizio.
+    *   **Unità di Misura:** L'unità di misura per la quantità (e.g., pezzi, metri, ore).
+    *   **Codice Prodotto:** Il codice identificativo del prodotto (e.g., codice SKU).
+    *   **Specifiche Tecniche:** Dettagli tecnici specifici per il bene/servizio.
+
+**In sintesi:**
+
+La differenza principale risiede nel livello di dettaglio e nell'ambito di applicazione degli attributi. Gli attributi del lotto descrivono l'intero raggruppamento, mentre gli attributi della voce descrivono i singoli elementi all'interno del lotto.
+
+**Analogia:**
+
+Immagina un'offerta per la fornitura di materiale scolastico.
+
+*   **Lotto:** ""Materiale Scolastico per la Scuola Elementare"" (attributi: ID Lotto, Descrizione Lotto, Valore Stimato, Termini di Consegna)
+*   **Voci all'interno del lotto:**
+    *   ""Matite HB"" (attributi: ID Voce, Descrizione Voce, Quantità Voce, Prezzo Unitario, Unità di Misura)
+    *   ""Quaderni a Righe"" (attributi: ID Voce, Descrizione Voce, Quantità Voce, Prezzo Unitario, Unità di Misura)
+    *   ""Gomme da Cancellare"" (attributi: ID Voce, Descrizione Voce, Quantità Voce, Prezzo Unitario, Unità di Misura)
+
+La scelta di definire un attributo a livello di lotto o di voce dipende da come si vuole strutturare l'offerta e da quali informazioni sono rilevanti per la valutazione. Se un attributo è comune a tutte le voci del lotto, è più efficiente definirlo a livello di lotto. Se un attributo è specifico per una singola voce, deve essere definito a livello di voce.","La differenza sta nel livello a cui l'attributo viene applicato. Selezionando 'Lotto', l'attributo viene richiesto una sola volta per l'intero lotto (livello 0), come nel caso di un'unica relazione tecnica per tutti i prodotti. Selezionando 'Voce', l'attributo viene richiesto per ogni singola riga di prodotto o servizio all'interno del lotto (livelli 1, 2, 3, ecc.), ad esempio per richiedere specifiche tecniche per ciascun prodotto.",0.0,0.9999999999999994,0.0,0.0
+Ho definito un attributo come 'Calcolato'. Dove e come devo definire la formula matematica che ne determina il valore?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"La definizione della formula matematica per un attributo 'Calcolato' dipende dal sistema o strumento che stai utilizzando.  Senza sapere quale strumento stai usando (es. un database, un software di modellazione dati, un linguaggio di programmazione, un foglio di calcolo, etc.), posso solo darti indicazioni generali.  Ecco le possibilità più comuni e dove cercare la definizione della formula:
+
+**1. Database (es. SQL Server, MySQL, PostgreSQL, Oracle):**
+
+*   **Viste Calcolate (Computed Columns):**  La formula è definita direttamente nella definizione della vista.  La sintassi varia a seconda del database, ma generalmente si usa un'espressione SQL all'interno della definizione della colonna.
+    *   **Esempio (SQL Server):**
+        ```sql
+        CREATE VIEW VistaClientiConTotaleOrdini AS
+        SELECT
+            ClienteID,
+            NomeCliente,
+            (SELECT SUM(Importo) FROM Ordini WHERE Ordini.ClienteID = Clienti.ClienteID) AS TotaleOrdini
+        FROM
+            Clienti;
+        ```
+*   **Funzioni Definite dall'Utente (User-Defined Functions - UDF):**  Se la logica è complessa, puoi definire una funzione che accetta input e restituisce il valore calcolato.  La formula è definita all'interno del corpo della funzione.
+    *   **Esempio (SQL Server):**
+        ```sql
+        CREATE FUNCTION CalcolaSconto (@Prezzo DECIMAL(10,2), @PercentualeSconto DECIMAL(5,2))
+        RETURNS DECIMAL(10,2)
+        AS
+        BEGIN
+            DECLARE @Sconto DECIMAL(10,2);
+            SET @Sconto = @Prezzo * (@PercentualeSconto / 100);
+            RETURN @Sconto;
+        END;
+
+        -- Utilizzo nella query:
+        SELECT Prezzo, dbo.CalcolaSconto(Prezzo, 10) AS PrezzoScontato FROM Prodotti;
+        ```
+*   **Trigger:**  In casi più rari, puoi usare un trigger (un blocco di codice che viene eseguito automaticamente in risposta a un evento, come un inserimento o un aggiornamento) per calcolare e impostare il valore dell'attributo.  La formula è definita all'interno del trigger.  Questo approccio è generalmente sconsigliato per calcoli semplici, in quanto può impattare le performance.
+
+**2. Software di Modellazione Dati (es. Power BI, Tableau, Qlik Sense):**
+
+*   **Colonne Calcolate (Calculated Columns):**  Questi strumenti offrono la possibilità di creare nuove colonne basate su formule.  La formula è definita nell'editor di espressioni dello strumento, utilizzando un linguaggio specifico (es. DAX in Power BI).
+    *   **Esempio (Power BI - DAX):**
+        ```dax
+        TotaleVendite = SUM(Vendite[Importo])
+        ```
+*   **Misure (Measures):**  Simili alle colonne calcolate, ma vengono calcolate dinamicamente in base al contesto della visualizzazione.  La formula è definita nell'editor di espressioni.
+    *   **Esempio (Power BI - DAX):**
+        ```dax
+        MargineProfitto = SUM(Vendite[Profitto]) / SUM(Vendite[Ricavi])
+        ```
+
+**3. Linguaggi di Programmazione (es. Python, Java, C#):**
+
+*   **Definizione della Classe/Oggetto:** Se l'attributo fa parte di una classe o oggetto, la formula è definita come parte della logica di calcolo all'interno della classe.  Potrebbe essere un metodo o una proprietà calcolata.
+    *   **Esempio (Python):**
+        ```python
+        class Cerchio:
+            def __init__(self, raggio):
+                self.raggio = raggio
+
+            @property
+            def area(self):
+                return 3.14159 * self.raggio * self.raggio
+
+        cerchio = Cerchio(5)
+        print(cerchio.area) # Stampa l'area del cerchio
+        ```
+
+**4. Fogli di Calcolo (es. Excel, Google Sheets):**
+
+*   **Celle con Formule:**  La formula è definita direttamente nella cella, utilizzando gli operatori matematici e le funzioni disponibili nel foglio di calcolo.
+    *   **Esempio (Excel):**
+        `=A1*B1` (moltiplica il valore nella cella A1 per il valore nella cella B1)
+
+**5. Altri Sistemi:**
+
+*   **Metadati:** In alcuni sistemi, la definizione della formula può essere memorizzata nei metadati dell'attributo.  Cerca nelle impostazioni o nella documentazione del sistema per capire come accedere e modificare i metadati.
+*   **File di Configurazione:** In alcuni casi, la formula potrebbe essere definita in un file di configurazione (es. XML, JSON, YAML).
+
+**Come Trovare la Definizione:**
+
+1.  **Documentazione:** La documentazione del sistema che stai utilizzando è la risorsa più importante.  Cerca informazioni su ""attributi calcolati"", ""colonne calcolate"", ""formule"", ""espressioni"", etc.
+2.  **Interfaccia Utente:** Esplora l'interfaccia utente del sistema.  Cerca opzioni come ""Modifica attributo"", ""Definizione colonna"", ""Calcolo"", ""Formula"".
+3.  **Codice Sorgente:** Se hai accesso al codice sorgente del sistema, cerca la definizione dell'attributo e la logica associata.
+4.  **Amministratore del Sistema:** Se non riesci a trovare la definizione, chiedi aiuto all'amministratore del sistema o a un esperto.
+
+**Per fornirti una risposta più precisa, per favore specifica:**
+
+*   **Quale sistema o strumento stai utilizzando?** (es. SQL Server, Power BI, Python, Excel, un software specifico, etc.)
+*   **Dove è definito l'attributo 'Calcolato'?** (es. in una tabella di un database, in un modello dati, in una classe Python, etc.)
+
+Con queste informazioni, posso darti istruzioni più dettagliate su dove e come definire la formula.","Se un attributo è stato definito come 'Calcolato' nella tabella 'Attributi da usare nelle fasi di gara', devi andare nella sezione 'Colonne calcolate'. Lì, per definire la formula, devi prima cliccare su 'Aggiungi Calcolo', selezionare l'attributo da calcolare e poi cliccare sull'icona della lente nella colonna 'Apri' per accedere alla calcolatrice e inserire la formula matematica.",,0.0,0.0,0.0
+Qual è il requisito fondamentale per i membri di una Commissione di Gara per poter operare sulla piattaforma EmPULIA?,['Informazioni rilevanti trovate nel Knowledge Graph:'],Il requisito fondamentale per i membri di una Commissione di Gara per poter operare sulla piattaforma EmPULIA è il possesso di **credenziali SPID di livello 2**.,"Secondo la guida, è necessario che sia il 'Presidente/Soggetto Valutatore' sia tutti gli altri membri del 'Seggio di Gara' e/o delle 'Commissioni Tecnica ed Economica' siano necessariamente registrati al sistema.",0.0,0.9999999999999991,0.0,0.0
+Come posso aggiungere un membro a un Seggio di Gara se non è ancora registrato sulla piattaforma EmPULIA?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"La risposta a come aggiungere un membro a un Seggio di Gara se non è ancora registrato sulla piattaforma EmPULIA, basandosi sul Knowledge Graph, non può essere fornita direttamente.  Il Knowledge Graph fornito è vuoto.
+
+**Tuttavia, posso fornire una risposta generale basata sulla logica comune di piattaforme simili e sulle procedure standard per la gestione di gare d'appalto:**
+
+**In generale, la procedura per aggiungere un membro non registrato al Seggio di Gara su una piattaforma di e-procurement come EmPULIA, prevede i seguenti passaggi:**
+
+1.  **Registrazione del membro:**
+    *   **Invito alla registrazione:** La piattaforma dovrebbe offrire la possibilità di invitare il membro non registrato a registrarsi.  Questo potrebbe avvenire tramite l'inserimento del suo indirizzo email e l'invio di un invito automatico da parte del sistema.
+    *   **Registrazione autonoma:** In alternativa, il membro potrebbe doversi registrare autonomamente sulla piattaforma EmPULIA.  In questo caso, è necessario fornirgli le istruzioni per la registrazione e assicurarsi che selezioni il ruolo appropriato (es. ""Membro del Seggio di Gara"").
+
+2.  **Assegnazione al Seggio di Gara:**
+    *   **Una volta registrato:** Dopo che il membro si è registrato e ha attivato il suo account, l'amministratore della gara (o chi ha i permessi necessari) potrà aggiungerlo al Seggio di Gara.  Questo di solito avviene tramite un'interfaccia di gestione del Seggio di Gara, dove è possibile cercare l'utente registrato e assegnarlo al ruolo di membro.
+
+**Considerazioni importanti:**
+
+*   **Ruoli e permessi:** Assicurarsi che il membro venga registrato con il ruolo corretto e che gli vengano assegnati i permessi necessari per svolgere le sue funzioni all'interno del Seggio di Gara.
+*   **Documentazione:** Consultare la documentazione ufficiale di EmPULIA (manuali, guide, FAQ) per istruzioni specifiche sulla procedura di registrazione e assegnazione dei membri del Seggio di Gara.
+*   **Supporto tecnico:** Se si riscontrano difficoltà, contattare il supporto tecnico di EmPULIA per assistenza.
+
+**In sintesi, la procedura tipica prevede la registrazione del membro non registrato e la successiva assegnazione al Seggio di Gara da parte dell'amministratore della gara o di chi ha i permessi necessari.  La documentazione ufficiale di EmPULIA e il supporto tecnico sono le risorse migliori per ottenere istruzioni specifiche e risolvere eventuali problemi.**","Per aggiungere un membro non ancora registrato, devi cliccare sul comando 'Aggiungi' sopra la tabella 'Lista Utenti Coinvolti'. Sulla nuova riga che appare, seleziona la casella 'Registra', indica il Ruolo che vuoi attribuirgli e infine compila tutte le informazioni richieste: Codice Fiscale, Nome, Cognome, Ruolo Aziendale ed E-Mail.",0.1,0.0,0.0,0.0
+"Se uso le funzioni 'Modifica Contratto' o 'Rinnovo' per cambiare la data di scadenza, queste modifiche vengono comunicate automaticamente ad ANAC?",['Informazioni rilevanti trovate nel Knowledge Graph:'],"La risposta dipende da come e se il tuo sistema comunica con ANAC.  **Le funzioni 'Modifica Contratto' o 'Rinnovo' che cambiano la data di scadenza, di per sé, non comunicano automaticamente le modifiche ad ANAC.**
+
+È necessario verificare se il tuo sistema (software di gestione contratti, piattaforma di e-procurement, ecc.) è integrato con i sistemi di ANAC (es. BDNCP - Banca Dati Nazionale dei Contratti Pubblici) e se tale integrazione prevede l'invio automatico degli aggiornamenti contrattuali.
+
+**In sintesi, devi controllare:**
+
+*   **Se il tuo sistema è integrato con ANAC.**
+*   **Se l'integrazione prevede l'invio automatico delle modifiche contrattuali (inclusa la data di scadenza).**
+
+Se non c'è integrazione o l'integrazione non prevede l'invio automatico, dovrai provvedere manualmente a comunicare le modifiche ad ANAC secondo le modalità previste dalla normativa vigente (es. tramite il portale ANAC).
+
+**In mancanza di informazioni specifiche sul tuo sistema, è impossibile dare una risposta definitiva.**  Ti consiglio di consultare la documentazione del tuo software o di contattare il fornitore per chiarire come vengono gestite le comunicazioni ad ANAC in caso di modifiche contrattuali.","No, le modifiche non vengono comunicate automaticamente. Le funzionalità di 'Modifica Contratto' e 'Funzioni' (come Rinnovo ed Estensione) non prevedono l'invio di schede con i dati modificati alla Piattaforma Contratti Pubblici (PCP) di ANAC. È quindi responsabilità dell'utente operare anche tramite il modulo 'Esecuzione' per adempiere a tali obblighi informativi.",0.0,0.0,0.0,0.0
+Ho più aggiudicazioni per lotti diversi vinti dallo stesso operatore. Come posso creare un unico contratto per tutte?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"Per creare un unico contratto per più aggiudicazioni di lotti diversi vinti dallo stesso operatore, devi seguire una procedura che tenga conto della normativa vigente e delle specificità della tua amministrazione. Ecco i passaggi e le considerazioni principali:
+
+**1. Verifica della Fattibilità e della Convenienza:**
+
+*   **Normativa:** Controlla se la normativa di riferimento (Codice degli Appalti, Linee Guida ANAC, etc.) consente l'unificazione dei contratti in casi come il tuo. In particolare, verifica se ci sono limiti o condizioni specifiche per l'aggregazione di lotti diversi.
+*   **Convenienza:** Valuta se l'unificazione è effettivamente vantaggiosa in termini di semplificazione amministrativa, riduzione dei costi di gestione e controllo, e miglioramento dell'efficienza complessiva. Considera anche l'impatto sulla gestione delle garanzie e delle responsabilità.
+*   **Omogeneità:** Analizza se i lotti aggiudicati sono sufficientemente omogenei per essere gestiti in un unico contratto. Se i lotti riguardano prestazioni molto diverse tra loro, l'unificazione potrebbe complicare la gestione e il controllo.
+
+**2. Base Giuridica e Motivazione:**
+
+*   **Delibera/Determinazione:** Formalizza la decisione di procedere con l'unificazione attraverso una delibera o determinazione motivata. In questo documento, spiega le ragioni che giustificano l'unificazione, i vantaggi previsti e la conformità alla normativa.
+*   **Riferimenti Normativi:** Indica chiaramente i riferimenti normativi che consentono l'unificazione dei contratti.
+
+**3. Negoziazione con l'Operatore Economico:**
+
+*   **Accordo:** Avvia una negoziazione con l'operatore economico aggiudicatario per definire i termini e le condizioni del contratto unificato. È fondamentale ottenere il suo consenso all'unificazione.
+*   **Condizioni Contrattuali:** Definisci chiaramente le condizioni contrattuali applicabili al contratto unificato, tenendo conto delle specificità di ciascun lotto. In particolare, presta attenzione a:
+    *   **Oggetto del contratto:** Descrivi in modo preciso e completo l'oggetto del contratto unificato, specificando le prestazioni relative a ciascun lotto.
+    *   **Importo:** Definisci l'importo complessivo del contratto unificato, che dovrà corrispondere alla somma degli importi dei singoli lotti.
+    *   **Termini di esecuzione:** Stabilisci i termini di esecuzione per ciascun lotto, tenendo conto delle scadenze previste nelle singole aggiudicazioni.
+    *   **Garanzie:** Definisci le garanzie da prestare per il contratto unificato, tenendo conto delle garanzie già prestate per i singoli lotti.
+    *   **Penali:** Stabilisci le penali applicabili in caso di inadempimento, differenziandole eventualmente per ciascun lotto.
+    *   **Modalità di pagamento:** Definisci le modalità di pagamento, tenendo conto delle specificità di ciascun lotto.
+    *   **Responsabilità:** Definisci le responsabilità dell'operatore economico per ciascun lotto.
+
+**4. Redazione del Contratto Unificato:**
+
+*   **Struttura:** Redigi un contratto unificato che comprenda tutte le prestazioni relative ai lotti aggiudicati.
+*   **Chiarezza:** Assicurati che il contratto sia chiaro, preciso e completo, in modo da evitare ambiguità e controversie.
+*   **Riferimenti:** Inserisci nel contratto unificato i riferimenti alle singole aggiudicazioni dei lotti.
+*   **Allegati:** Allega al contratto unificato tutti i documenti rilevanti, come i capitolati speciali d'appalto dei singoli lotti, le offerte dell'operatore economico e le delibere di aggiudicazione.
+
+**5. Stipula e Gestione del Contratto:**
+
+*   **Stipula:** Stipula il contratto unificato con l'operatore economico.
+*   **Registrazione:** Registra il contratto unificato presso gli organi competenti.
+*   **Gestione:** Gestisci il contratto unificato in modo efficiente ed efficace, monitorando l'esecuzione delle prestazioni relative a ciascun lotto e verificando il rispetto dei termini e delle condizioni contrattuali.
+
+**Considerazioni aggiuntive:**
+
+*   **Parere legale:** Considera di richiedere un parere legale per assicurarti che la procedura di unificazione sia conforme alla normativa vigente.
+*   **Trasparenza:** Assicurati che la procedura di unificazione sia trasparente e che tutte le informazioni rilevanti siano pubblicate sul sito web dell'amministrazione.
+*   **Documentazione:** Conserva tutta la documentazione relativa alla procedura di unificazione, compresa la delibera/determinazione, l'accordo con l'operatore economico, il contratto unificato e i documenti allegati.
+
+Seguendo questi passaggi, potrai creare un unico contratto per più aggiudicazioni di lotti diversi vinti dallo stesso operatore, semplificando la gestione e il controllo delle prestazioni e riducendo i costi amministrativi. Ricorda sempre di consultare la normativa vigente e di richiedere un parere legale per assicurarti di operare nel rispetto delle leggi e dei regolamenti.","Sì, è possibile creare un unico contratto. Per farlo, devi andare nella sezione 'Aggiudicazioni in attesa di contratto', selezionare tramite le check box tutte le aggiudicazioni relative ai diversi lotti vinti dallo stesso operatore e poi cliccare sul comando 'Contratto' nella toolbar. È fondamentale notare che questo è possibile solo se per questi lotti è stata creata un'unica comunicazione di aggiudicazione definitiva.",0.0,0.9326549708261419,0.0,0.0
+Quali sono le principali regole generali che distinguono i concorsi di idee dalle gare tradizionali su EmPULIA?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"Purtroppo, non posso rispondere alla tua domanda. Non ho accesso a un Knowledge Graph specifico che contenga informazioni sulle regole che distinguono i concorsi di idee dalle gare tradizionali su EmPULIA.
+
+Per ottenere una risposta precisa, dovresti consultare direttamente:
+
+*   **Il sito web ufficiale di EmPULIA:** Cerca sezioni dedicate ai bandi, ai regolamenti e alle FAQ.
+*   **I bandi specifici:** Ogni bando dovrebbe indicare chiaramente se si tratta di un concorso di idee o di una gara tradizionale, e specificare le regole applicabili.
+*   **La normativa regionale pugliese:** Potrebbe esserci una legislazione specifica che disciplina i concorsi di idee e le gare pubbliche nella regione Puglia.
+*   **Uffici competenti di EmPULIA:** Contatta direttamente gli uffici di EmPULIA per chiarimenti.
+
+In generale, posso dirti che le differenze principali tra concorsi di idee e gare tradizionali spesso riguardano:
+
+*   **Obiettivo:** I concorsi di idee mirano a raccogliere proposte innovative e creative, mentre le gare tradizionali mirano a selezionare un fornitore per un servizio o un lavoro specifico.
+*   **Livello di dettaglio richiesto:** I concorsi di idee richiedono solitamente un livello di dettaglio inferiore rispetto alle gare tradizionali.
+*   **Criteri di valutazione:** I concorsi di idee valutano spesso l'originalità, la fattibilità e l'innovazione delle proposte, mentre le gare tradizionali valutano principalmente il prezzo, la qualità e l'esperienza del fornitore.
+*   **Premi:** I concorsi di idee offrono spesso premi in denaro o riconoscimenti, mentre le gare tradizionali portano all'aggiudicazione di un contratto.
+
+Tuttavia, queste sono solo generalizzazioni. Le regole specifiche variano a seconda del bando.","I concorsi di idee e progettazione seguono regole specifiche diverse dalle altre gare. Le principali sono: possono essere configurati solo come 'lotto singolo'; garantiscono l' 'anonimato delle idee e dei progetti' fino all'apertura delle buste amministrative; non prevedono mai un' 'offerta economica' (il punteggio tecnico è sempre 100 punti); e la 'verifica della documentazione amministrativa' avviene 'ex-post', cioè solo dopo aver completato la valutazione tecnica e definito una graduatoria.",0.0,0.0,0.0,0.0
+Ho pubblicato un concorso di idee. Posso vedere chi è l'Operatore Economico che ha inviato un quesito prima che la gara scada?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"No, di norma non puoi vedere chi è l'Operatore Economico che ha inviato un quesito prima della scadenza del termine per la presentazione delle offerte.
+
+**Motivazioni:**
+
+* **Parità di trattamento e trasparenza:** La normativa sugli appalti pubblici impone la parità di trattamento tra tutti gli Operatori Economici e la massima trasparenza. Rivelare l'identità di chi pone un quesito prima della scadenza della gara violerebbe questi principi. Gli altri partecipanti potrebbero essere influenzati o avvantaggiati dalla conoscenza di chi ha posto la domanda.
+* **Anonimato dei quesiti:** I quesiti vengono solitamente pubblicati in forma anonima, con la sola domanda e la relativa risposta. Questo garantisce che tutti gli Operatori Economici abbiano accesso alle stesse informazioni e che nessuno sia avvantaggiato dalla conoscenza dell'identità di chi ha posto la domanda.
+* **Possibile turbativa d'asta:** La conoscenza dell'identità di chi pone i quesiti potrebbe portare a comportamenti collusivi o a tentativi di influenzare l'esito della gara, configurando una turbativa d'asta.
+
+**Eccezioni:**
+
+* **Consenso esplicito:** In casi eccezionali, e solo con il consenso esplicito dell'Operatore Economico che ha posto il quesito, potrebbe essere rivelata la sua identità. Tuttavia, questa pratica è fortemente sconsigliata e deve essere attentamente valutata per evitare possibili contestazioni.
+
+**In conclusione:**
+
+La regola generale è che l'identità dell'Operatore Economico che pone un quesito in un concorso di idee (o in una gara d'appalto) rimane anonima fino alla scadenza del termine per la presentazione delle offerte. Questo garantisce la parità di trattamento, la trasparenza e previene possibili turbative d'asta.","No, non è possibile. Per garantire l'anonimato dei partecipanti, la piattaforma oscura alla Stazione Appaltante i nominativi e i riferimenti sia dei mittenti che dei destinatari nelle sezioni relative ai quesiti e alle comunicazioni. Potrai quindi gestire la risposta al quesito, ma senza vedere chi lo ha inviato.",0.0,0.9144596485773652,0.0,0.0
+Ci sono specifici soggetti autorizzati a compilare e trasmettere le schede PCP nel modulo Esecuzione Contratti?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"La risposta alla tua domanda non può essere fornita direttamente basandosi unicamente sul contesto ""Informazioni rilevanti trovate nel Knowledge Graph"". Per rispondere con precisione, è necessario accedere e analizzare il contenuto specifico del Knowledge Graph.
+
+Tuttavia, posso fornire una risposta generale basata sulla prassi comune e sulla logica:
+
+**In generale, i soggetti autorizzati a compilare e trasmettere le schede PCP (Piano di Controllo di Produzione) nel modulo Esecuzione Contratti sono:**
+
+*   **Personale dell'azienda fornitrice/appaltatrice:** Solitamente, il personale responsabile della qualità, della produzione o dell'esecuzione del contratto è incaricato di compilare e trasmettere le schede PCP. Questo include responsabili di produzione, responsabili qualità, tecnici di laboratorio, ecc.
+*   **Responsabili del contratto (lato fornitore/appaltatore):** In alcuni casi, il responsabile del contratto è direttamente coinvolto nella compilazione o supervisione delle schede PCP, assicurandosi che siano conformi ai requisiti contrattuali.
+*   **Personale autorizzato dal committente (in alcuni casi):** In situazioni specifiche, il committente può autorizzare proprio personale a compilare o contribuire alla compilazione delle schede PCP, soprattutto se è coinvolto attivamente nel processo di controllo qualità.
+
+**È fondamentale che il Knowledge Graph specifichi:**
+
+*   **Chi è formalmente designato a compilare e trasmettere le schede PCP.**
+*   **Quali sono le responsabilità specifiche di ciascun soggetto coinvolto.**
+*   **Quali sono le procedure di autorizzazione e validazione delle schede PCP.**
+
+**Per ottenere una risposta precisa, è necessario consultare direttamente il Knowledge Graph e cercare informazioni specifiche su:**
+
+*   **Ruoli e responsabilità definiti nel modulo Esecuzione Contratti.**
+*   **Procedure operative standard (POS) relative alla compilazione e trasmissione delle schede PCP.**
+*   **Eventuali autorizzazioni specifiche richieste per l'accesso e la modifica dei dati nel modulo.**
+
+In sintesi, senza l'accesso al Knowledge Graph, posso solo fornire una risposta generica. La risposta definitiva si trova all'interno del Knowledge Graph stesso.","Sì, ci sono due soggetti specifici autorizzati. Il modulo Esecuzione e le relative schede PCP possono essere gestiti solo dal RUP Appaltante (l'utente indicato come RUP/Delegato nella fase di affidamento) o dal DEC (Direttore dell'Esecuzione del Contratto). La guida precisa inoltre che quando opera il DEC, le schede vengono comunque trasmesse ad ANAC a nome del RUP dell'esecuzione.",0.2222222222222222,0.0,0.0,0.0
+"Descrivi il flusso completo per gestire un subappalto per un contratto in esecuzione, dalla richiesta iniziale alla sua conclusione.",['Informazioni rilevanti trovate nel Knowledge Graph:'],"Ok, ecco una descrizione completa del flusso per gestire un subappalto per un contratto in esecuzione, basata su una comprensione generale del processo e tenendo conto che non ho accesso a informazioni specifiche dal Knowledge Graph.  Questo flusso è strutturato in fasi, dalla necessità iniziale alla chiusura del subappalto.
+
+**Fase 1: Identificazione della Necessità di Subappalto**
+
+1.  **Valutazione del Contratto Principale:**  L'appaltatore principale (noi) deve valutare attentamente il contratto principale per identificare le aree in cui le competenze interne sono insufficienti, la capacità è limitata, o il subappalto è più efficiente o conveniente.  Questo include:
+    *   Analisi dei requisiti tecnici e delle specifiche.
+    *   Valutazione delle risorse interne disponibili (personale, attrezzature, competenze).
+    *   Identificazione di potenziali rischi e opportunità legate al subappalto.
+    *   Verifica delle clausole contrattuali relative al subappalto (approvazioni richieste, restrizioni, ecc.).
+
+2.  **Definizione dell'Ambito del Subappalto:**  Una volta identificata la necessità, è fondamentale definire chiaramente l'ambito del lavoro da subappaltare.  Questo include:
+    *   Descrizione dettagliata dei compiti, delle responsabilità e dei risultati attesi.
+    *   Definizione delle specifiche tecniche, degli standard di qualità e dei requisiti di sicurezza.
+    *   Identificazione delle interfacce tra il lavoro dell'appaltatore principale e quello del subappaltatore.
+    *   Definizione delle tempistiche e delle scadenze.
+
+3.  **Approvazione Interna:**  Ottenere l'approvazione interna per il subappalto, seguendo le procedure aziendali.  Questo potrebbe richiedere la presentazione di una proposta che giustifichi la necessità del subappalto, il budget previsto, e i potenziali benefici.
+
+**Fase 2: Selezione del Subappaltatore**
+
+1.  **Identificazione di Potenziali Subappaltatori:**  Ricercare e identificare potenziali subappaltatori che abbiano le competenze, l'esperienza e le risorse necessarie per svolgere il lavoro.  Questo può includere:
+    *   Ricerca di mercato e analisi dei fornitori.
+    *   Richiesta di informazioni (RFI) a potenziali subappaltatori.
+    *   Consultazione di database di fornitori approvati.
+    *   Raccomandazioni da parte di altri appaltatori o clienti.
+
+2.  **Richiesta di Offerta (RFQ) / Richiesta di Proposta (RFP):**  Preparare e inviare una RFQ o RFP a un gruppo selezionato di potenziali subappaltatori.  La RFQ/RFP dovrebbe includere:
+    *   Una descrizione dettagliata dell'ambito del lavoro.
+    *   Le specifiche tecniche e i requisiti di qualità.
+    *   Le tempistiche e le scadenze.
+    *   I criteri di valutazione delle offerte.
+    *   Le condizioni contrattuali preliminari.
+
+3.  **Valutazione delle Offerte:**  Valutare attentamente le offerte ricevute in base ai criteri predefiniti.  Questo può includere:
+    *   Valutazione tecnica:  Verificare che il subappaltatore abbia le competenze e l'esperienza necessarie.
+    *   Valutazione finanziaria:  Analizzare i prezzi, i costi e le condizioni di pagamento.
+    *   Valutazione della conformità:  Verificare che il subappaltatore soddisfi i requisiti legali, normativi e di sicurezza.
+    *   Verifica delle referenze:  Contattare i clienti precedenti del subappaltatore per valutare la sua performance.
+
+4.  **Due Diligence:**  Eseguire una due diligence sul subappaltatore prescelto per verificare la sua solidità finanziaria, la sua reputazione e la sua conformità alle normative.
+
+5.  **Negoziazione del Contratto di Subappalto:**  Negoziare i termini e le condizioni del contratto di subappalto con il subappaltatore prescelto.  Questo include:
+    *   Definizione chiara dell'ambito del lavoro, delle responsabilità e dei risultati attesi.
+    *   Definizione dei prezzi, dei costi e delle condizioni di pagamento.
+    *   Definizione delle tempistiche e delle scadenze.
+    *   Definizione delle procedure di gestione delle modifiche, delle controversie e delle risoluzioni.
+    *   Definizione delle clausole di garanzia, di responsabilità e di assicurazione.
+    *   Integrazione delle clausole del contratto principale che si applicano al subappaltatore.
+
+**Fase 3: Esecuzione del Subappalto**
+
+1.  **Firma del Contratto di Subappalto:**  Una volta che i termini e le condizioni sono stati concordati, firmare il contratto di subappalto.
+
+2.  **Riunione di Avvio (Kick-off Meeting):**  Organizzare una riunione di avvio con il subappaltatore per:
+    *   Rivedere l'ambito del lavoro, le responsabilità e i risultati attesi.
+    *   Definire le procedure di comunicazione e di reporting.
+    *   Stabilire i canali di escalation per la risoluzione dei problemi.
+    *   Presentare il team di progetto e i contatti chiave.
+
+3.  **Monitoraggio e Controllo:**  Monitorare e controllare regolarmente la performance del subappaltatore per garantire che stia rispettando i termini e le condizioni del contratto.  Questo include:
+    *   Monitoraggio dei progressi rispetto alle tempistiche e alle scadenze.
+    *   Controllo della qualità del lavoro svolto.
+    *   Gestione delle modifiche e delle variazioni.
+    *   Risoluzione dei problemi e delle controversie.
+    *   Comunicazione regolare con il subappaltatore.
+    *   Verifica della conformità alle normative di sicurezza e ambientali.
+
+4.  **Gestione dei Pagamenti:**  Elaborare i pagamenti al subappaltatore in base ai termini e alle condizioni del contratto.  Questo include:
+    *   Verifica delle fatture e della documentazione di supporto.
+    *   Approvazione dei pagamenti.
+    *   Gestione delle ritenute e delle detrazioni.
+
+**Fase 4: Chiusura del Subappalto**
+
+1.  **Completamento del Lavoro:**  Verificare che il subappaltatore abbia completato tutto il lavoro previsto nell'ambito del contratto.
+
+2.  **Accettazione del Lavoro:**  Accettare formalmente il lavoro svolto dal subappaltatore.  Questo può includere:
+    *   Ispezione del lavoro.
+    *   Test e collaudo.
+    *   Approvazione della documentazione finale.
+
+3.  **Pagamento Finale:**  Effettuare il pagamento finale al subappaltatore, una volta che il lavoro è stato accettato e tutte le fatture sono state approvate.
+
+4.  **Valutazione della Performance del Subappaltatore:**  Valutare la performance del subappaltatore per future collaborazioni.  Questo può includere:
+    *   Raccolta di feedback da parte del team di progetto.
+    *   Valutazione della qualità del lavoro, del rispetto delle tempistiche e della gestione dei costi.
+    *   Documentazione delle lezioni apprese.
+
+5.  **Chiusura Formale del Contratto:**  Chiudere formalmente il contratto di subappalto, rilasciando il subappaltatore da tutte le obbligazioni residue.  Questo può includere:
+    *   Emissione di una lettera di chiusura.
+    *   Restituzione di eventuali garanzie o cauzioni.
+    *   Archiviazione della documentazione del contratto.
+
+**Considerazioni Aggiuntive:**
+
+*   **Comunicazione:**  La comunicazione efficace è fondamentale in ogni fase del processo di subappalto.
+*   **Documentazione:**  Mantenere una documentazione accurata di tutte le fasi del processo di subappalto.
+*   **Conformità:**  Garantire la conformità a tutte le leggi, i regolamenti e le normative applicabili.
+*   **Gestione del Rischio:**  Identificare e gestire i rischi associati al subappalto.
+
+Questo flusso fornisce una panoramica completa del processo di gestione del subappalto.  Le procedure specifiche possono variare a seconda della natura del contratto principale, delle politiche aziendali e delle normative locali.  È importante adattare questo flusso alle proprie esigenze specifiche.","Il flusso completo per gestire un subappalto si articola in tre schede principali. 1. Richiesta (Scheda RSU1): Per avviare il processo, devi andare nella toolbar del contratto in esecuzione, cliccare su 'Funzioni' e selezionare 'Subappalto'. Questo ti permetterà di compilare e inviare la scheda RSU1 con la richiesta. 2. Esito (Scheda ES1): Dopo che la RSU1 è confermata, devi tornare su 'Funzioni' e selezionare 'Esito richiesta subappalto' per creare la scheda ES1 e dare l'esito. 3. Conclusione (Scheda CS1): Infine, una volta confermata la ES1, accedi di nuovo a 'Funzioni' e seleziona 'Conclusione subappalto' per compilare la scheda CS1 che chiude il processo.",0.0,0.832350072483885,0.0,0.0
+In che modo è possibile compilare l'elenco dei prodotti in un questionario fabbisogni?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"Per compilare l'elenco dei prodotti in un questionario fabbisogni, puoi seguire questi passaggi, tenendo presente che la strategia migliore dipenderà dal contesto specifico del questionario e dei tuoi obiettivi:
+
+**1. Definire lo scopo del questionario:**
+
+*   **Qual è l'obiettivo principale del questionario?** Stai cercando di identificare i prodotti che i clienti desiderano, valutare la domanda per nuovi prodotti, o migliorare i prodotti esistenti?
+*   **A chi è rivolto il questionario?** (Es. clienti esistenti, potenziali clienti, esperti del settore)
+*   **Quali informazioni specifiche stai cercando di ottenere?**
+
+**2. Identificare le categorie di prodotti rilevanti:**
+
+*   **Basati sulla tua offerta attuale:** Se hai già una linea di prodotti, inizia da lì.  Assicurati che le categorie siano chiare e ben definite.
+*   **Considera i prodotti complementari:** Pensa a prodotti che potrebbero essere utilizzati insieme ai tuoi prodotti esistenti.
+*   **Analizza la concorrenza:** Guarda cosa offrono i tuoi concorrenti. Questo può aiutarti a identificare lacune nel mercato o opportunità per nuovi prodotti.
+*   **Ricerca di mercato:** Utilizza ricerche di mercato, analisi di tendenza e feedback dei clienti per identificare le categorie di prodotti più promettenti.
+
+**3. Scegliere il formato dell'elenco dei prodotti:**
+
+*   **Elenco a discesa:** Utile per elenchi predefiniti e limitati di prodotti. Facile da usare per i partecipanti.
+*   **Caselle di controllo:** Permettono ai partecipanti di selezionare più prodotti da un elenco.
+*   **Campo di testo libero:** Utile per consentire ai partecipanti di inserire prodotti che non sono inclusi nell'elenco predefinito.  Richiede più lavoro di analisi.
+*   **Matrice di valutazione:** Utile per valutare diversi prodotti in base a diversi criteri (es. prezzo, funzionalità, qualità).
+*   **Domande aperte:** Utile per raccogliere feedback più dettagliato sui prodotti desiderati.
+
+**4. Strutturare l'elenco dei prodotti:**
+
+*   **Organizza i prodotti per categoria:** Raggruppa i prodotti simili per rendere l'elenco più facile da navigare.
+*   **Utilizza un linguaggio chiaro e conciso:** Evita termini tecnici o ambigui.
+*   **Fornisci descrizioni brevi:** Aggiungi una breve descrizione per ogni prodotto per chiarire cosa include.
+*   **Considera l'ordine dei prodotti:** Metti i prodotti più popolari o rilevanti all'inizio dell'elenco.
+
+**5. Considerare l'inclusione di opzioni ""Altro"" e ""Nessuno dei precedenti"":**
+
+*   **""Altro"":** Permette ai partecipanti di specificare prodotti che non sono inclusi nell'elenco predefinito.
+*   **""Nessuno dei precedenti"":** Permette ai partecipanti di indicare che non sono interessati a nessuno dei prodotti elencati.
+
+**6. Testare il questionario:**
+
+*   **Esegui un test pilota:** Chiedi a un piccolo gruppo di persone di compilare il questionario e fornisci feedback.
+*   **Analizza i risultati:** Identifica eventuali problemi con l'elenco dei prodotti o con il questionario in generale.
+*   **Apporta modifiche:** Apporta le modifiche necessarie in base al feedback ricevuto.
+
+**Esempi specifici:**
+
+*   **Questionario per un negozio di abbigliamento:** L'elenco dei prodotti potrebbe includere categorie come ""Magliette"", ""Pantaloni"", ""Giacche"", ""Scarpe"", ""Accessori"", con sottocategorie per ogni categoria (es. ""Magliette a maniche corte"", ""Magliette a maniche lunghe"").
+*   **Questionario per un'azienda di software:** L'elenco dei prodotti potrebbe includere categorie come ""Software di gestione progetti"", ""Software di contabilità"", ""Software CRM"", ""Software di marketing"", con opzioni per specificare le funzionalità desiderate.
+*   **Questionario per un'azienda alimentare:** L'elenco dei prodotti potrebbe includere categorie come ""Snack"", ""Bevande"", ""Pasti pronti"", ""Ingredienti"", con opzioni per specificare le preferenze alimentari (es. ""Senza glutine"", ""Vegano"", ""Biologico"").
+
+**In sintesi, la compilazione dell'elenco dei prodotti in un questionario fabbisogni richiede un'attenta pianificazione e considerazione del contesto specifico. Definire lo scopo del questionario, identificare le categorie di prodotti rilevanti, scegliere il formato appropriato e testare il questionario sono passaggi fondamentali per garantire che l'elenco dei prodotti sia efficace e fornisca informazioni preziose.**","È possibile compilare l'elenco dei prodotti in due modi. La prima modalità è direttamente a video, compilando i campi per ogni prodotto e usando il comando 'Verifica Informazioni'. In alternativa, è possibile scaricare un modello Excel (.xlsx) tramite l'icona 'Template prodotti da compilare', compilarlo offline e poi ricaricarlo sulla piattaforma tramite l'icona 'Carica file prodotti'.",0.0,0.940584579252261,0.0,0.0
+Come può un referente fabbisogni delegare la compilazione dei questionari ad altri utenti e monitorarne il progresso?,['Informazioni rilevanti trovate nel Knowledge Graph:'],"Per permettere a un referente fabbisogni di delegare la compilazione dei questionari ad altri utenti e monitorarne il progresso, la soluzione ideale dipende dalla piattaforma o dal software specifico che si sta utilizzando per gestire i questionari. Tuttavia, ecco un approccio generale e le funzionalità chiave che dovrebbero essere presenti:
+
+**Funzionalità Chiave Necessarie:**
+
+*   **Gestione Utenti e Ruoli:** La piattaforma deve permettere la creazione di utenti con ruoli specifici. Il ruolo di ""Referente Fabbisogni"" deve avere privilegi sufficienti per delegare e monitorare, mentre gli utenti delegati avranno permessi limitati alla compilazione dei questionari assegnati.
+*   **Assegnazione di Questionari:** Il referente fabbisogni deve poter assegnare specifici questionari a utenti specifici. Questo può avvenire individualmente o in blocco.
+*   **Notifiche:** Il sistema dovrebbe inviare notifiche automatiche agli utenti delegati quando viene loro assegnato un questionario. Dovrebbero esserci anche notifiche di promemoria per i questionari non completati entro una certa data.
+*   **Monitoraggio del Progresso:** Il referente fabbisogni deve avere una dashboard o un'interfaccia che mostri lo stato di avanzamento di ogni questionario assegnato. Questo dovrebbe includere:
+    *   **Stato:** (Es. ""Non iniziato"", ""In corso"", ""Completato"", ""In revisione"")
+    *   **Data di scadenza:**
+    *   **Percentuale di completamento:**
+    *   **Utente assegnato:**
+    *   **Data di ultima modifica:**
+*   **Reportistica:** La piattaforma dovrebbe generare report che riassumano lo stato di avanzamento di tutti i questionari, permettendo al referente fabbisogni di identificare colli di bottiglia e aree che richiedono attenzione.
+*   **Autorizzazioni Granulari:**  È importante che le autorizzazioni siano granulari. Ad esempio, il referente potrebbe voler consentire a un utente delegato di visualizzare solo i questionari a lui assegnati, senza accesso ad altri dati sensibili.
+*   **Audit Trail:** Un registro di audit che traccia chi ha fatto cosa (assegnazione, modifica, completamento) è utile per la trasparenza e la responsabilità.
+
+**Flusso di Lavoro Tipico:**
+
+1.  **Configurazione Utenti e Ruoli:** L'amministratore del sistema configura gli utenti e assegna loro i ruoli appropriati (Referente Fabbisogni, Utente Delegato, ecc.).
+2.  **Creazione e Configurazione Questionari:** Il referente fabbisogni crea o importa i questionari nella piattaforma.
+3.  **Assegnazione Questionari:** Il referente fabbisogni seleziona uno o più questionari e li assegna agli utenti delegati appropriati. Definisce anche la data di scadenza per il completamento.
+4.  **Notifiche:** Il sistema invia automaticamente notifiche agli utenti delegati informandoli dell'assegnazione.
+5.  **Compilazione Questionari:** Gli utenti delegati accedono alla piattaforma e compilano i questionari assegnati.
+6.  **Monitoraggio del Progresso:** Il referente fabbisogni monitora il progresso di ogni questionario tramite la dashboard o i report. Può inviare promemoria agli utenti delegati se necessario.
+7.  **Completamento e Analisi:** Una volta completati tutti i questionari, il referente fabbisogni può analizzare i dati raccolti e generare report finali.
+
+**Esempi di Implementazione (a seconda della piattaforma):**
+
+*   **Google Forms (con add-on):** Google Forms di base non ha funzionalità di delega e monitoraggio avanzate. Tuttavia, esistono add-on di terze parti che possono aggiungere queste funzionalità, come l'assegnazione di sezioni specifiche a utenti diversi e il monitoraggio del completamento.
+*   **Microsoft Forms (con Power Automate):** Simile a Google Forms, Microsoft Forms può essere esteso con Power Automate per automatizzare l'assegnazione di questionari e il monitoraggio del progresso.
+*   **Piattaforme di Sondaggi Professionali (SurveyMonkey, Qualtrics, ecc.):** Queste piattaforme offrono funzionalità integrate per la gestione degli utenti, l'assegnazione di questionari, il monitoraggio del progresso e la reportistica.
+*   **Sistemi di Gestione dei Fabbisogni (se presenti):** Se l'organizzazione utilizza un sistema specifico per la gestione dei fabbisogni, è probabile che questo sistema includa funzionalità per la gestione dei questionari e la delega.
+
+**In sintesi, per delegare la compilazione dei questionari e monitorarne il progresso, il referente fabbisogni ha bisogno di una piattaforma che offra gestione utenti e ruoli, assegnazione di questionari, notifiche, monitoraggio del progresso e reportistica. La scelta della piattaforma dipenderà dalle esigenze specifiche dell'organizzazione e dal budget disponibile.**","Un referente fabbisogni può delegare la compilazione tramite sub-questionari. All'interno del 'Questionario Fabbisogni', deve accedere alla scheda 'Sub-Questionari'. Lì, deve prima aggiungere gli utenti a cui delegare il compito usando il comando 'Aggiungi'. Una volta definiti gli utenti, per inviare la richiesta deve cliccare sul pulsante 'Invia Sub-Questionari' nella toolbar. Successivamente, dalla stessa scheda, potrà monitorare lo stato di ogni sub-questionario (es. In Lavorazione, Completato, Annullato).",0.0,0.8955564668835935,0.0,0.0
