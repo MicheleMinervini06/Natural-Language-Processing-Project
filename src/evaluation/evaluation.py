@@ -27,8 +27,6 @@ if src_path not in sys.path:
     sys.path.append(src_path)
 
 from answer_generator import run_qa_pipeline 
-from knowledge_retriever import NEO4J_URI, NEO4J_USER, NEO4J_DATABASE, NEO4J_PASSWORD
-from knowledge_retriever import KnowledgeRetriever # Importa la classe
 
 # --- Helper Functions ---
 def load_dataset(filepath: str) -> list:
@@ -40,13 +38,50 @@ def load_dataset(filepath: str) -> list:
         print(f"Errore nel caricamento del dataset da '{filepath}': {e}")
         return []
 
-def generate_evaluation_data_from_pipeline(golden_dataset: list, retriever: KnowledgeRetriever) -> list:
+def get_user_choice():
+    """Chiede all'utente quale tipo di dati utilizzare per la valutazione."""
+    print("\n=== SELEZIONE TIPO DATI PER VALUTAZIONE ===")
+    print("1. Dati Aggregati/Clusterizzati (knowledge_retriever)")
+    print("2. Dati Grezzi (knowledge_retriever_rawData)")
+    
+    while True:
+        choice = input("Inserisci 1 o 2: ").strip()
+        if choice in ["1", "2"]:
+            return choice
+        print("Scelta non valida. Inserisci 1 o 2.")
+
+def import_retriever_class(use_raw_data: bool):
+    """Importa dinamicamente la classe KnowledgeRetriever appropriata."""
+    if use_raw_data:
+        print("Importazione knowledge_retriever_rawData...")
+        try:
+            from knowledge_retriever_rawData import KnowledgeRetriever, NEO4J_URI, NEO4J_USER, NEO4J_DATABASE, NEO4J_PASSWORD
+            return KnowledgeRetriever, NEO4J_URI, NEO4J_USER, NEO4J_DATABASE, NEO4J_PASSWORD
+        except ImportError as e:
+            print(f"Errore nell'importazione di knowledge_retriever_rawData: {e}")
+            print("Assicurati che il file knowledge_retriever_rawData.py esista nella cartella src/")
+            return None, None, None, None, None
+    else:
+        print("Importazione knowledge_retriever...")
+        try:
+            from knowledge_retriever import KnowledgeRetriever, NEO4J_URI, NEO4J_USER, NEO4J_DATABASE, NEO4J_PASSWORD
+            return KnowledgeRetriever, NEO4J_URI, NEO4J_USER, NEO4J_DATABASE, NEO4J_PASSWORD
+        except ImportError as e:
+            print(f"Errore nell'importazione di knowledge_retriever: {e}")
+            return None, None, None, None, None
+
+def generate_evaluation_data_from_pipeline(golden_dataset: list, use_raw_data: bool) -> list:
     """
     Esegue la pipeline di Q&A su ogni domanda del golden dataset per generare i risultati da valutare.
+    
+    Args:
+        golden_dataset: Dataset delle domande di riferimento
+        use_raw_data: True per dati raw, False per dati aggregati
     """
     results = []
     total_questions = len(golden_dataset)
-    print(f"Generazione dei risultati per le {total_questions} domande nel golden set...")
+    data_type_str = "dati grezzi" if use_raw_data else "dati aggregati"
+    print(f"Generazione dei risultati per le {total_questions} domande nel golden set usando {data_type_str}...")
     
     for i, item in enumerate(golden_dataset):
         question = item.get("question")
@@ -56,8 +91,8 @@ def generate_evaluation_data_from_pipeline(golden_dataset: list, retriever: Know
             
         print(f"  Processando domanda {i+1}/{total_questions}: '{question[:60]}...'")
         
-        # Esecuzione della pipeline completa passando l'istanza del retriever
-        pipeline_output = run_qa_pipeline(question)
+        # Esecuzione della pipeline completa con il tipo di dati specificato
+        pipeline_output = run_qa_pipeline(question, use_raw_data=use_raw_data)
         
         result_item = {
             "question": question,
@@ -71,10 +106,14 @@ def generate_evaluation_data_from_pipeline(golden_dataset: list, retriever: Know
     return results
 
 def main_evaluation():
+    # --- User Choice ---
+    choice = get_user_choice()
+    use_raw_data = (choice == "2")
+    
     # --- Setup ---
     GOLDEN_DATASET_PATH = "data/golden_dataset.json"
-    ALL_CHUNKS_PATH = "data/processed/processed_chunks_toc_enhanced.json"
-    EVALUATION_RUN_NAME = f"evaluation_run_gemini_{time.strftime('%Y%m%d_%H%M%S')}"
+    data_type = "rawData" if use_raw_data else "aggregated"
+    EVALUATION_RUN_NAME = f"evaluation_run_{data_type}_gemini_{time.strftime('%Y%m%d_%H%M%S')}"
 
     # --- RAGAs Gemini Model Configuration ---
     print("Configurazione dei modelli Gemini per la valutazione RAGAs...")
@@ -85,7 +124,7 @@ def main_evaluation():
 
     # Configure models with API key explicitly
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-pro",  # Changed to available model
+        model="gemini-2.5-pro",
         temperature=0.0,
         google_api_key=gemini_api_key
     )
@@ -93,28 +132,17 @@ def main_evaluation():
         model="models/embedding-001",
         google_api_key=gemini_api_key
     )
-    
-    # --- Inizializzazione Retriever ---
-    print("Inizializzazione del Knowledge Retriever...")
-    retriever = KnowledgeRetriever(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD, NEO4J_DATABASE, ALL_CHUNKS_PATH)
-    if not retriever.driver:
-        print("Valutazione interrotta: impossibile connettersi a Neo4j.")
-        return
 
     # --- Esecuzione Pipeline ---
     golden_dataset = load_dataset(GOLDEN_DATASET_PATH)
     if not golden_dataset:
         print("Valutazione interrotta: golden dataset non caricato.")
-        retriever.close()
         return
 
-    evaluation_data = generate_evaluation_data_from_pipeline(golden_dataset, retriever)
-    
-    # Chiudi la connessione a Neo4j, non serve più per la fase di valutazione
-    retriever.close()
+    # Genera i dati di valutazione usando il tipo di dati specificato
+    evaluation_data = generate_evaluation_data_from_pipeline(golden_dataset, use_raw_data)
 
     # --- Esecuzione Valutazione RAGAs ---
-    # Converti i dati in formato Dataset di Hugging Face
     dataset_dict = {
         "question": [item["question"] for item in evaluation_data],
         "answer": [item["answer"] for item in evaluation_data],
@@ -125,9 +153,8 @@ def main_evaluation():
 
     metrics = [faithfulness, answer_relevancy, context_precision, context_recall]
 
-    print("\nEsecuzione della valutazione con RAGAs usando Gemini come giudice...")
+    print(f"\nEsecuzione della valutazione con RAGAs usando Gemini come giudice ({data_type})...")
     
-    # Use the models directly in the evaluate function
     result = evaluate(
         dataset=hf_dataset,
         metrics=metrics,
