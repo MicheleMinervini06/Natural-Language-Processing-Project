@@ -43,12 +43,13 @@ def get_user_choice():
     print("\n=== SELEZIONE TIPO DATI PER VALUTAZIONE ===")
     print("1. Dati Aggregati/Clusterizzati (knowledge_retriever)")
     print("2. Dati Grezzi (knowledge_retriever_rawData)")
+    print("3. Dati generati con KgGen")
     
     while True:
-        choice = input("Inserisci 1 o 2: ").strip()
-        if choice in ["1", "2"]:
+        choice = input("Inserisci 1, 2 o 3: ").strip()
+        if choice in ["1", "2", "3"]:
             return choice
-        print("Scelta non valida. Inserisci 1 o 2.")
+        print("Scelta non valida. Inserisci 1, 2 o 3.")
 
 def import_retriever_class(use_raw_data: bool):
     """Importa dinamicamente la classe KnowledgeRetriever appropriata."""
