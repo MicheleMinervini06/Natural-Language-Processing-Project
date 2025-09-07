@@ -46,11 +46,3 @@ Assicurati di aver installato la libreria necessaria:
 ```bash
 pip install google-generativeai
 ```
-
-## Modelli disponibili
-
-- `gemini-1.5-pro`: Modello più avanzato, migliore qualità
-- `gemini-1.5-flash`: Modello più veloce, costi inferiori
-- `gemini-1.0-pro`: Modello base
-
-Il codice è configurato per usare `gemini-1.5-pro` per default.

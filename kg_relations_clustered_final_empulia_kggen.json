@@ -1,0 +1,458 @@
+[
+  {
+    "soggetto_cluster": "sedi",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "azienda",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'sedi' e 'azienda' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "categorie soa",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "albo fornitori",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'Categorie SOA' e 'albo delle imprese' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "albi",
+    "predicato_cluster": "on",
+    "oggetto_cluster": "piattaforma",
+    "contesti_aggregati": [
+      "Relazione 'on' tra 'Albi' e 'piattaforma' (normalizzata come 'on')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "on"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "utente",
+    "predicato_cluster": "has",
+    "oggetto_cluster": "dati contatto",
+    "contesti_aggregati": [
+      "Relazione 'has' tra 'Utente' e 'dati di contatto' (normalizzata come 'has')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "has"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "dati contatto",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "anagrafica",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'dati di contatto' e 'Anagrafica' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "anagrafica",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "azienda",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'Anagrafica' e 'azienda' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "azienda",
+    "predicato_cluster": "has",
+    "oggetto_cluster": "dati contatto",
+    "contesti_aggregati": [
+      "Relazione 'has' tra 'azienda' e 'dati di contatto' (normalizzata come 'has')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "has"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "anagrafica",
+    "predicato_cluster": "used to check",
+    "oggetto_cluster": "categorie soa",
+    "contesti_aggregati": [
+      "Relazione 'used to check' tra 'Anagrafica' e 'Categorie SOA' (normalizzata come 'used to check')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "used to check"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "albo fornitori",
+    "predicato_cluster": "divided into",
+    "oggetto_cluster": "beni/servizi",
+    "contesti_aggregati": [
+      "Relazione 'divided into' tra 'albo delle imprese' e 'beni/servizi' (normalizzata come 'divided into')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "divided into"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "anagrafica",
+    "predicato_cluster": "precaricati",
+    "oggetto_cluster": "azienda",
+    "contesti_aggregati": [
+      "Relazione 'precaricati' tra 'Anagrafica' e 'azienda' (normalizzata come 'precaricati')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "precaricati"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "categorie soa",
+    "predicato_cluster": "on",
+    "oggetto_cluster": "piattaforma",
+    "contesti_aggregati": [
+      "Relazione 'on' tra 'Categorie SOA' e 'piattaforma' (normalizzata come 'on')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "on"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "iscrizione",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "beni/servizi",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'Classi di iscrizione' e 'beni/servizi' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "password",
+    "predicato_cluster": "valid for",
+    "oggetto_cluster": "piattaforma",
+    "contesti_aggregati": [
+      "Relazione 'valid for' tra 'password' e 'piattaforma' (normalizzata come 'valid for')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "valid for"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "dati contatto",
+    "predicato_cluster": "include",
+    "oggetto_cluster": "dati contatto",
+    "contesti_aggregati": [
+      "Relazione 'include' tra 'dati di contatto' e 'dati di contatto' (normalizzata come 'include')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "include"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "abilitazioni",
+    "predicato_cluster": "migrated based on",
+    "oggetto_cluster": "categorie soa",
+    "contesti_aggregati": [
+      "Relazione 'migrated based on' tra 'abilitazioni' e 'Categorie SOA' (normalizzata come 'migrated based on')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "migrated based on"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "password",
+    "predicato_cluster": "used to enter",
+    "oggetto_cluster": "piattaforma",
+    "contesti_aggregati": [
+      "Relazione 'used to enter' tra 'credenziali' e 'piattaforma' (normalizzata come 'used to enter')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "used to enter"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "categorie soa",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "lavori pubblici",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'Categorie SOA' e 'Lavori Pubblici' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "forma giuridica",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "azienda",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'forma giuridica' e 'azienda' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "utente",
+    "predicato_cluster": "migrated to",
+    "oggetto_cluster": "piattaforma",
+    "contesti_aggregati": [
+      "Relazione 'migrated to' tra 'Utente' e 'piattaforma' (normalizzata come 'migrated to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "migrated to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "p.iva",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "azienda",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'P.IVA' e 'azienda' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "procedure",
+    "predicato_cluster": "accessible on",
+    "oggetto_cluster": "piattaforma",
+    "contesti_aggregati": [
+      "Relazione 'accessible on' tra 'procedure' e 'piattaforma' (normalizzata come 'accessible on')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "accessible on"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "beni/servizi",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "albi",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'beni/servizi' e 'Albi' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "fornitore",
+    "predicato_cluster": "is registered on",
+    "oggetto_cluster": "piattaforma",
+    "contesti_aggregati": [
+      "Relazione 'is registered on' tra 'fornitore' e 'piattaforma' (normalizzata come 'is registered on')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "is registered on"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  },
+  {
+    "soggetto_cluster": "utente",
+    "predicato_cluster": "related to",
+    "oggetto_cluster": "utente",
+    "contesti_aggregati": [
+      "Relazione 'related to' tra 'Utente' e 'Utente' (normalizzata come 'related to')."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "predicati_originali_cluster": [
+      "related to"
+    ],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Relazione generata da kg-gen con normalizzazione.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+  }
+]

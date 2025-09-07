@@ -1,0 +1,155 @@
+[
+  {
+    "soggetto": "fornitore",
+    "predicato": "utilizza",
+    "oggetto": "empulia",
+    "contesto_relazione": "fornitore sulla piattaforma EmPULIA.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "empulia",
+    "predicato": "INVIA_NOTIFICA",
+    "oggetto": "email",
+    "contesto_relazione": "Hai dunque ricevuto via email la terna di Password.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "entra nella nuova piattaforma",
+    "predicato": "utilizza",
+    "oggetto": "terna di credenziali",
+    "contesto_relazione": "Entra nella nuova piattaforma utilizzando la terna di credenziali che hai ricevuto",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_2",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "segui i passaggi descritti",
+    "predicato": "utilizza",
+    "oggetto": "nuova piattaforma empulia",
+    "contesto_relazione": "Segui i passaggi descritti di seguito per poter essere subito operativo anche sulla nuova piattafoma",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_3",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "accertati che i dati di contatto siano corretti",
+    "predicato": "utilizza",
+    "oggetto": "utente",
+    "contesto_relazione": "Accertati che i dati di contatto (telefono e/o email) della tua utenza siano corretti. Clicca su Utente in alto a destra",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_4",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "accertati che i dati della tua azienda siano corretti",
+    "predicato": "utilizza",
+    "oggetto": "anagrafica",
+    "contesto_relazione": "Accertati che i dati (es. Telefono) della tua azienda siano corretti. Clicca su Anagrafica in alto a destra",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_5",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "potrai apportare le modifiche richieste",
+    "predicato": "genera",
+    "oggetto": "pdf firmato digitalmente",
+    "contesto_relazione": "Potrai apportare le modifiche richieste, ma tali modifiche non saranno immediatamente operative. Infatti ti verrà richiesto di generare un pdf con digitalmente e di riallegarlo firmato.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_6",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "potrai apportare le modifiche richieste",
+    "predicato": "utilizza",
+    "oggetto": "clicca su invia",
+    "contesto_relazione": "Potrai apportare le modifiche richieste, ma tali modifiche non saranno immediatamente operative. Infatti ti verrà richiesto di generare un pdf con digitalmente e di riallegarlo firmato. Clicca su Invia al termine.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_7",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "nuova piattaforma empulia",
+    "predicato": "INCLUDE_FUNZIONALITA",
+    "oggetto": "albi fornitori",
+    "contesto_relazione": "Sulla nuova piattaforma sono previsti tre diversi Albi Fornitori",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_8",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "albi fornitori",
+    "predicato": "INCLUDE_FUNZIONALITA",
+    "oggetto": "albo forniture e servizi",
+    "contesto_relazione": "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_9",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "albi fornitori",
+    "predicato": "INCLUDE_FUNZIONALITA",
+    "oggetto": "albo dei lavori pubblici",
+    "contesto_relazione": "L’albo delle imprese che sulla vecchia piattaforma era unico, è dunque stato diviso in due: Forniture/Servizi e Le abilitazioni sono state migrate sulla base delle categorie selezionate:  Albo dei Lavori Pubblici",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_10",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "verifica le categorie per le quali sei attualmente abilitato",
+    "predicato": "utilizza",
+    "oggetto": "anagrafica",
+    "contesto_relazione": "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_11",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "verifica le categorie per le quali sei attualmente abilitato",
+    "predicato": "utilizza",
+    "oggetto": "classi di iscrizione",
+    "contesto_relazione": "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi)",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_12",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "verifica le categorie per le quali sei attualmente abilitato",
+    "predicato": "utilizza",
+    "oggetto": "categorie soa",
+    "contesto_relazione": "Verifica le categorie per le quali sei attualmente abilitato, entrando in Anagrafica , e poi in Classi di iscrizione (per Forniture/Servizi) o Categorie SOA (per Lavori Pubblici)",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_13",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "nuova piattaforma empulia",
+    "predicato": "richiede",
+    "oggetto": "selezionare le categorie di massimo dettaglio",
+    "contesto_relazione": "Ricorda che – a partire dal tuo prossimo rinnovo all’Albo - sulla nuova piattaforma sarà richiesto di selezionare le categorie di massimo dettaglio",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_14",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "31/12/2023",
+    "predicato": "SI_APPLICA_A",
+    "oggetto": "fornitore",
+    "contesto_relazione": "Per le aziende migrate la data di scadenza del primo rinnovo è fissata d’ufficio al 31/12/2023",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_15",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "soggetto": "creare un nuovo utente",
+    "predicato": "richiede",
+    "oggetto": "fornitore",
+    "contesto_relazione": "Per creare un nuovo utente fai una nuova p.iva dell’azienda già registrata e negli step successive inserisci i dati del nuovo utente. In questa fase non sarà possibile variare i dati anagrafici precaricati.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_16",
+    "source_page_number": null,
+    "source_section_title": null
+  }
+]

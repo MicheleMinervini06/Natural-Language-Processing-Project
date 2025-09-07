@@ -1,0 +1,56 @@
+[
+  {
+    "timestamp": "2025-08-05 15:25:54",
+    "user_question": "Come si registra un utente PA su EmPULIA?",
+    "graph_context_length": 61,
+    "text_context_length": 76,
+    "answer_length": 188,
+    "answer": "Per registrare un utente PA su EmPULIA, è necessario essere in possesso di SPID e selezionare l'ente di appartenenza. La procedura di registrazione inizia dalla homepage della piattaforma.",
+    "context_valid": true
+  },
+  {
+    "timestamp": "2025-08-05 15:32:43",
+    "user_question": "Come si registra un utente PA su EmPULIA?",
+    "graph_context_length": 61,
+    "text_context_length": 76,
+    "answer_length": 188,
+    "answer": "Per registrare un utente PA su EmPULIA, è necessario essere in possesso di SPID e selezionare l'ente di appartenenza. La procedura di registrazione inizia dalla homepage della piattaforma.",
+    "context_valid": true
+  },
+  {
+    "timestamp": "2025-08-05 15:52:06",
+    "user_question": "Come si registra un utente PA su EmPULIA?",
+    "graph_context_length": 2609,
+    "text_context_length": 20497,
+    "answer_length": 1201,
+    "answer": "Per registrare un utente PA (Pubblica Amministrazione) su EmPULIA, se sei già registrato ed operativo come utente di una Stazione Appaltante sulla piattaforma EmPULIA, la tua utenza è stata migrata anche sulla nuova piattaforma. Hai dunque ricevuto via email la nuova terna di credenziali valide solo per la nuova piattaforma.\n\nEntra nella nuova piattaforma utilizzando la terna di credenziali che hai ricevuto e segui i passaggi descritti per poter essere subito operativo.\n\nInoltre, se sei già registrato come fornitore sulla piattaforma EmPULIA, la tua utenza è stata migrata anche sulla nuova piattaforma. Hai dunque ricevuto via email la terna di Password che saranno valide solo per la nuova piattaforma.\nLa vecchia piattaforma sarà accessibile con le consuete modalità che già utilizzi.\nEntra nella nuova piattaforma utilizzando la terna di credenziali che hai ricevuto e segui i passaggi descritti di seguito per poter essere subito operativo anche sulla nuova piattaforma.\n\nSe devi creare un nuovo utente, crea una nuova partita IVA dell’azienda già registrata e negli step successivi inserisci i dati del nuovo utente. In questa fase non sarà possibile variare i dati anagrafici precaricati.",
+    "context_valid": true
+  },
+  {
+    "timestamp": "2025-08-05 15:59:43",
+    "user_question": "Come viene gestito il calcolo dell'anomalia dalla piattaforma?",
+    "graph_context_length": 1455,
+    "text_context_length": 9243,
+    "answer_length": 350,
+    "answer": "Non dispongo di informazioni sufficienti per rispondere alla tua domanda su come viene gestito il calcolo dell'anomalia dalla piattaforma EmPULIA. Le informazioni a mia disposizione riguardano principalmente la migrazione degli utenti dalla vecchia piattaforma, la gestione dei dati dei fornitori, la configurazione del DGUE e dei modelli di offerta.",
+    "context_valid": true
+  },
+  {
+    "timestamp": "2025-08-05 16:03:36",
+    "user_question": "Come viene gestito il calcolo dell'anomalia dalla piattaforma?",
+    "graph_context_length": 1455,
+    "text_context_length": 9243,
+    "answer_length": 405,
+    "answer": "Non dispongo di informazioni sufficienti per rispondere alla tua domanda su come viene gestito il calcolo dell'anomalia dalla piattaforma EmPULIA. Le informazioni a mia disposizione riguardano principalmente la migrazione degli utenti dalla vecchia piattaforma, la gestione dei fornitori, la configurazione del DGUE e dei modelli di offerta, ma non forniscono dettagli specifici sul calcolo dell'anomalia.",
+    "context_valid": true
+  },
+  {
+    "timestamp": "2025-08-05 16:04:24",
+    "user_question": "Cos'è il DGUE?",
+    "graph_context_length": 2297,
+    "text_context_length": 13163,
+    "answer_length": 1050,
+    "answer": "Il DGUE (Documento di Gara Unico Europeo) elettronico è un modello auto dichiarativo, sviluppato sulla base di uno standard europeo, con cui l'Operatore Economico autocertifica il possesso dei requisiti per la partecipazione a gare d’appalto.\n\nSulla piattaforma EmPULIA, la predisposizione del documento DGUE è attivabile per qualsiasi Bando/Invito relativo ad una procedura di gara ed all’abilitazione all’Albo Fornitori o al Sistema Dinamico di Acquisizione (SDA). Questo consente la compilazione del documento direttamente a Sistema (invece che come documento da allegare separatamente) per gli Operatori Economici, che dovranno compilare tutte le sezioni di loro competenza, scaricare il pdf auto generato, firmarlo digitalmente e ricaricarlo nell'apposito campo nella busta amministrativa.\n\nSe si attiva il DGUE strutturato, tutti gli OE coinvolti nella presentazione dell’offerta (mandataria, mandanti, ausiliarie, imprese esecutrici in caso di consorzi) avranno l’obbligo di compilare, firmare digitalmente e ricaricare il DGUE in piattaforma.",
+    "context_valid": true
+  }
+]

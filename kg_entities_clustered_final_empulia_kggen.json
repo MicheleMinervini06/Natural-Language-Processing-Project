@@ -1,0 +1,458 @@
+[
+  {
+    "nome_entita_cluster": "password",
+    "tipo_entita_cluster": "AzioneUtente",
+    "membri_cluster": [
+      "Password",
+      "password"
+    ],
+    "tipi_membri_cluster": [
+      "AzioneUtente",
+      "AzioneUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'AzioneUtente' correlata al concetto di 'password'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 2,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 2
+  },
+  {
+    "nome_entita_cluster": "utente",
+    "tipo_entita_cluster": "RuoloUtente",
+    "membri_cluster": [
+      "Utente",
+      "utenza"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "RuoloUtente"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'RuoloUtente' correlata al concetto di 'utente'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 2,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 2
+  },
+  {
+    "nome_entita_cluster": "fornitore",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "fornitore"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'fornitore'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "beni/servizi",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "Forniture/Servizi",
+      "beni/servizi"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'beni/servizi'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 2,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 2
+  },
+  {
+    "nome_entita_cluster": "categorie soa",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "Categorie SOA",
+      "categorie",
+      "categorie SOA"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'categorie soa'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 3,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 3
+  },
+  {
+    "nome_entita_cluster": "albo fornitori",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "Albo dei Lavori Pubblici",
+      "albo delle imprese"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'albo fornitori'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 2,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 2
+  },
+  {
+    "nome_entita_cluster": "sedi",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "sedi"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'sedi'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "p.iva",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "P.IVA",
+      "p.iva"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'p.iva'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 2,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 2
+  },
+  {
+    "nome_entita_cluster": "azienda",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "azienda",
+      "aziende"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'azienda'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 2,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 2
+  },
+  {
+    "nome_entita_cluster": "forma giuridica",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "forma giuridica"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'forma giuridica'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "dati contatto",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "dati di contatto",
+      "email",
+      "fax",
+      "numeri di telefono",
+      "sito web",
+      "telefono"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'dati contatto'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 6,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 6
+  },
+  {
+    "nome_entita_cluster": "lavori pubblici",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "Lavori Pubblici"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'lavori pubblici'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "piattaforma",
+    "tipo_entita_cluster": "FunzionalitaPiattaforma",
+    "membri_cluster": [
+      "nuova piattaforma",
+      "piattaforma EmPULIA",
+      "vecchia piattaforma"
+    ],
+    "tipi_membri_cluster": [
+      "FunzionalitaPiattaforma",
+      "FunzionalitaPiattaforma",
+      "FunzionalitaPiattaforma"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'FunzionalitaPiattaforma' correlata al concetto di 'piattaforma'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 3,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 3
+  },
+  {
+    "nome_entita_cluster": "albi",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "Albi",
+      "Albi Fornitori",
+      "Albo Forniture e Servizi"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'albi'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 3,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 3
+  },
+  {
+    "nome_entita_cluster": "pdf",
+    "tipo_entita_cluster": "DocumentoSistema",
+    "membri_cluster": [
+      "pdf"
+    ],
+    "tipi_membri_cluster": [
+      "DocumentoSistema"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'DocumentoSistema' correlata al concetto di 'pdf'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "abilitazioni",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "abilitazioni"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'abilitazioni'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "procedure",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "procedure"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'procedure'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "iscrizione",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "Classi di iscrizione"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'iscrizione'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 1,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 1
+  },
+  {
+    "nome_entita_cluster": "anagrafica",
+    "tipo_entita_cluster": "Unknown",
+    "membri_cluster": [
+      "Anagrafica",
+      "dati",
+      "dati anagrafici"
+    ],
+    "tipi_membri_cluster": [
+      "Unknown",
+      "Unknown",
+      "Unknown"
+    ],
+    "descrizioni_aggregate": [
+      "Entità di tipo 'Unknown' correlata al concetto di 'anagrafica'."
+    ],
+    "fonti_aggregate_chunk_id": [
+      "GuidaRapidaMigrazioneOperatoriEconomici.pdf"
+    ],
+    "fonti_aggregate_pagina": [],
+    "fonti_aggregate_sezione": [],
+    "conteggio_occorrenze_totale": 3,
+    "motivazione_clustering": "Cluster generato da kg-gen con normalizzazione EntityNormalizer.",
+    "chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf",
+    "occorrenze": 3
+  }
+]

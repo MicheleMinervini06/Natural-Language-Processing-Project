@@ -1,0 +1,210 @@
+[
+  {
+    "nome_entita": "fornitore",
+    "tipo_entita": "RuoloUtente",
+    "descrizione_entita": "Fornitore sulla piattaforma EmPULIA.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_0",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "empulia",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "Piattaforma per i fornitori.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_1",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "email",
+    "tipo_entita": "NotificaSistema",
+    "descrizione_entita": "Email contenente le credenziali.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_2",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "entra nella nuova piattaforma",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Azione di accesso alla nuova piattaforma.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_3",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "terna di credenziali",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Credenziali per accedere alla piattaforma.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_4",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "segui i passaggi descritti",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Seguire i passaggi per essere operativo sulla nuova piattaforma.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_5",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "nuova piattaforma empulia",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "La nuova piattaforma EmPULIA per i fornitori.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_6",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "accertati che i dati di contatto siano corretti",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Verifica dei dati di contatto.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_7",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "utente",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Pulsante Utente in alto a destra.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_8",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "controlla i dati ed eventualmente clicca su numeri di telefono",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Controllo e modifica dei numeri di telefono.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_9",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "accertati che i dati della tua azienda siano corretti",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Verifica dei dati aziendali.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_10",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "anagrafica",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Pulsante Anagrafica in alto a destra.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_11",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "controlla i dati ed eventualmente clicca su fax e sito web",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Controllo e modifica di fax e sito web.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_12",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "entra dal menu di sinistra",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Entrare dal menu di sinistra.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_13",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "potrai apportare le modifiche richieste",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Apportare le modifiche richieste.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_14",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "pdf firmato digitalmente",
+    "tipo_entita": "DocumentoSistema",
+    "descrizione_entita": "PDF da generare, firmare e riallegare.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_15",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "clicca su invia",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Cliccare su Invia al termine.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_16",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "albi fornitori",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "Albi fornitori sulla nuova piattaforma.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_17",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "albo forniture e servizi",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "Albo per forniture e servizi.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_18",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "albo dei lavori pubblici",
+    "tipo_entita": "PiattaformaModulo",
+    "descrizione_entita": "Albo per lavori pubblici.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_19",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "verifica le categorie per le quali sei attualmente abilitato",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Verifica delle categorie abilitate.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_20",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "classi di iscrizione",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Classi di iscrizione per Forniture/Servizi.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_21",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "categorie soa",
+    "tipo_entita": "InterfacciaUtenteElemento",
+    "descrizione_entita": "Categorie SOA per Lavori Pubblici.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_22",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "selezionare le categorie di massimo dettaglio",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Selezionare le categorie di massimo dettaglio al rinnovo.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_23",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "31/12/2023",
+    "tipo_entita": "TermineTemporale",
+    "descrizione_entita": "Data di scadenza del primo rinnovo per le aziende migrate.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_24",
+    "source_page_number": null,
+    "source_section_title": null
+  },
+  {
+    "nome_entita": "creare un nuovo utente",
+    "tipo_entita": "AzioneUtente",
+    "descrizione_entita": "Azione di creare un nuovo utente.",
+    "source_chunk_id": "GuidaRapidaMigrazioneOperatoriEconomici.pdf_section_25",
+    "source_page_number": null,
+    "source_section_title": null
+  }
+]
