@@ -1,21 +1,26 @@
 import json
 import logging
 from neo4j import GraphDatabase, basic_auth
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 from functools import lru_cache
 import sqlite3
 import os
 import google.generativeai as genai
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from query_analyzer_rawData import analyze_user_question 
+from utils.context_reranker import ContextReranker
 
 # --- Configurazione ---
 NEO4J_URI = "neo4j://localhost:7687"
 NEO4J_USER = "neo4j"
 NEO4J_PASSWORD = "Password"
-NEO4J_DATABASE = "test" # Assicurati che questo sia il DB corretto
+NEO4J_DATABASE = "test"
 DEBUG_LEVEL = "INFO"
 VECTOR_INDEX_NAME = "node_text_embeddings"
+
+# Configurazione per il Reranking
+INITIAL_RETRIEVAL_TOP_K = 20 # Quanti candidati recuperare prima del reranking
+RERANKED_TOP_N = 5 # Quanti candidati tenere dopo il reranking
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -40,14 +45,16 @@ class KnowledgeRetriever:
         
         self.chunks_db_path = self._create_chunks_db(all_chunks_filepath)
         try:
-            # Passa esplicitamente la API key se necessario
             self.embedder = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=GEMINI_API_KEY)
-            self.logger.info("Modello di embedding caricato con successo.")
+            self.logger.info("Modello di embedding caricato.")
         except Exception as e:
-            self.logger.error(f"Errore durante l'inizializzazione del modello di embedding: {e}")
+            self.logger.error(f"Errore inizializzazione embedder: {e}")
             self.embedder = None
 
-    def _create_chunks_db(self, filepath: str) -> str:
+        # ### <<< MODIFICA: Inizializza l'istanza del Reranker >>> ###
+        self.reranker = ContextReranker()
+            
+    def _create_chunks_db(self, filepath: str) -> str: # Logica invariata
         db_path = filepath.replace('.json', '.db')
         if os.path.exists(db_path): return db_path
         try:
@@ -62,9 +69,9 @@ class KnowledgeRetriever:
         except Exception as e:
             self.logger.error(f"Errore nella creazione del database chunks: {e}")
             return ""
-    
+
     @lru_cache(maxsize=128)
-    def _get_chunk_by_id(self, chunk_id: str) -> Dict:
+    def _get_chunk_by_id(self, chunk_id: str) -> Dict: # Logica invariata
         if not self.chunks_db_path: return {}
         try:
             conn = sqlite3.connect(self.chunks_db_path)
@@ -80,7 +87,7 @@ class KnowledgeRetriever:
     def close(self):
         if self.driver: self.driver.close()
 
-    def _run_cypher_query(self, query: str, parameters: Dict = None) -> List[Dict]:
+    def _run_cypher_query(self, query: str, parameters: Dict = None) -> List[Dict]: # Logica invariata
         if not self.driver: return []
         try:
             with self.driver.session(database=NEO4J_DATABASE) as session:
@@ -90,7 +97,7 @@ class KnowledgeRetriever:
             return []
 
     @lru_cache(maxsize=32)
-    def _embed_query(self, text: str) -> List[float]:
+    def _embed_query(self, text: str) -> List[float]: # Logica invariata
         if not self.embedder: return []
         try:
             return self.embedder.embed_query(text)
@@ -98,63 +105,34 @@ class KnowledgeRetriever:
             self.logger.error(f"Errore durante la generazione dell'embedding della query: {e}")
             return []
 
-    def _hybrid_retrieval(self, search_terms: List[str], query_embedding: List[float], top_k: int = 5) -> List[Dict]:
-        """Implementa la ricerca ibrida: keyword + vettoriale per trovare i nodi "ancora", poi espande."""
-        
-        # --- FASE 1: Ricerca per Keyword ---
+    def _hybrid_retrieval(self, search_terms: List[str], query_embedding: List[float], top_k: int) -> List[Dict]: # Logica invariata
         keyword_query = """
-        UNWIND $search_terms as term
-        MATCH (node:KnowledgeNode)
-        WHERE 
-            toLower(node.name) CONTAINS toLower(term) OR
-            ANY(original IN node.original_names WHERE toLower(original) CONTAINS toLower(term))
+        UNWIND $search_terms as term MATCH (node:KnowledgeNode)
+        WHERE toLower(node.name) CONTAINS toLower(term) OR ANY(original IN node.original_names WHERE toLower(original) CONTAINS toLower(term))
         RETURN node, elementId(node) as element_id
         """
         keyword_results = self._run_cypher_query(keyword_query, {"search_terms": search_terms})
-
-        # --- FASE 2: Ricerca Vettoriale ---
         vector_results = []
         if query_embedding:
-            # ### <<< CORREZIONE KeyError >>> ###
-            # La query vettoriale ora restituisce ANCHE 'element_id'
             vector_query = """
             CALL db.index.vector.queryNodes($index_name, $top_k, $query_embedding)
-            YIELD node, score
-            RETURN node, elementId(node) as element_id
+            YIELD node, score RETURN node, elementId(node) as element_id
             """
-            vector_results = self._run_cypher_query(vector_query, {
-                "index_name": VECTOR_INDEX_NAME,
-                "top_k": top_k,
-                "query_embedding": query_embedding
-            })
-        
-        # --- FASE 3: Unione dei Risultati (Anchor IDs) ---
-        anchor_ids = set()
-        for record in keyword_results + vector_results:
-            # Ora entrambi i tipi di record avranno la chiave 'element_id'
-            anchor_ids.add(record['element_id'])
-        
-        if not anchor_ids:
-            self.logger.warning("La fase di ancoraggio non ha trovato nodi.")
-            return []
-            
+            vector_results = self._run_cypher_query(vector_query, {"index_name": VECTOR_INDEX_NAME, "top_k": top_k, "query_embedding": query_embedding})
+        anchor_ids = {record['element_id'] for record in keyword_results + vector_results}
+        if not anchor_ids: return []
         self.logger.info(f"Fase di ancoraggio ibrida ha trovato {len(anchor_ids)} nodi unici.")
-
-        # --- FASE 4: Espansione del Contesto ---
         expand_query = """
         MATCH (anchor:KnowledgeNode) WHERE elementId(anchor) IN $anchor_ids
         OPTIONAL MATCH (same_chunk_neighbor:KnowledgeNode)
-        WHERE same_chunk_neighbor.source_chunk_id = anchor.source_chunk_id 
-              AND elementId(same_chunk_neighbor) <> elementId(anchor)
+        WHERE same_chunk_neighbor.source_chunk_id = anchor.source_chunk_id AND elementId(same_chunk_neighbor) <> elementId(anchor)
         OPTIONAL MATCH (anchor)-[r]-(direct_neighbor:KnowledgeNode)
         WITH COLLECT(DISTINCT anchor) + COLLECT(DISTINCT same_chunk_neighbor) + COLLECT(DISTINCT direct_neighbor) as all_nodes
-        UNWIND all_nodes as node
-        RETURN DISTINCT node
+        UNWIND all_nodes as node RETURN DISTINCT node
         """
-        # Converti il set in lista per passarlo come parametro
         return self._run_cypher_query(expand_query, {"anchor_ids": list(anchor_ids)})
 
-    def _format_context_from_subgraph(self, subgraph_nodes: List[Dict]) -> tuple[str, set]:
+    def _format_context_from_subgraph(self, subgraph_nodes: List[Dict]) -> Tuple[str, set]: # Logica invariata
         if not subgraph_nodes: return "Nessuna informazione trovata nel Knowledge Graph.", set()
         context_str = "Informazioni rilevanti trovate nel Knowledge Graph:\n\n"
         source_chunk_ids, nodes_processed = set(), set()
@@ -173,23 +151,35 @@ class KnowledgeRetriever:
         return context_str.strip(), source_chunk_ids
 
     def retrieve_knowledge(self, analysis: Dict[str, Any], retrieve_text: bool = True) -> Dict[str, Any]:
-        self.logger.info("Avvio recupero ibrido potenziato dal Knowledge Graph")
+        self.logger.info("Avvio recupero ibrido con Reranking dal Knowledge Graph")
         user_question = analysis.get("domanda_originale", "")
         search_terms = analysis.get("termini_di_ricerca_espansi", [])
         entity_names = [e.get("nome", "") for e in analysis.get("entita_chiave", [])]
         final_search_terms = list(set([term.lower() for term in search_terms + entity_names if term]))
         query_embedding = self._embed_query(user_question)
-        subgraph_results = self._hybrid_retrieval(final_search_terms, query_embedding)
+        
+        # 1. RECUPERO AMPIO
+        subgraph_results = self._hybrid_retrieval(final_search_terms, query_embedding, top_k=INITIAL_RETRIEVAL_TOP_K)
         graph_context, source_chunk_ids = self._format_context_from_subgraph(subgraph_results)
+        
         text_context = ""
         if retrieve_text and source_chunk_ids:
-            self.logger.info(f"Recupero del testo originale da {len(source_chunk_ids)} chunk")
-            relevant_chunks = sorted([chunk for chunk in [self._get_chunk_by_id(cid) for cid in source_chunk_ids] if chunk], key=lambda c: (c.get('source_file', ''), c.get('page_number', 0)))
+            # 2. COLLEZIONE DEI CHUNK CANDIDATI
+            self.logger.info(f"Recupero del testo originale da {len(source_chunk_ids)} chunk candidati...")
+            candidate_chunks = [chunk for chunk in [self._get_chunk_by_id(cid) for cid in source_chunk_ids] if chunk]
+
+            # 3. RERANKING E FILTRAGGIO
+            reranked_chunks = self.reranker.rerank(user_question, candidate_chunks)
+            final_chunks = reranked_chunks[:RERANKED_TOP_N]
+            self.logger.info(f"Contesto finale costruito con i top {len(final_chunks)} chunk dopo il reranking.")
+            
+            # 4. COSTRUZIONE DEL CONTESTO FINALE
             text_context += "\n\n--- Testo Originale dalle Guide per Contesto Aggiuntivo ---\n\n"
-            for chunk in relevant_chunks:
+            for chunk in final_chunks:
                 text_context += f"Fonte: {chunk.get('source_file')} - Pagina {chunk.get('page_number')} - Sezione '{chunk.get('section_title') or 'N/A'}'\n"
                 text_context += "```\n" + str(chunk.get('text', '')) + "\n```\n\n"
-        self.logger.info("Recupero conoscenza ibrido completato")
+        
+        self.logger.info("Recupero conoscenza con reranking completato")
         return {"graph_context": graph_context, "text_context": text_context.strip()}
 
 if __name__ == "__main__":
@@ -206,14 +196,14 @@ if __name__ == "__main__":
             if analysis_result:
                 retrieved_context = retriever.retrieve_knowledge(analysis_result, retrieve_text=True)
                 print("\n" + "="*50)
-                print("RISULTATO RECUPERO CONOSCENZA (v4.3 - Corretto)")
+                print("RISULTATO RECUPERO CONOSCENZA (v5 - Con Reranker Separato)")
                 print("="*50 + "\n")
                 print(f"DOMANDA: {test_question}\n")
                 print("--- Analisi e Termini Espansi ---")
                 print(json.dumps(analysis_result, indent=2, ensure_ascii=False))
-                print("\n--- Contesto dal Grafo ---")
+                print("\n--- Contesto dal Grafo (Pre-Reranking) ---")
                 print(retrieved_context["graph_context"])
-                print("\n--- Contesto dal Testo Originale ---")
+                print("\n--- Contesto dal Testo Originale (Post-Reranking) ---")
                 print(retrieved_context["text_context"])
             retriever.close()
         else:
