@@ -80,6 +80,55 @@
 
 **Prossimi Passi**
 -
-- Tentare di ricreare la KB
+- ~~Tentare di ricreare la KB~~
 - Riconsiderare il golden datset, in quanto la recall/precision sono propabilmente caloclate sulla base dei chunk di riferimento e la KB non viene di fatti considerata
 - ~~Controllare se i chunk vengano effetivamente recuperato con ilk nuovo approccio~~
+
+- Miglioramento #1: Ibridare la Ricerca "Anchor" (Keyword + Vettoriale)
+
+    Attualmente, la tua fase di "Ancoraggio" (trovare i nodi iniziali) si basa su una ricerca testuale con `CONTAINS`. Questo è efficace ma può mancare le sfumature semantiche. Il passo successivo è renderla ibrida.
+    1.  **Crea Indici Vettoriali:** Se non l'hai già fatto, crea un indice vettoriale in Neo4j sulle proprietà `name` e `description` dei tuoi nodi.
+    2.  **Modifica la Fase di Ancoraggio:** Invece di una sola `MATCH`, eseguine due in parallelo:
+        *   Una `MATCH` con `CONTAINS` come quella attuale per catturare le corrispondenze esatte delle parole chiave.
+        *   Una chiamata all'indice vettoriale (`CALL db.index.vector.queryNodes`) per trovare i nodi semanticamente più simili alla domanda dell'utente (o ai termini espansi).
+    3.  **Unisci i Risultati:** Prendi i nodi trovati da entrambi gli approcci e usali come punto di partenza per la fase di "Espansione".
+
+    **Perché Funziona:**
+    *   Otterrai il meglio di entrambi i mondi. La ricerca per keyword è ottima per acronimi e termini tecnici precisi (come "DGUE"). La ricerca vettoriale è eccellente per catturare il significato e le domande parafrasate (come "come si fa a firmare un contratto?" che potrebbe non contenere la parola "sottoscrizione").
+    *   Questo aumenterà drasticamente il `Context Recall` perché avrai molte più probabilità di trovare i nodi "ancora" corretti.
+
+- Miglioramento #2: Implementare un "Reranker" per il Contesto Recuperato
+
+    La tua strategia di espansione ("Expand") è ottima ma potrebbe recuperare più contesto del necessario, includendo nodi vicini ma non strettamente pertinenti. Questo può "annacquare" il contesto finale e abbassare la `Context Precision`.
+
+   **Cosa Fare:**
+    1.  **Recupera un Contesto Ampio:** Esegui la tua pipeline di recupero (quella ibrida del Miglioramento #1) per ottenere un insieme di potenziali nodi/chunk di contesto (diciamo 10-15 candidati).
+    2.  **Fase di Reranking:** Prima di passare questo contesto al prompt finale, introduci un nuovo passaggio. Utilizza un modello specializzato (un "reranker" o cross-encoder, o anche una chiamata mirata a Gemini) per calcolare un punteggio di pertinenza per **ciascun pezzo di contesto recuperato** rispetto alla **domanda originale dell'utente**.
+    3.  **Filtra e Ordina:** Riordina i pezzi di contesto in base a questo punteggio e passa al prompt finale solo i top 3-5 più pertinenti.
+
+   **Perché Funziona:**
+    *   Questo agisce come un filtro di qualità. Permette alla fase di recupero di essere "aggressiva" (alto `Recall`), mentre la fase di reranking garantisce che solo le informazioni migliori vengano utilizzate per la risposta finale (alto `Precision`).
+    *   Migliorerà drasticamente la `Context Precision` e, di conseguenza, la `Faithfulness`, perché l'LLM finale riceverà un contesto più pulito e focalizzato.
+
+- Miglioramento #3: Esplorazione Guidata dalle Relazioni ("Relationship-Aware Traversal")
+
+    La tua attuale esplorazione del grafo tratta tutte le connessioni allo stesso modo. Possiamo renderla più intelligente, facendole dare priorità a certi tipi di relazioni in base all'intento della domanda.
+
+    **Cosa Fare:**
+    1.  **Mappa Intenti a Relazioni:** Crea una piccola mappa logica. Ad esempio:
+        *   Se l'intento è `find_procedure`, le relazioni importanti sono `HA_PASSO_SUCCESSIVO`, `RICHIEDE`, `ESEGUITA_DA`.
+        *   Se l'intento è `find_definition`, le relazioni importanti sono `SI_APPLICA_A`, `CONTIENE_ELEMENTO`.
+    2.  **Modifica la Query di Espansione:** Rendi la tua query Cypher dinamica. Dopo aver trovato i nodi "ancora", invece di un generico `(anchor)-[r]-(direct_neighbor)`, specifica i tipi di relazione a cui dare la priorità.
+
+    *Esempio di query Cypher per un intento procedurale:*
+    ```cypher
+    // ... fase di ancoraggio ...
+    WITH anchor
+    // Espansione che favorisce le relazioni procedurali
+    OPTIONAL MATCH p=(anchor)-[:RICHIEDE|ESEGUITA_DA*1..2]-(procedural_neighbor)
+    // ... raccogli e restituisci i nodi del path 'p' ...
+    ```
+
+   **Perché Funziona:**
+    *   Questo trasforma la tua esplorazione da una "passeggiata casuale" a un'"indagine mirata". Il sistema non solo trova i vicini, ma trova i vicini *giusti* per il tipo di domanda posta.
+    *   Questo migliorerà ulteriormente sia il `Context Recall` (trovando percorsi più lunghi ma significativi) sia la `Context Precision` (ignorando le connessioni irrilevanti).
