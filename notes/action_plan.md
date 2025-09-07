@@ -84,7 +84,7 @@
 - Riconsiderare il golden datset, in quanto la recall/precision sono propabilmente caloclate sulla base dei chunk di riferimento e la KB non viene di fatti considerata
 - ~~Controllare se i chunk vengano effetivamente recuperato con ilk nuovo approccio~~
 
-- Miglioramento #1: Ibridare la Ricerca "Anchor" (Keyword + Vettoriale)
+- ~~Miglioramento #1: Ibridare la Ricerca "Anchor" (Keyword + Vettoriale)~~
 
     Attualmente, la tua fase di "Ancoraggio" (trovare i nodi iniziali) si basa su una ricerca testuale con `CONTAINS`. Questo è efficace ma può mancare le sfumature semantiche. Il passo successivo è renderla ibrida.
     1.  **Crea Indici Vettoriali:** Se non l'hai già fatto, crea un indice vettoriale in Neo4j sulle proprietà `name` e `description` dei tuoi nodi.

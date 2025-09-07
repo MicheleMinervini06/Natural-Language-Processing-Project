@@ -215,7 +215,7 @@ class KnowledgeRetriever:
 
     def retrieve_knowledge(self, user_question: str, retrieve_text: bool = True) -> Dict[str, Any]:
         self.logger.info(f"Avvio recupero conoscenza per: '{user_question}'")
-        analysis = analyze_user_question(user_question)
+        analysis = user_question
         self.logger.debug(f"Analisi completata: {analysis}")
         
         if not isinstance(analysis, dict) or not analysis.get("entita_chiave"):

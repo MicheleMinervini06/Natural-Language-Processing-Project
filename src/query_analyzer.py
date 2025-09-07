@@ -6,7 +6,7 @@ from typing import List, Dict, Any
 
 # --- Configurazione Globale ---
    
-LLM_MODEL_ANALYSIS = "gemini-2.5-flash"
+LLM_MODEL_ANALYSIS = "gemini-2.5-pro"
 
 # I tipi di entità rimangono gli stessi del nostro KG
 KNOWN_ENTITY_TYPES = [
@@ -15,7 +15,7 @@ KNOWN_ENTITY_TYPES = [
     "TipoDocumento", "Prerequisito", "Condizione", "ParametroConfigurazione",
     "Criterio", "StatoDocumento", "StatoProcedura", "EnteEsterno",
     "Organismo", "TermineTemporale", "Scadenza", "MessaggioSistema",
-    "Notifica", "SezioneGuida"
+    "Notifica", "SezioneGuida", "NotificaSistema"
 ]
 
 # Carica la lista dei nomi canonici una sola volta all'avvio

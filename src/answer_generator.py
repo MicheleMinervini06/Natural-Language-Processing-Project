@@ -12,7 +12,7 @@ try:
 except KeyError:
     print("ERRORE: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
 
-LLM_MODEL_SYNTHESIS = "gemini-2.0-flash-exp"
+LLM_MODEL_SYNTHESIS = "gemini-2.5-pro"
 
 # Configurazione del Retriever
 NEO4J_URI = "neo4j://localhost:7687"
@@ -27,16 +27,13 @@ _analyze_function = None
 _KnowledgeRetriever = None
 
 def setup_pipeline(use_raw_data: bool = True):
-    """
-    Configura dinamicamente la pipeline in base al tipo di dati.
-    
-    Args:
-        use_raw_data (bool): True per dati raw, False per dati aggregati
-    """
+    """Configura dinamicamente la pipeline in base al tipo di dati."""
     global _current_data_type, _analyze_function, _KnowledgeRetriever, _retriever_instance
     
-    # Reset dell'istanza precedente se diversa
-    if _current_data_type != use_raw_data and _retriever_instance:
+    if _current_data_type == use_raw_data and _KnowledgeRetriever is not None:
+        return True # Già configurato
+
+    if _retriever_instance:
         close_retriever_connection()
     
     _current_data_type = use_raw_data
@@ -67,54 +64,33 @@ def setup_pipeline(use_raw_data: bool = True):
     return True
 
 def get_neo4j_config(use_raw_data: bool) -> Dict[str, str]:
-    """
-    Restituisce la configurazione Neo4j appropriata per il tipo di dati.
-    
-    Args:
-        use_raw_data (bool): True per dati raw, False per dati aggregati
-        
-    Returns:
-        Dict con configurazione Neo4j
-    """
+    """Restituisce la configurazione Neo4j appropriata."""
     base_config = {
         "uri": NEO4J_URI,
         "user": NEO4J_USER,
         "password": NEO4J_PASSWORD
     }
-    
     if use_raw_data:
         base_config["database"] = "test"
     else:
         base_config["database"] = "testaggregated"
-    
     return base_config
 
 def get_retriever_instance(use_raw_data: bool = True) -> Optional:
-    """
-    Funzione Singleton-like per creare e restituire una singola istanza del retriever.
-    
-    Args:
-        use_raw_data (bool): True per dati raw, False per dati aggregati
-    """
+    """Funzione Singleton per creare e restituire una singola istanza del retriever."""
     global _retriever_instance
     
-    # Setup della pipeline se necessario
-    if _current_data_type != use_raw_data:
+    if _current_data_type != use_raw_data or _KnowledgeRetriever is None:
         if not setup_pipeline(use_raw_data):
             return None
     
     if _retriever_instance is None:
         print(f"Inizializzazione del Knowledge Retriever ({'raw' if use_raw_data else 'aggregated'})...")
-        
         config = get_neo4j_config(use_raw_data)
         _retriever_instance = _KnowledgeRetriever(
-            config["uri"], 
-            config["user"], 
-            config["password"], 
-            config["database"], 
-            ALL_CHUNKS_FILE_PATH
+            config["uri"], config["user"], config["password"], 
+            config["database"], ALL_CHUNKS_FILE_PATH
         )
-        
         if not _retriever_instance.driver:
             print("Inizializzazione del Retriever fallita.")
             _retriever_instance = None
@@ -122,7 +98,7 @@ def get_retriever_instance(use_raw_data: bool = True) -> Optional:
     return _retriever_instance
 
 def close_retriever_connection():
-    """Funzione per chiudere la connessione del retriever alla fine."""
+    """Chiude la connessione del retriever."""
     global _retriever_instance
     if _retriever_instance:
         print("Chiusura connessione del Knowledge Retriever...")
@@ -130,9 +106,9 @@ def close_retriever_connection():
         _retriever_instance = None
 
 def call_gemini_with_retries(prompt, model_name=LLM_MODEL_SYNTHESIS, max_retries=3, delay=5):
-    generation_config = {"temperature": 0.2}
-    model = genai.GenerativeModel(model_name=model_name, generation_config=generation_config)
+    """Chiama Gemini per la sintesi della risposta finale."""
     try:
+        model = genai.GenerativeModel(model_name)
         response = model.generate_content(prompt)
         return response.text.strip()
     except Exception as e:
@@ -140,49 +116,72 @@ def call_gemini_with_retries(prompt, model_name=LLM_MODEL_SYNTHESIS, max_retries
         return ""
 
 def build_answer_generation_prompt(user_question, graph_context, text_context):
-    return f"Domanda: {user_question}\nContesto: {graph_context}\n{text_context}\nRisposta:"
+    """Costruisce il prompt per la generazione della risposta finale."""
+    return f"""
+Sei un assistente esperto sulla piattaforma di e-procurement EmPULIA.
+Il tuo compito è rispondere alla domanda dell'utente in modo chiaro, conciso e basandoti ESCLUSIVAMENTE sulle informazioni fornite nel contesto. Non inventare informazioni.
+
+**Domanda dell'Utente:**
+{user_question}
+
+**Contesto dal Knowledge Graph (Entità e Relazioni):**
+{graph_context}
+code
+Code
+**Contesto dal Testo Originale (Se disponibile):**
+{text_context}
+code
+Code
+**Istruzioni per la Risposta:**
+1.  Sintetizza le informazioni da entrambi i contesti per formulare una risposta completa.
+2.  Se il contesto non contiene informazioni sufficienti, dichiara: "Non ho trovato informazioni specifiche per rispondere alla tua domanda."
+3.  Non fare riferimento al "Knowledge Graph" o ai "documenti" nella tua risposta. Parla direttamente all'utente.
+4.  Usa un linguaggio professionale e, se utile, elenchi puntati.
+
+**Risposta Finale:**
+"""
     
 def validate_context(retrieved_context):
+    """Verifica se il contesto recuperato è vuoto."""
     graph_context = retrieved_context.get("graph_context", "")
     text_context = retrieved_context.get("text_context", "")
     graph_empty = (not graph_context or "Nessuna" in graph_context)
     text_empty = (not text_context or "Nessun" in text_context)
     return not (graph_empty and text_empty)
 
-def save_interaction_log(user_question, context, answer, log_file="interaction_log.json"):
-    pass
-
 def run_qa_pipeline(user_question: str, use_raw_data: bool = True) -> Dict[str, Any]:
     """
     Orchestra l'intera pipeline di Q&A per una singola domanda.
-    
-    Args:
-        user_question (str): La domanda dell'utente
-        use_raw_data (bool): True per dati raw, False per dati aggregati
     """
     retriever = get_retriever_instance(use_raw_data)
     if not retriever:
         return {
             "question": user_question,
-            "answer": "Mi dispiace, non riesco a connettermi alla mia base di conoscenza in questo momento.",
-            "contexts": [],
-            "error": "Knowledge Retriever non inizializzato."
+            "answer": "Mi dispiace, non riesco a connettermi alla mia base di conoscenza.",
+            "contexts": [], "error": "Knowledge Retriever non inizializzato."
         }
 
-    # Verifica che la funzione di analisi sia disponibile
     if not _analyze_function:
         return {
             "question": user_question,
             "answer": "Errore nella configurazione del sistema di analisi.",
-            "contexts": [],
-            "error": "Funzione di analisi non configurata."
+            "contexts": [], "error": "Funzione di analisi non configurata."
         }
 
     # 1. Analisi della domanda
     analysis = _analyze_function(user_question)
     
-    # 2. Recupero della conoscenza
-    retrieved_context = retriever.retrieve_knowledge(user_question, retrieve_text=True)
+    # ### <<< CORREZIONE FONDAMENTALE >>> ###
+    # Passiamo il dizionario 'analysis' al retriever, non più la stringa 'user_question'.
+    if analysis:
+        retrieved_context = retriever.retrieve_knowledge(analysis, retrieve_text=True)
+    else:
+        # Se l'analisi fallisce, crea un contesto vuoto per evitare errori
+        print("L'analisi della domanda ha fallito. Procedo con un contesto vuoto.")
+        retrieved_context = {
+            "graph_context": "Analisi della domanda fallita.",
+            "text_context": ""
+        }
     
     # 3. Generazione della risposta
     graph_context = retrieved_context.get("graph_context", "")
@@ -206,40 +205,32 @@ def run_qa_pipeline(user_question: str, use_raw_data: bool = True) -> Dict[str, 
     result_package = {
         "question": user_question,
         "answer": final_answer,
-        "contexts": contexts_list,
-        "analysis": analysis,
-        "retrieved_context": retrieved_context,
-        "data_type": "raw" if use_raw_data else "aggregated",
-        "error": None
+        "contexts": contexts_list
     }
-    
-    save_interaction_log(user_question, retrieved_context, final_answer)
     
     return result_package
 
 def answer_user_question(user_question: str, use_raw_data: bool = True) -> str:
-    """
-    Funzione wrapper per l'utente finale. Restituisce solo la stringa della risposta.
-    
-    Args:
-        user_question (str): La domanda dell'utente
-        use_raw_data (bool): True per dati raw, False per dati aggregati
-    """
+    """Funzione wrapper per l'utente finale. Restituisce solo la stringa della risposta."""
     result = run_qa_pipeline(user_question, use_raw_data)
     return result.get("answer", "Si è verificato un errore inaspettato.")
 
 # --- Esempio di Utilizzo e Test ---
 if __name__ == "__main__":
     import atexit
-    
-    # Registra la funzione di cleanup
     atexit.register(close_retriever_connection)
     
-    # Test della pipeline completa con dati raw
-    test_question = "Cos'è il DGUE e dove si usa?"
+    test_question = "Sono un utente e ho appena ricevuto le nuove credenziali. Qual è il primo passo che devo compiere dopo aver fatto l'accesso?"
     
     print(f"--- TEST PIPELINE COMPLETA (DATI RAW) ---")
     print(f"Domanda: {test_question}\n")
     
     full_output = run_qa_pipeline(test_question, use_raw_data=True)
-    print(json.dumps(full_output, indent=2, ensure_ascii=False))
+    
+    # Stampa un output più leggibile per il test
+    print("\n--- RISULTATO DEL TEST ---")
+    print(f"DOMANDA: {full_output.get('question')}")
+    print(f"\nRISPOSTA:\n{full_output.get('answer')}")
+    print("\nCONTESTI USATI:")
+    for i, ctx in enumerate(full_output.get('contexts', [])):
+        print(f"--- Contesto {i+1} ---\n{ctx}\n--------------------")
