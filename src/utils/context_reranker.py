@@ -15,8 +15,8 @@ class ContextReranker:
         self.model = None
         try:
             # Il modello verrà scaricato da Hugging Face la prima volta
-            self.model = CrossEncoder(model_name)
-            self.logger.info(f"Modello Reranker '{model_name}' caricato con successo.")
+            self.model = CrossEncoder(model_name, device='cuda')
+            self.logger.info(f"Modello Reranker '{model_name}' caricato con successo su {self.model.device}.")
         except Exception as e:
             self.logger.error(f"Errore critico durante l'inizializzazione del Reranker: {e}")
             self.logger.error("Il reranking sarà disabilitato.")
@@ -45,7 +45,7 @@ class ContextReranker:
         
         # Calcola gli score di pertinenza. Il modello gestisce internamente i batch.
         try:
-            scores = self.model.predict(pairs, show_progress_bar=False)
+            scores = self.model.predict(pairs, show_progress_bar=True)
         except Exception as e:
             self.logger.error(f"Errore durante la predizione del reranker: {e}")
             return chunks # Restituisce i chunk originali in caso di errore
