@@ -97,7 +97,7 @@
     *   Otterrai il meglio di entrambi i mondi. La ricerca per keyword è ottima per acronimi e termini tecnici precisi (come "DGUE"). La ricerca vettoriale è eccellente per catturare il significato e le domande parafrasate (come "come si fa a firmare un contratto?" che potrebbe non contenere la parola "sottoscrizione").
     *   Questo aumenterà drasticamente il `Context Recall` perché avrai molte più probabilità di trovare i nodi "ancora" corretti.
 
-- Miglioramento #2: Implementare un "Reranker" per il Contesto Recuperato
+- ~~Miglioramento #2: Implementare un "Reranker" per il Contesto Recuperato~~
 
     La tua strategia di espansione ("Expand") è ottima ma potrebbe recuperare più contesto del necessario, includendo nodi vicini ma non strettamente pertinenti. Questo può "annacquare" il contesto finale e abbassare la `Context Precision`.
 
@@ -132,3 +132,19 @@
    **Perché Funziona:**
     *   Questo trasforma la tua esplorazione da una "passeggiata casuale" a un'"indagine mirata". Il sistema non solo trova i vicini, ma trova i vicini *giusti* per il tipo di domanda posta.
     *   Questo migliorerà ulteriormente sia il `Context Recall` (trovando percorsi più lunghi ma significativi) sia la `Context Precision` (ignorando le connessioni irrilevanti).
+
+- Miglioramento #4: Risposte con Citazioni e Fonti Verificabili
+
+    **Obiettivo Principale:** Aumentare la fiducia dell'utente e la verificabilità del sistema, trasformandolo in uno strumento di livello professionale.
+
+    *   **Come Funziona:**
+        Questo miglioramento agisce *dopo* la generazione della risposta finale.
+
+        1.  Conserva una traccia dei `final_chunks` (i top N dopo il reranking) che sono stati usati per generare la risposta.
+        2.  **Chiama un LLM per l'Attribuzione:** Dopo aver ottenuto la risposta finale, fai un'ultima chiamata LLM.
+        3.  **Prompt di Attribuzione:**
+            > "Data questa domanda, questa risposta generata e questi frammenti di testo sorgente (ognuno con un ID come 'Fonte: nomefile.pdf - Pagina X'), il tuo compito è di aggiungere una citazione alla fine di ogni frase nella risposta. La citazione deve indicare l'ID del frammento da cui proviene l'informazione. Se una frase sintetizza informazioni da più fonti, includile tutte."
+        4.  Sostituisci la risposta originale con la nuova risposta "arricchita" di citazioni.
+
+        *Esempio di Output:*
+        > "Dopo aver ricevuto le nuove credenziali, il primo passo obbligatorio è il cambio della password. [Fonte: Guida_Rapida_Migrazione_Utenti_SA.pdf - Pagina 4] Questa operazione si trova nella 'Lista attività' ed è considerata bloccante per le altre funzionalità. [Fonte: Guida_Rapida_Migrazione_Utenti_SA.pdf - Pagina 5]"    
