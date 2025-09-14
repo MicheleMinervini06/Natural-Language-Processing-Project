@@ -202,7 +202,7 @@ if __name__ == "__main__":
                 print("--- Analisi e Termini Espansi ---")
                 print(json.dumps(analysis_result, indent=2, ensure_ascii=False))
                 print("\n--- Contesto dal Grafo (Pre-Reranking) ---")
-                print(retrieved_context["graph_context"])
+                #print(retrieved_context["graph_context"])
                 print("\n--- Contesto dal Testo Originale (Post-Reranking) ---")
                 print(retrieved_context["text_context"])
             retriever.close()

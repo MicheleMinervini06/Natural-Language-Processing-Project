@@ -137,7 +137,12 @@ Code
 2.  Se il contesto non contiene informazioni sufficienti, dichiara: "Non ho trovato informazioni specifiche per rispondere alla tua domanda."
 3.  Non fare riferimento al "Knowledge Graph" o ai "documenti" nella tua risposta. Parla direttamente all'utente.
 4.  Usa un linguaggio professionale e, se utile, elenchi puntati.
-
+5.  DEVI aggiungere alla fine della risposta le fonti usate per generare la risposta, in questo modo:
+**Fonti:**
+- Fonte 1: [inserisci il nome del documento]
+- Fonte 2: [inserisci il nome del documento]
+etc.
+Trovi queste informazioni nel contesto del testo originale. ASSICURATI di inserire solo i riferimenti a documenti effetivamente usati per la risposta.
 **Risposta Finale:**
 """
     
@@ -220,8 +225,8 @@ if __name__ == "__main__":
     import atexit
     atexit.register(close_retriever_connection)
     
-    test_question = "Sono un utente e ho appena ricevuto le nuove credenziali. Qual è il primo passo che devo compiere dopo aver fatto l'accesso?"
-    
+    #test_question = "Sono un utente e ho appena ricevuto le nuove credenziali. Qual è il primo passo che devo compiere dopo aver fatto l'accesso?"
+    test_question = "Come faccio a rinnovare la mia patente di guida?"
     print(f"--- TEST PIPELINE COMPLETA (DATI RAW) ---")
     print(f"Domanda: {test_question}\n")
     
@@ -232,5 +237,5 @@ if __name__ == "__main__":
     print(f"DOMANDA: {full_output.get('question')}")
     print(f"\nRISPOSTA:\n{full_output.get('answer')}")
     print("\nCONTESTI USATI:")
-    for i, ctx in enumerate(full_output.get('contexts', [])):
-        print(f"--- Contesto {i+1} ---\n{ctx}\n--------------------")
+    #for i, ctx in enumerate(full_output.get('contexts', [])):
+     #   print(f"--- Contesto {i+1} ---\n{ctx}\n--------------------")

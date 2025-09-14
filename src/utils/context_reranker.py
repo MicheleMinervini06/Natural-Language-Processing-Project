@@ -15,7 +15,7 @@ class ContextReranker:
         self.model = None
         try:
             # Il modello verrà scaricato da Hugging Face la prima volta
-            self.model = CrossEncoder(model_name, device='cuda')
+            self.model = CrossEncoder(model_name, device='cpu')
             self.logger.info(f"Modello Reranker '{model_name}' caricato con successo su {self.model.device}.")
         except Exception as e:
             self.logger.error(f"Errore critico durante l'inizializzazione del Reranker: {e}")
