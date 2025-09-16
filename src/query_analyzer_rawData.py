@@ -3,9 +3,7 @@ import json
 import os
 import time
 from typing import List, Dict, Any
-
-# --- Configurazione Globale ---
-LLM_MODEL_ANALYSIS = "gemini-2.5-pro"
+from utils.llm_handler import call_llm_for_analysis
 
 # Tipi di entità conosciuti dal nostro Knowledge Graph
 KNOWN_ENTITY_TYPES = [
@@ -16,29 +14,6 @@ KNOWN_ENTITY_TYPES = [
     "Organismo", "TermineTemporale", "Scadenza", "MessaggioSistema",
     "Notifica", "SezioneGuida", "NotificaSistema"
 ]
-
-# --- Funzioni Core per Gemini ---
-
-def call_gemini_with_retries(prompt: str, model_name: str = LLM_MODEL_ANALYSIS, max_retries: int = 3, delay: int = 5) -> str:
-    """Funzione robusta per chiamare l'API Gemini con gestione dei tentativi."""
-    generation_config = {"temperature": 0.0, "response_mime_type": "application/json"}
-    model = genai.GenerativeModel(model_name=model_name, generation_config=generation_config)
-    
-    for attempt in range(max_retries):
-        try:
-            response = model.generate_content(prompt)
-            cleaned_response = response.text.strip()
-            if cleaned_response.startswith("```json"):
-                cleaned_response = cleaned_response[7:-3].strip()
-            return cleaned_response
-        except Exception as e:
-            print(f"Errore durante la chiamata a Gemini (tentativo {attempt + 1}/{max_retries}): {e}")
-            if attempt < max_retries - 1:
-                time.sleep(delay * (2 ** attempt))
-            else:
-                print("Massimo numero di tentativi raggiunto.")
-                return ""
-    return ""
 
 def get_few_shot_examples() -> str:
     """Restituisce esempi few-shot per guidare l'LLM."""
@@ -126,10 +101,10 @@ def analyze_user_question(user_question: str) -> Dict[str, Any]:
         print("Errore: la domanda dell'utente è vuota.")
         return {}
     
-    print(f"Analisi ed espansione della domanda con Gemini: '{user_question}'...")
+    print(f"Analisi ed espansione della domanda con LLM scelto: '{user_question}'...")
 
     prompt = build_gemini_query_analysis_prompt(user_question)
-    llm_output_str = call_gemini_with_retries(prompt)
+    llm_output_str = call_llm_for_analysis(prompt)
 
     if not llm_output_str:
         print("Errore: Gemini non ha restituito una risposta valida.")
@@ -156,14 +131,6 @@ def analyze_user_question(user_question: str) -> Dict[str, Any]:
         return {}
 
 if __name__ == "__main__":
-    api_key = os.getenv("GEMINI_API_KEY")
-    if api_key:
-        genai.configure(api_key=api_key)
-        print("API Key Gemini caricata.")
-    else:
-        print("ATTENZIONE: GEMINI_API_KEY non trovata.")
-        exit() 
-    
     test_question = "Sono un utente e ho appena ricevuto le nuove credenziali. Qual è il primo passo che devo compiere dopo aver fatto l'accesso?"
     analysis = analyze_user_question(test_question)
     print("\n--- Risultato Analisi ---")

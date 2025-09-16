@@ -3,16 +3,16 @@ import json
 import os
 import time
 from typing import Dict, Any, Optional
+from utils.llm_handler import call_llm_for_synthesis, LLM_PROVIDER
 
-# --- Configurazione Globale ---
-try:
-    GOOGLE_API_KEY = os.environ["GEMINI_API_KEY"]
-    genai.configure(api_key=GOOGLE_API_KEY)
-    print("API Key di Google Gemini configurata.")
-except KeyError:
-    print("ERRORE: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
+# # --- Configurazione Globale ---
+# try:
+#     GOOGLE_API_KEY = os.environ["GEMINI_API_KEY"]
+#     genai.configure(api_key=GOOGLE_API_KEY)
+#     print("API Key di Google Gemini configurata.")
+# except KeyError:
+#     print("ERRORE: La variabile d'ambiente GEMINI_API_KEY non è impostata.")
 
-LLM_MODEL_SYNTHESIS = "gemini-2.5-pro"
 
 # Configurazione del Retriever
 NEO4J_URI = "neo4j://localhost:7687"
@@ -105,16 +105,6 @@ def close_retriever_connection():
         _retriever_instance.close()
         _retriever_instance = None
 
-def call_gemini_with_retries(prompt, model_name=LLM_MODEL_SYNTHESIS, max_retries=3, delay=5):
-    """Chiama Gemini per la sintesi della risposta finale."""
-    try:
-        model = genai.GenerativeModel(model_name)
-        response = model.generate_content(prompt)
-        return response.text.strip()
-    except Exception as e:
-        print(f"Errore in call_gemini_with_retries: {e}")
-        return ""
-
 def build_answer_generation_prompt(user_question, graph_context, text_context):
     """Costruisce il prompt per la generazione della risposta finale."""
     return f"""
@@ -176,7 +166,6 @@ def run_qa_pipeline(user_question: str, use_raw_data: bool = True) -> Dict[str, 
     # 1. Analisi della domanda
     analysis = _analyze_function(user_question)
     
-    # ### <<< CORREZIONE FONDAMENTALE >>> ###
     # Passiamo il dizionario 'analysis' al retriever, non più la stringa 'user_question'.
     if analysis:
         retrieved_context = retriever.retrieve_knowledge(analysis, retrieve_text=True)
@@ -196,7 +185,7 @@ def run_qa_pipeline(user_question: str, use_raw_data: bool = True) -> Dict[str, 
         final_answer = "Non ho trovato informazioni specifiche per rispondere alla tua domanda."
     else:
         prompt = build_answer_generation_prompt(user_question, graph_context, text_context)
-        final_answer = call_gemini_with_retries(prompt)
+        final_answer = call_llm_for_synthesis(prompt)
         if not final_answer:
             final_answer = "Si è verificato un problema nella generazione della risposta."
 

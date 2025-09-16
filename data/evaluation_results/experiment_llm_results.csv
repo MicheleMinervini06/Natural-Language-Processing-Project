@@ -1,0 +1,6 @@
+Run ID,Descrizione Modifica,Context Recall,Context Precision,Answer Relevancy,Faithfulness,Note
+Run_01,llama3:8b,0.7933,0.8000,0.7520,0.8586
+Run_02,qwen3:8b,0.7267,0.8000,0.6223,0.7042
+Run_03,qwen3:14b-chat,0.7800,0.7667,0.4861,0.3876
+Run_04,gpt-oss:20b,0.8000,0.8000,0.7427,0.8254, "Temperatura ad 1 non a 0"
+
